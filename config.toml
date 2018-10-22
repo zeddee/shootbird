@@ -27,13 +27,13 @@ pygmentsCodefences      = true
     primaryImage        = "tn.png"                     # Image that shows on Twitter cards and OpenGraph links
 
 [[params.mainMenu]]
+    link = "/what-is-shootbird"
+    text = "打鳥 (shoot bird?)"
+
+[[params.mainMenu]]
     link = "/posts"
     text = "posts"
 
 [[params.mainMenu]]
     link = "/gallery"
     text = "gallery"
-
-[[params.mainMenu]]
-    link = "/about"
-    text = "who is sam?"
