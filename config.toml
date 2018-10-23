@@ -38,14 +38,19 @@ pygmentsCodefences      = true
   headerImage         = "/img/logo/shootbird_logo_beak.png"
 
 
+
+
 [[params.mainMenu]]
-    link = "/posts"
-    text = "posts"
+    link = "/what-we-do"
+    text = "what we do"
 
 [[params.mainMenu]]
     link = "/what-is-shoot-bird"
     text = "打鳥 (shoot bird?)"
 
+[[params.mainMenu]]
+    link = "/posts"
+    text = "posts"
 # [[params.mainMenu]]
 #     link = "/gallery"
 #     text = "gallery"
