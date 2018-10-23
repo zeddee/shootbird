@@ -35,7 +35,7 @@
         margin-bottom: 1em
         line-height: 1.8
         letter-spacing: 1.5px
-        opacity: 0.8
+        opacity: 1
     & .highlight
         width: 100%
     & pre
@@ -50,7 +50,7 @@
         border: none
     & code
         font-size: 0.9rem
-        font-family: 'Source Code Pro', monospace
+        font-family: $code-font
         padding: 0.1rem
         border-radius: 3px
         border: 1px solid $links
@@ -62,12 +62,12 @@
         opacity: 1
     & blockquote
         background-color: $links
-        color: $dark-grey
+        color: $text-dark
         padding: 2rem
         margin: 2rem 1rem 2rem 1rem
         border-radius: 3px
         a
-            color: $black
+            color: $text-dark
         & ul
             margin-top: 1rem
         & li

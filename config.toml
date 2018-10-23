@@ -11,7 +11,7 @@ pygmentsCodefences      = true
 [params]
     dateform            = "Mon Jan 02, 2006"
     dateformfull        = "Mon Jan 2 2006 15:04:05 EST"
-    favicon             = "sam.ico"
+    favicon             = "favicon.ico"
     homepage            = "main"                        # What to call the home page link
     galleryFolder       = "images/"                     # Where you've put your images, after "/content/gallery/"
     clickablePhotos     = false                          # Allow links to the full size images
@@ -19,21 +19,23 @@ pygmentsCodefences      = true
                                                          # Note: This will only become active if clickablePhotos is also true.
     smallImagesSubfolder = "small/"                      # The subfolder for the small versions of the images under the gallery (with trailing slash)
                                                          # For each image the small version has to have the same filename as the big version.
-    footerText          = "Call me Sam, a theme for Hugo."
+    footerText          = "©2018 [zed](https://nsdmdh.com/about). also [NSDMDH](https://nsdmdh.com)"
 
 # Metadata
-    description         = "A new Hugo site."            # Max 160 characters show in search results
+    description         = "Off centre."            # Max 160 characters show in search results
     twitterCard         = "summary_large_image"         # Card value “summary”, “summary_large_image”, “app”, or “player”
-    primaryImage        = "tn.png"                     # Image that shows on Twitter cards and OpenGraph links
+    primaryImage        = "/img/logo/shootbird_logo_beak.png"                     # Image that shows on Twitter cards and OpenGraph links
+		headerImage         = "/img/logo/shootbird_logo_beak.png"
 
-[[params.mainMenu]]
-    link = "/what-is-shootbird"
-    text = "打鳥 (shoot bird?)"
 
 [[params.mainMenu]]
     link = "/posts"
     text = "posts"
 
 [[params.mainMenu]]
-    link = "/gallery"
-    text = "gallery"
+    link = "/what-is-shoot-bird"
+    text = "打鳥 (shoot bird?)"
+
+# [[params.mainMenu]]
+#     link = "/gallery"
+#     text = "gallery"

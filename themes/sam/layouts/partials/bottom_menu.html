@@ -9,7 +9,10 @@
             &#183;
         {{ end }}
     {{ end }}
-
+    <a href="{{.Page.Site.BaseURL}}">
+        {{ .Page.Site.Params.homepage }}
+    </a>
+       &#183; 
     {{ if .Page.Site.Params.mainMenu }}
         {{ range first 1 .Page.Site.Params.mainMenu }}
             <a href="{{ .link }}">
@@ -25,9 +28,5 @@
             </a>
         {{ end }}
     {{ end }}
-    &#183; 
-    <a href="{{.Page.Site.BaseURL}}">
-        {{ .Page.Site.Params.homepage }}
-    </a>
 {{ end }}
 </p>

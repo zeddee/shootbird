@@ -17,7 +17,9 @@
 </head>
 
 <body>
+
     {{ block "main" . }}<div class="wrap">
+			{{ block "header" . }}<header>{{ partial "header.html" . }}</header>{{ end }}
         {{ block "section_title" . }}<div class="section" id="title">{{ .Title }}</div>{{ end }}
 
         {{ block "section_content" . }}<div class="section" id="content">{{ .Content }}</div>{{ end }}

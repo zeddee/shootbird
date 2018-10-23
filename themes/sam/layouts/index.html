@@ -6,7 +6,9 @@
     </head>
     <body>
         <div class="section" id="splash">
-
+        {{ partial "header.html" . }}
+        <br/>
+        <br/>
             {{ if .Site.Params.mainMenu }}
                 {{ range .Site.Params.mainMenu }}
                     <div class="big-link">
@@ -25,7 +27,11 @@
                     </div>
                 {{ end }}
             {{ end }}
-            
+            <br/>
+            <br/>
+        <section class="footer">
+        {{ partial "footer.html" . }}
+        </section>
         </div>
     </body>
 </html>

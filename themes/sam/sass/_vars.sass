@@ -1,11 +1,16 @@
-$white: #fff
-$black: #111
-$dark-grey: #39424E
-$font: 'Didact Gothic','sans serif'
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif:400,400i,700,700i');
+  
+$light: #fff
+$dark: #000
+$dark-secondary: #333
+$font: 'Noto Serif',serif
+$code-font: 'Source Sans Pro', monospace
+$body-background: $light
 $body-size: 16px
-$body-text: $white
+$body-text: $dark
+$text-dark: darken($light, 10%)
 
-$links: darken($white, 20%)
-$links-hover: $white
+$links: lighten($body-text, 30%)
+$links-hover: lighen($links, 30%)
 
 $code-block: #000004
