@@ -50,7 +50,7 @@ pygmentsCodefences      = true
 
 [[params.mainMenu]]
     link = "/posts"
-    text = "posts"
+    text = "blog"
 # [[params.mainMenu]]
 #     link = "/gallery"
 #     text = "gallery"
