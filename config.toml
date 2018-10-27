@@ -41,8 +41,8 @@ pygmentsCodefences      = true
 
 
 [[params.mainMenu]]
-    link = "/what-we-do"
-    text = "what we do"
+    link = "/who-dis"
+    text = "who dis?"
 
 [[params.mainMenu]]
     link = "/what-is-shoot-bird"
