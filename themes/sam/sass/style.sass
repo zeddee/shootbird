@@ -16,8 +16,9 @@ body
     font-size: $body-size
     font-family: $font
     color: $body-text
-    line-height: 2rem
-    letter-spacing: 1.5px
+    //line-height: 2rem
+    line-height: 1.414em
+    //letter-spacing: 1.5px
     text-shadow: none
     display: flex
     flex-direction: column
@@ -157,3 +158,49 @@ section.post-footer
 .go-center
     justify-content: center
     align-items: center
+
+// asciidoctor
+
+#content ol.loweralpha
+  list-style-type: lower-alpha
+
+#content div.admonitionblock
+  width: auto
+  font-size: 0.9em
+  table td
+      border: none
+      //background: $light-secondary
+      padding: 0.3em
+      padding-top: 1em
+      padding-bottom: 1em
+      vertical-align: top
+      text-align: left
+  table td.icon
+      font-weight: 700
+      border-right: solid 0.5em $dark-secondary
+      border-left: solid 1px $dark-secondary
+      padding-right: 1em
+      padding-left: 1em
+      background-color: rgba($light-secondary, 0.4)
+  .icon>.title
+      margin-bottom: 0
+  table td.content
+      padding-left: 2em
+      padding-right: 2em
+      background: rgba($light-secondary, 0.3)
+
+#content div.note
+  table td.icon
+    $thisColor: gold
+    border-color: $thisColor
+    background-color: rgba($thisColor, 0.4)
+#content div.warning
+  table td.icon
+    $thisColor: red
+    border-color: $thisColor
+    background-color: rgba($thisColor, 0.4)
+#content div.tip
+  table td.icon
+    $thisColor: #229954
+    border-color: $thisColor
+    background-color: rgba($thisColor, 0.4)
