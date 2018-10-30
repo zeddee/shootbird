@@ -4,6 +4,16 @@ date: 2018-10-22T17:54:04+08:00
 draft: false
 ---
 
+[Zed](https://nsdmdh.com/about) writes here at [Shoot Bird](/)
+about design, software, and ethics. He is also a documentarian who
+has worked with software companies to produce end-user and developer
+documentation, as well as helped keep their developers sane by 
+writing stuff down for them.
+Ping him at [zed@nsdmdh.com](mailto://zed@nsdmdh.com)
+for business enquiries, or if you want to talk about anything he's written about.
+
+*~*
+
 打鳥 (.v, Hokkien; _pak jiao_), literally translates as "shoot bird"
 and is used to refer to the act of landing a wide shot
 i.e. missing the target.
