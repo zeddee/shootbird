@@ -1,0 +1,58 @@
+---
+title: "Why Technical Documentation?"
+date: 2018-10-23T23:42:28+08:00
+showDate: true
+draft: false
+tags: ["documentation"]
+---
+
+A technical writer asks questions and writes stuff down. This is more difficult than it sounds — allow me to demonstrate:
+
+Imagine that you've started work at a café. 
+
+On your first week there, you learn how the coffee machine works: where the beans go, how often it needs to be cleaned. 
+In the middle of that week, you learn which customers are friendly, and who are not. 
+You learn that the coffee machine has a quirk — every tenth pour will give you half the coffee that it usually does.
+You usually end up drinking that coffee, or giving it to that customer who always asks for a thinner brew.
+
+At the end of your first month, you learn that your most difficult customer can be placated with one of those plastic strips of syrup,
+and they start bringing you donuts from the cake shop next door.
+
+At the end of your second month, you learn that if you're on closing shift on Thursdays,
+you should start dimming the lights early so the café starts emptying out before the drunks start to try and come in after ladies' night. 
+You put out paper cups with water in them for those who hang outside anyway, so at least fewer cigarettes end up on the floor and in the drainage.
+
+At the end of your third month, some of the kids who end up smoking outside the café on ladies' night decide to hang out here instead. 
+You make friends with them, and they end up coming in during the day to study. They occupy no more than a small table outside, 
+and buy a steady stream of coffee; you give them water and watch their stuff for them when they need to pee.
+
+At the end of your fourth month, you've decided to move on to another job. Your replacement is hired. What do you tell them?
+
+*~*
+
+When you're working alone, it's easy to learn and perform tasks via muscle memory. It's also easy to say that your skill domain is one that you have to "learn by doing", because that is also partly true. All skills require practice and rehearsal to get good at doing them. But it starts to work against you when you need to work with someone else — no! don't use fresh milk in that latte; she forgot to tell you she's lactose intolerant — or, say, when a new colleague takes over your shift. 
+
+Lots of this can't be written down: interpersonal relationships, "unofficial" transactions ("you look terrible today; shh, here's an extra shot and some honey"), implicit contracts ("yes, you can hog this table; don't tell my boss and please buy some coffee"). But for every item that can't be effectively documented, there's one that can: what to do when a drunk customer comes in on Thursdays; who to call in an emergency; what to do with that 10th shot that your coffee machine refuses to fill; when to tell the kids off, and what's safe to let them do. You'll also notice that this isn't as stiff as an SOP (Standard Operating Proceduce) — a document like this is more casual, something like a guide to running a shift at the café. Like a user's guide.
+
+Technical documentation is both the SOP and the shift manager's guide for software. The SOP or the technical specifications are important for knowing what we expect to be done, and the "shift manager's guide" tells us what is done in practice. Ideally, the realities of these two domains — specifications and ground operations — should converge. But because life happens, they usually don't. As documentarians, our job is to not only figure out what is expected of the system that we're documenting, but also what happens during day-to-day usage.
+
+I spent the first six months at my first technical writing job figuring out the software I was documenting worked, and the gap between that and how a user would expect it to work. It meant getting endlessly frustrated because I had to figure out everything that would go wrong in the software, and mapping that to how that error is displayed in the software (and how it wasn't), and then mapping it to what a user would expect. It was like having a coffee menu that showed a series of instructions to operate the coffee machine instead of having coffee names, and then realising that some of the instructions were wrong, or customers were picking the wrong set of instructions and not getting the coffee they wanted. You'd think the first step would be to just change the menu, but it's a bit more complicated in software: we've got to figure out which of the instructions are incorrect, what coffee names belong to what, figure out if we have beans for everything that we think we're offering, and figure out which instructions map to our multiple coffee machines or if we even have it in the store.
+
+But it helps, because once you've got all that written down and published, the number of calls your customer support team gets drop because instead of having to call in to get their question answered, the answer to their problem is written and put up somewhere they can google. They get more time to deal with the more difficult cases, and start to work better because they're dealing with more challenging and meaningful problems rather than menial ones. People are more willing to buy your product because they can see how it works up-front, rather than having to find out how everything works after they send you money. And more unexpectedly, your software engineers start using the documentation, because nobody remembers how stuff is supposed to work, and you're writing stuff down that maybe they didn't think of. And the next time a new employee or two joins your team, you direct them to spend a day reading the documentation rather than taking a member of your team off their projects to walk them through all your products. **It's a lot more than writing down the steps to make your coffee.**
+
+What technical documentation does is move information out of the silos that they're usually created in, and making it available and legible to everyone who needs it. It makes collaboration easier, because instead of having to spend time figuring out if we're talking about the same team we go to what's been written down and work from there. In a sense, this is a semi-journalistic (we're not tech journalists) practise — gathering and reporting information as-is, and keeping stakeholders (and sometimes, the public) informed about technical issues.
+
+*~*
+
+So why technical documentation? Because it's hard enough to write stuff down, but knowing what to write down requires a certain amount of practise.
+Asking the right questions, and then figuring out how to best communicate it, are difficult things.
+We decide on the order of headings, which details to include and which to remove. 
+We decide what would annoy people and therefore should leave out (because more often than not, nobody wants to read documentation), 
+and what we have to put our foot down and be annoying about.
+We learn how to be concise without losing too much fidelity, and how to make a document human without being frivolous.
+
+And lastly: yes, one of your engineers can probably do some of these things if given enough time. But they'll be a lot happier if you just let them deal with the code and hire someone like us to take care of your docs :)
+
+
+
+
