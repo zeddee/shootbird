@@ -5,7 +5,7 @@ draft: false
 ---
 
 [Zed](https://www.zeddee.com) writes here at [Shoot Bird](/)
-about design, software, and ethics. He is also a documentarian who
+about design, software, and ethics. He is also a [documentarian](/posts/why-technical-documentation) who
 has worked with software companies to produce end-user and developer
 documentation, as well as helped keep their developers sane by 
 writing stuff down for them.
@@ -30,3 +30,7 @@ But in a world where precision tends to mean "algorithmic" and "machine-like", i
 
 "Shooting birds" — and what we're trying to do here at [Shoot Bird](/what-is-shoot-bird) — is therefore an exercise in exploring the periphery in hope that sometimes, what can seem like bad aim in the
 service of finding a meatier target than if you were on target.
+
+*~*
+
+Contact [zed@nsdmdh.com](mailto://zed@nsdmdh.com) for work/questions.

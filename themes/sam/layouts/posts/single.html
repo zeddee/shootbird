@@ -19,10 +19,7 @@
     <hr/>
     {{ .Content }}
 </div>
-<section class="post-footer">
-	<img class="profileImage" src="{{ .Site.Params.profileImage }}" />
-	<section>{{ .Site.Params.postFooterText | markdownify }}</section>
-</section>
+{{ partial "postFooter.html" . }}
 {{ end }}
 
 {{ define "bottom-menu" }}

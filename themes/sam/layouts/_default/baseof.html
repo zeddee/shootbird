@@ -22,7 +22,9 @@
 			{{ block "header" . }}<header>{{ partial "header.html" . }}</header>{{ end }}
         {{ block "section_title" . }}<div class="section" id="title">{{ .Title }}</div>{{ end }}
 
-        {{ block "section_content" . }}<div class="section" id="content">{{ .Content }}</div>{{ end }}
+        {{ block "section_content" . }}<div class="section" id="content">{{ .Content }}</div>
+        
+        {{ end }}
 
         {{ block "bottom-menu" . }}
         {{ if .Site.Params.mainMenu }}<div class="section bottom-menu">{{ partial "bottom_menu.html" (dict "Page" . "show_back_menu_item" false) }}</div>{{ end }}

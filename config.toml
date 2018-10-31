@@ -24,7 +24,7 @@ publishDir = "docs"
     footerText          = "©2018 [zed](https://www.zeddee.com/)."
   profileImage      = "/zed-square-400px.jpg"
   postFooterText      = """
-  Zed is a former educator and currently a
+  Author: Zed is a former educator and currently a
   [professional explainer](https://www.zeddee.com/cv).
   He writes about software, video games, and narrative design.
   If you have software or a system that needs explaining
