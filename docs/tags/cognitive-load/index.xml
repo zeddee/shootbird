@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Shoot Bird</title>
-    <link>/posts/</link>
-    <description>Recent content in Posts on Shoot Bird</description>
+    <title>Cognitive Load on Shoot Bird</title>
+    <link>/tags/cognitive-load/</link>
+    <description>Recent content in Cognitive Load on Shoot Bird</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Nov 2018 04:21:08 +0800</lastBuildDate>
     
-	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/cognitive-load/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,17 +19,6 @@
       <guid>/posts/when-to-start-naming-things/</guid>
       <description>First rule of magic: Don&amp;rsquo;t let anyone know your real name. Names have power.1
  Microcopy isn&amp;rsquo;t usually at the top of the list when it comes to developing interfaces — button text is usually straightforward when it comes to the nondescript &amp;ldquo;OK&amp;rdquo;/&amp;ldquo;Cancel&amp;rdquo;, &amp;ldquo;Confirm&amp;rdquo; or &amp;ldquo;Save&amp;rdquo;. In fact, given the high rate of smartphone penetration, the value of screen real-estate favours use of iconography over text to communicate functionality.</description>
-    </item>
-    
-    <item>
-      <title>Why Technical Documentation?</title>
-      <link>/posts/why-technical-documentation/</link>
-      <pubDate>Tue, 23 Oct 2018 23:42:28 +0800</pubDate>
-      
-      <guid>/posts/why-technical-documentation/</guid>
-      <description>A technical writer asks questions and writes stuff down. This is more difficult than it sounds — allow me to demonstrate:
- Imagine that you&amp;#8217;ve started work at a café.
- On your first week there, you learn how the coffee machine works: where the beans go, how often it needs to be cleaned. In the middle of that week, you learn which customers are friendly, and who are not. You learn that the coffee machine has a quirk — every tenth pour will give you half the coffee that it usually does.</description>
     </item>
     
   </channel>

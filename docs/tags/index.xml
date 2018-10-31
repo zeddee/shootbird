@@ -6,10 +6,37 @@
     <description>Recent content in Tags on Shoot Bird</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 23 Oct 2018 23:42:28 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 01 Nov 2018 04:21:08 +0800</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Cognitive Load</title>
+      <link>/tags/cognitive-load/</link>
+      <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
+      
+      <guid>/tags/cognitive-load/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dark Patterns</title>
+      <link>/tags/dark-patterns/</link>
+      <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
+      
+      <guid>/tags/dark-patterns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Design</title>
+      <link>/tags/design/</link>
+      <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
+      
+      <guid>/tags/design/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Documentation</title>
@@ -17,6 +44,42 @@
       <pubDate>Tue, 23 Oct 2018 23:42:28 +0800</pubDate>
       
       <guid>/tags/documentation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Imovie</title>
+      <link>/tags/imovie/</link>
+      <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
+      
+      <guid>/tags/imovie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Macos</title>
+      <link>/tags/macos/</link>
+      <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
+      
+      <guid>/tags/macos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Technical Communication</title>
+      <link>/tags/technical-communication/</link>
+      <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
+      
+      <guid>/tags/technical-communication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ux</title>
+      <link>/tags/ux/</link>
+      <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
+      
+      <guid>/tags/ux/</guid>
       <description></description>
     </item>
     

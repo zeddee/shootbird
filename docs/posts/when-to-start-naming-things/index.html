@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Off centre.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="/">
+
+<meta name="twitter:image" content="/img/logo/shootbird_logo_beak.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Shoot Bird">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Off centre.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="/img/logo/shootbird_logo_beak.png">
+
+<link rel="shortcut icon" href="/favicon.png" id="favicon">
+<link rel="stylesheet" href="/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        When to Start Naming Things
+        
+    </title>
+</head>
+
+<body>
+
+    <div class="wrap">
+			<header><a href="/" 
+  style="border-bottom:none;"
+  alt="Shoot Bird">
+	<img
+    style="width:3rem;"
+    src="/img/logo/shootbird_logo_beak.png"
+    alt="Shoot Bird" />
+</a>
+</header>
+        <div class="section" id="title">When to Start Naming Things</div>
+
+        
+<div class="section" id="content">
+		
+		  Thu Nov 01, 2018
+			&#183;
+			1197 words
+		
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="/tags/design">
+                design
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="/tags/cognitive-load">
+                cognitive load
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="/tags/ux">
+                ux
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="/tags/dark-patterns">
+                dark patterns
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="/tags/imovie">
+                iMovie
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="/tags/macos">
+                macOS
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="/tags/technical-communication">
+                technical communication
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    <blockquote>
+<p>First rule of magic: Don&rsquo;t let anyone know your real name. Names have power.<sup class="footnote-ref" id="fnref:1"><a href="#fn:1">1</a></sup></p>
+</blockquote>
+
+<p>Microcopy isn&rsquo;t usually at the top of the list when it comes to developing interfaces — button text is usually straightforward when it comes to the nondescript &ldquo;OK&rdquo;/&ldquo;Cancel&rdquo;, &ldquo;Confirm&rdquo; or &ldquo;Save&rdquo;. In fact, given the high rate of <a href="https://www2.deloitte.com/content/dam/Deloitte/us/Documents/technology-media-telecommunications/us-global-mobile-consumer-survey-second-edition.pdf">smartphone penetration</a>, the value of screen real-estate favours use of iconography over text to communicate functionality.</p>
+
+<p>This works when your UI does things that have well-established conventions for, like a 📞 button would call someone when tapped, and a 🗑 button deletes an item. Barring obscure iconography when a front-end developer tries to get cute with their UI implementation (🤷‍♂️), there comes a point when you actually have to start labelling stuff instead of relying on icons to communicate which button does what.</p>
+
+<p>(<code>alt</code> text only works when your users are using a mouse/trackpad.)</p>
+
+<p>That inflection point, where you start having to label stuff, is when you find that you need a manual to describe how to use your application&rsquo;s UI.</p>
+
+<p><img src="/img/imovie/imovie-highlight1.jpg" alt="iMovie" /></p>
+
+<p>Take iMovie for example: without context, I wouldn&rsquo;t know what any of the icons at the top right corner of the application does without holding my mouse cursor over each icon. While this is forgivable for a complex application — you can&rsquo;t expect the UI to deliver beyond what&rsquo;s basically the physical limit of a display — what I found most annoying about this is that I couldn&rsquo;t for the life of me figure out how to export my work. The option to <strong>save</strong> or <strong>export</strong> has been inexplicably removed from the &ldquo;File&rdquo; menu, leaving me fumbling around with the interface trying to get my work into a reasonable format <em>and deliver it to my client</em>. It got more frustrating when I realised that pressing the standard shortcut keys for <strong>export</strong> (⌘+E) sent me to a screen that said &ldquo;Theatre&rdquo;, appeared to export my project, but left me with no way to open its location on my filesystem.</p>
+
+<p>I eventually found that to export a clip without going through the &ldquo;Theatre&rdquo;, I had to go to <strong>File &gt; Share &gt; File&hellip;</strong>. But that didn&rsquo;t export the whole project, but just the first clip of the project. I had to click on the <strong>Share</strong> button at the top-right corner of the application, and select <strong>File</strong> to get my whole project exported.</p>
+
+<p><img src="/img/imovie/imovie-share-file.jpg" alt="iMovie — Share" /></p>
+
+<p>(Note: I realised — two days after my attempt — that I could drag exported projects out of the &ldquo;Theatre&rdquo; to any location on my filesystem. But that is horribly unintuitive: nothing in the &ldquo;Theatre&rdquo; told me that I could do that. Nothing in the &ldquo;Theatre&rdquo; UI showed any <a href="https://en.wikipedia.org/wiki/The_Design_of_Everyday_Things">affordances</a> for dragging and dropping exported project. This is even worse when you consider that I&rsquo;ve been using Apple products for eight years and counting, and I&rsquo;ve worked in UX/UI-related fields for five of those years.)</p>
+
+<p>We can break this down into two fundamental issues:</p>
+
+<ol>
+<li><strong>Convention was broken</strong>. This is an example of how UI design can be <em>too</em> clever — in its push to move its users to a more iCloud-centric paradigm, Apple decided to hide its File export option and instead push users to export to iCloud by default. It&rsquo;s a textbook example of a <a href="https://darkpatterns.org/">dark pattern</a>, and is shameful to see in what is supposed to be top-tier software.</li>
+<li><strong>Mislabelling, or a lack of labels</strong>. This is a perennial issue with icon-heavy interfaces — that they assume that all their users know what they mean. In this case, I would not expect a <strong>Share</strong> button to allow me to export a file to a location on my filesystem. It is possible to argue that Apple is trying to reclaim the otherwise underused &ldquo;Share&rdquo; button, which conventionally is used to share data with other people (e.g. through social media applications, email etc.) because <strong>sharing is denotationally a social act</strong>. It is also possible to argue that, given the above definition of &ldquo;sharing&rdquo;, the Finder (and therefore the filesystem itself) is <em>also</em> an application. But you can tell by the mental gymnastics we have to perform that these are not intuitive definitions, which means that we are trying to stretch the meaning of the word — not something we should be doing in a field where <a href="https://en.wikipedia.org/wiki/Cognitive_load">reducing cognitive load</a> is so important.</li>
+</ol>
+
+<p>Both these issues point towards a need for clearer labelling and more explicitly functional microcopy — that is to say, buttons and features should be clearly spelt out and and named according to accepted convention.</p>
+
+<p><strong>Share</strong> buttons should perform a social function; performing file-related movement of data out of an application should be delegated to an <strong>Export</strong> button. Similarly, an icon depicting a paint palette should allow me to select from a range of colours (to what effect?), and not produce yet another row of unlabelled bars with barely any colour and expect me to know how to use them.</p>
+
+<p><img src="/img/imovie/imovie-colour-correct.jpg" alt="iMovie — Colour Correction" /></p>
+
+<p>Labelled UIs are just simpler. It takes a lot of work to get an unlabelled UI to work — and as shown above, even Apple can&rsquo;t get it right. Yes, more text increases clutter and workflow friction. Yes, text increases cognitive load. Yes, text depends on the user&rsquo;s ability to understand the written language, and also adds the burden of localisation. But all these things have very clear solutions: if you have too much text in your UI, then you&rsquo;re putting too many things in one screen — which means you might need to put a bit more work into refining your user flow. If localisation is difficult, then you might have coupled your UI text too tightly with your application code (or even worse, hardcoded these things), which pre-empts the technical debt that comes with it (what happens when you don&rsquo;t have a spare C++ developer at hand to correct a typo in one popup box?).</p>
+
+<p>And finally: it makes the job of whomever needs to describe your software to another person infinitely easier (it&rsquo;s not just the technical writers). A labelled interface is easy to refer to, and easy to describe in written text, and verbally over the phone (can you imagine your customer support staff having to describe a hamburger menu button to someone who has neither used one, nor has ever known the taste of an actual burger?).</p>
+
+<p>If there&rsquo;s anything that you should take away from this post, is that <strong>effective technical communication favours the explicit over the implicit</strong>. It is always better to spell things out, than to assume that your users will figure it out by themselves. In Gaiman&rsquo;s <em>The Book of Magic: Invisible Labyrinths</em>, Constantine tells young Tim that giving out their names means giving others power over them. Similarly, explicitly naming a UI element not only allows your user to use it, but also allows your user to more fully grasp it, understand it. The more your user understands your application, the better they&rsquo;ll get at extracting value from it — which I assume is what you want.</p>
+
+<p><strong>tl;dr</strong>: Prefer the explicit over the implicit; name things so they can be grasped (and used).</p>
+<div class="footnotes">
+
+<hr />
+
+<ol>
+<li id="fn:1">John Constantine in <em>The Books of Magic: Invisible Labyrinth</em>, published by DC Comics (1990), written by Neil Gaiman.
+ <a class="footnote-return" href="#fnref:1"><sup>[return]</sup></a></li>
+</ol>
+</div>
+
+</div>
+<section class="post-footer">
+	<img class="profileImage" src="/zed-square-400px.jpg" />
+	<section><strong>Author |</strong> Zed is a former educator and currently a
+  <a href="https://www.zeddee.com/cv">professional explainer</a>.
+  He writes about software, video games, and narrative design.
+  If you have software or a system that needs explaining
+  (to frustrated users, or you just need someone to write
+  stuff down for you), you can contact him for work at
+  <a href="mailto://zed@nsdmdh.com">zed@nsdmdh.com</a>.</section>
+</section>
+
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+
+    
+        <a href="/posts">back</a>
+        
+            &#183;
+        
+    
+    <a href="/">
+        main
+    </a>
+       &#183; 
+    
+        
+            <a href="/services">
+                services
+            </a>
+        
+    
+    
+        
+            &#183; 
+            <a href="/what-is-shoot-bird">
+                打鳥 (shoot bird?)
+            </a>
+        
+            &#183; 
+            <a href="/posts">
+                blog
+            </a>
+        
+    
+
+</p>
+
+</div>
+
+
+        <div class="section footer"><span>©2018 <a href="https://www.zeddee.com/">zed</a>.</span>
+</div>
+    </div>
+</body>
+
+</html>
