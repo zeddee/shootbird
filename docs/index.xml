@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Shoot Bird</title>
-    <link>www.shootbird.work/</link>
+    <link>/</link>
     <description>Recent content on Shoot Bird</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 23 Oct 2018 23:42:28 +0800</lastBuildDate>
     
-	<atom:link href="www.shootbird.work/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Why Technical Documentation?</title>
-      <link>www.shootbird.work/posts/why-technical-documentation/</link>
+      <link>/posts/why-technical-documentation/</link>
       <pubDate>Tue, 23 Oct 2018 23:42:28 +0800</pubDate>
       
-      <guid>www.shootbird.work/posts/why-technical-documentation/</guid>
+      <guid>/posts/why-technical-documentation/</guid>
       <description>A technical writer asks questions and writes stuff down. This is more difficult than it sounds — allow me to demonstrate:
  Imagine that you&amp;#8217;ve started work at a café.
  On your first week there, you learn how the coffee machine works: where the beans go, how often it needs to be cleaned. In the middle of that week, you learn which customers are friendly, and who are not. You learn that the coffee machine has a quirk — every tenth pour will give you half the coffee that it usually does.</description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>Services</title>
-      <link>www.shootbird.work/services/</link>
+      <link>/services/</link>
       <pubDate>Tue, 23 Oct 2018 23:29:43 +0800</pubDate>
       
-      <guid>www.shootbird.work/services/</guid>
+      <guid>/services/</guid>
       <description>Hire us. We&amp;rsquo;ve done stuff like this:
  Designed, built, and wrote: https://docs.groundlabs.com/er Samples:
  Ground Labs Documentation: ER2 — Exchange Domain Scanning Ground Labs Documentation: ER2 — Database Scanning  Individual guides (sample code + instructional content):
@@ -37,10 +37,10 @@
     
     <item>
       <title>What Is Shoot Bird?</title>
-      <link>www.shootbird.work/what-is-shoot-bird/</link>
+      <link>/what-is-shoot-bird/</link>
       <pubDate>Mon, 22 Oct 2018 17:54:04 +0800</pubDate>
       
-      <guid>www.shootbird.work/what-is-shoot-bird/</guid>
+      <guid>/what-is-shoot-bird/</guid>
       <description>Zed writes here at Shoot Bird about design, software, and ethics. He is also a documentarian who has worked with software companies to produce end-user and developer documentation, as well as helped keep their developers sane by writing stuff down for them. Ping him at zed@nsdmdh.com for business enquiries, or if you want to talk about anything he&amp;rsquo;s written about.
 ~
 打鳥 (.v, Hokkien; pak jiao), literally translates as &amp;ldquo;shoot bird&amp;rdquo; and is used to refer to the act of landing a wide shot i.</description>
