@@ -3,7 +3,7 @@ title: "Why Technical Documentation?"
 date: 2018-10-23T23:42:28+08:00
 showDate: true
 draft: false
-tags: ["documentation"]
+tags: ["documentation", "technical communication"]
 ---
 
 A technical writer asks questions and writes stuff down. This is more difficult than it sounds — allow me to demonstrate:
