@@ -4,7 +4,7 @@ date: 2018-10-22T17:54:04+08:00
 draft: false
 ---
 
-[Zed](https://nsdmdh.com/about) writes here at [Shoot Bird](/)
+[Zed](https://www.zeddee.com) writes here at [Shoot Bird](/)
 about design, software, and ethics. He is also a documentarian who
 has worked with software companies to produce end-user and developer
 documentation, as well as helped keep their developers sane by 

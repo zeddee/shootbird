@@ -22,4 +22,4 @@ Other things we can do:
 - Information and instructional design.
 - General tech consultancy (we help people figure out what ✨tech✨ things they're getting themselves into).
 
-For more **information** or a **quote**, email [Zed](https://nsdmdh.com/about) at [zed@nsdmdh.com](mailto://zed@nsdmdh.com)
+For more **information** or a **quote**, email [Zed](https://www.zeddee.com/) at [zed@nsdmdh.com](mailto://zed@nsdmdh.com)

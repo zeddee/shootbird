@@ -21,11 +21,11 @@ publishDir = "docs"
                                                          # Note: This will only become active if clickablePhotos is also true.
     smallImagesSubfolder = "small/"                      # The subfolder for the small versions of the images under the gallery (with trailing slash)
                                                          # For each image the small version has to have the same filename as the big version.
-    footerText          = "©2018 [zed](https://nsdmdh.com/about). also [NSDMDH](https://nsdmdh.com)"
+    footerText          = "©2018 [zed](https://zeddee.com/)."
   profileImage      = "/zed-square-400px.jpg"
   postFooterText      = """
   Zed is a former educator and currently a
-  [professional explainer](https://nsdmdh.com/about).
+  [professional explainer](https://zeddee.com/cv).
   He writes about software, video games, and narrative design.
   If you have software or a system that needs explaining
   (to frustrated users, or you just need someone to write
