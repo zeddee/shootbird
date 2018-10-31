@@ -6,7 +6,7 @@ draft: false
 
 Hire us. We've done stuff like this:
 
-* Designed, built, and wrote: https://docs.groundlabs.com/er
+* Designed, built, and wrote: https://docs.groundlabs.com
 * Samples:
   * [Ground Labs Documentation: ER2 — Exchange Domain Scanning](https://docs.groundlabs.com/er2.0.26/Content/Targets/Add_Targets/Cloud_Targets/Exchange_Domain.htm)
   * [Ground Labs Documentation: ER2 — Database Scanning](https://docs.groundlabs.com/er2.0.26/Content/Targets/Add_Targets/Server_Targets/Databases.htm)
