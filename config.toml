@@ -36,8 +36,8 @@ publishDir = "docs"
 # Metadata
     description         = "Off centre."            # Max 160 characters show in search results
     twitterCard         = "summary_large_image"         # Card value “summary”, “summary_large_image”, “app”, or “player”
-    primaryImage        = "/img/logo/shootbird_logo_beak.png"                     # Image that shows on Twitter cards and OpenGraph links
-  headerImage         = "/img/logo/shootbird_logo_beak.png"
+    primaryImage        = "/img/logo/shootbird_opengraph.png"                     # Image that shows on Twitter cards and OpenGraph links
+    headerImage         = "/img/logo/shootbird_logo_beak.png"
 
 
 
