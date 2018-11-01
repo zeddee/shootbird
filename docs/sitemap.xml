@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/posts/learn-how-to-use-terminal/</loc>
+    <lastmod>2018-11-01T05:10:02+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/posts/when-to-start-naming-things/</loc>
     <lastmod>2018-11-01T04:21:08+08:00</lastmod>
   </url>
@@ -23,6 +28,12 @@
   </url>
   
   <url>
+    <loc>/tags/bash/</loc>
+    <lastmod>2018-11-01T05:10:02+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
     <priority>0</priority>
   </url>
@@ -30,6 +41,12 @@
   <url>
     <loc>/tags/cognitive-load/</loc>
     <lastmod>2018-11-01T04:21:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/command-line/</loc>
+    <lastmod>2018-11-01T05:10:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -65,25 +82,25 @@
   
   <url>
     <loc>/posts/</loc>
-    <lastmod>2018-11-01T04:21:08+08:00</lastmod>
+    <lastmod>2018-11-01T05:10:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-11-01T04:21:08+08:00</lastmod>
+    <lastmod>2018-11-01T05:10:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2018-11-01T04:21:08+08:00</lastmod>
+    <lastmod>2018-11-01T05:10:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/technical-communication/</loc>
-    <lastmod>2018-11-01T04:21:08+08:00</lastmod>
+    <lastmod>2018-11-01T05:10:02+08:00</lastmod>
     <priority>0</priority>
   </url>
   

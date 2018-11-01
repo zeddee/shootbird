@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Off centre.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="/">
+
+<meta name="twitter:image" content="/img/logo/shootbird_logo_beak.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Shoot Bird">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Off centre.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="/img/logo/shootbird_logo_beak.png">
+
+<link rel="shortcut icon" href="/favicon.png" id="favicon">
+<link rel="stylesheet" href="/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+    
+
+    
+    
+    
+    <title>
+        
+        Learn How to Use Terminal
+        
+    </title>
+</head>
+
+<body>
+
+    <div class="wrap">
+			<header><a href="/" 
+  style="border-bottom:none;"
+  alt="Shoot Bird">
+	<img
+    style="width:3rem;"
+    src="/img/logo/shootbird_logo_beak.png"
+    alt="Shoot Bird" />
+</a>
+</header>
+        <div class="section" id="title">Learn How to Use Terminal</div>
+
+        
+<div class="section" id="content">
+		
+		  Thu Nov 01, 2018
+			&#183;
+			953 words
+		
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="/tags/bash">
+                bash
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="/tags/technical-communication">
+                technical communication
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="/tags/command-line">
+                command line
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_overview">Overview</a></li>
+<li><a href="#_precision_speed">Precision + Speed</a></li>
+<li><a href="#_quickly_copypaste_stuff">Quickly Copy+Paste Stuff</a></li>
+<li><a href="#_download_youtube_videos">Download YouTube videos</a></li>
+<li><a href="#_conclusion">Conclusion</a></li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/img/terminal/terminal-blink.gif" alt="The Terminal">
+</div>
+<div class="title">Figure 1. Scary Computer Stuff (or How I Learnt to Stop Worrying and Love the Terminal).</div>
+</div>
+<div class="sect1">
+<h2 id="_overview">Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <a href="https://support.apple.com/en-sg/guide/terminal/welcome/mac">terminal</a> (and it&#8217;s Windows counterparts, the <a href="https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands">Command Prompt and PowerShell</a>) are terrifying to behold if you have no idea what you&#8217;re doing. In <a href="/posts/when-to-start-naming-things">When to Start Naming Things</a>, we&#8217;ve talked about text labels and design conventions in graphic interfaces. But what do you do when you&#8217;re faced with nothing but a blinking text cursor, and nothing else? And why would you want to use such a thing in the first place?</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/img/terminal/terminal-empty.jpg" alt="Empty terminal">
+</div>
+<div class="title">Figure 2. Empty terminal.</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_precision_speed">Precision + Speed</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Graphic interfaces are great at giving you precision on a slow drip. Given a list of files, you can be very precise in selecting files to delete given that you&#8217;ve had the time to:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Hold down the <code>⌘</code> key and click each file in turn to select them.</p>
+</li>
+<li>
+<p>Pressing <code>⌘+delete</code> to move them to the trash.</p>
+</li>
+<li>
+<p>Right-clicking the 🗑 icon and selecting "Empty Trash".</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Or you could just type the following in the terminal to remove all <code>pdf</code> files in the <code>target-directory</code> folder:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span><span class="tok-nb">cd</span> target-directory
+rm *.pdf</code></pre>
+</div>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Warning</div>
+</td>
+<td class="content">
+This completely skips moving files to the Trash. Once you do this, you cannot recover your files without using a disk forensics tool.)
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_quickly_copypaste_stuff">Quickly Copy+Paste Stuff</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Another really useful thing you can do is this: on macOS, you have a tool called <code>pbcopy</code>, which allows you to send text to your clipboard. I use this to quickly copy and paste snippets of text for, let&#8217;s say, emails. Here&#8217;s how it works:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open your terminal by going to <strong>Applications &gt; Utilitites &gt; Terminal</strong>, or by using spotlight: press <code>⌘+space</code> and type <code>terminal</code> to find it.</p>
+</li>
+<li>
+<p>In the terminal, create a new directory by typing the following: <code>mkdir tmp</code></p>
+</li>
+<li>
+<p>Press enter to run the command.</p>
+</li>
+<li>
+<p>Go into the <code>tmp</code> directory you&#8217;ve just created by running the following command: <code>cd tmp</code></p>
+</li>
+<li>
+<p>Make a <code>revert.txt</code> text file by running the following command:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span><span class="tok-nb">echo</span> <span class="tok-s2">&quot;As per my last email; please revert. Thanks.&quot;</span> &gt;&gt; revert.txt</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="6">
+<li>
+<p>To quickly see the contents of the file, run <code>cat revert.txt</code> <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
+</li>
+<li>
+<p>Copy the contents of <code>revert.txt</code> to your clipboard by running <code>cat revert.txt | pbcopy</code>.</p>
+</li>
+<li>
+<p>Press <code>⌘+v</code> to paste the contents of your clipboard. Done!</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+You can open the current directory in your Finder by running <code>open .</code>. In fact, you can open most things (including files) with the <code>open</code> command. For example, you can open the text file you just created by running <code>open revert.txt</code>. This only works on macOS.)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The thing about these little nifty things you can do with the terminal is that their efficiencies add up. Being able to do this with one text file is nice, but having a whole library of text files you can do this with can potentially save you a lot of time. Plus, once you get used to it, navigating your filesystem using the terminal is a lot quicker, without the same distractions as clicking through the Finder, double-clicking and waiting for a file to open, and then realising its the wrong one and opening the next file (yes, I know QuickLook exists. I&#8217;m just trying to make a point).</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_download_youtube_videos">Download YouTube videos</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>If you&#8217;re willing to really dig into this, you can install and run applications from the terminal directly. And I&#8217;d really recommend it, especially if you like YouTube and you&#8217;re tired of being endlessly assailed by ads when you try to google "YouTube downloader" (or worse, if you&#8217;re using a dubious ad-riddled piece of software to download these things). Enter <a href="https://brew.sh/">brew.sh</a>.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://brew.sh/">brew.sh</a> is a package manager for macOS (there are similar things for Windows, but none come close to anything you can run in a <code>bash</code> terminal) that allows you to install applications by just running <code>brew install &lt;application_name&gt;</code>. Go to <a href="brewformulas.org">brewformulas.org</a> <sup class="footnote">[<a id="_footnoteref_2" class="footnote" href="#_footnotedef_2" title="View footnote.">2</a>]</sup> to find a list of applications you can install and run in the terminal.</p>
+</div>
+<div class="paragraph">
+<p>Now, for the important part — start downloading YouTube videos by doing the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the terminal.</p>
+</li>
+<li>
+<p>Install <a href="https://brew.sh/">brew.sh</a> by running this command displayed on their site. You&#8217;ll probably have to enter your user password to complete the installation. <sup class="footnote">[<a id="_footnoteref_3" class="footnote" href="#_footnotedef_3" title="View footnote.">3</a>]</sup> if for some reason it doesn&#8217;t]:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span>/usr/bin/ruby -e <span class="tok-s2">&quot;</span><span class="tok-k">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span class="tok-k">)</span><span class="tok-s2">&quot;</span></code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>Install the <code>youtube-dl</code> tool. Run:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span>brew install youtube-dl</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p>Go to a YouTube video, and copy its URL from the browser&#8217;s address bar.</p>
+</li>
+<li>
+<p>Go to your terminal and run:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span>youtube-dl -f mp4 &lt;youtube-video-url&gt;</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="6">
+<li>
+<p>Done!</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conclusion">Conclusion</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The terminal is scary as it is powerful. Once you&#8217;ve gotten the basics down, you&#8217;ll be able to very quickly use more of its features. Plus, once you&#8217;re fluent with the macOS terminal, you&#8217;re essentially fluent in Linux (though I&#8217;m not sure how useful this is to you) because the macOS terminal and the Linux terminal both use the same command shell: <code>bash</code>.</p>
+</div>
+<div class="paragraph">
+<p>This means lots of skills are transferable: you can read and write files in the same way, and do things like check your computer&#8217;s IP address by running <code>ifconfig</code> (deprecated in more recent versions of Linux).</p>
+</div>
+<div class="paragraph">
+<p>This also means that you can quickly graduate to using more advanced tools, like the <a href="https://gohugo.io">Hugo</a> static-site generator, which this site is built on. But that&#8217;s a post for another time.</p>
+</div>
+<div class="paragraph">
+<p>If you&#8217;ve got questions on how this possibly can help you at work or at play, you can email me at <a href="mailto://zed@nsdmdh.com">zed@nsdmdh.com</a>.</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. <code>cat</code> is short for "concatenate", which also means you can run this on several files to display all their text as a single stream of output.
+</div>
+<div class="footnote" id="_footnotedef_2">
+<a href="#_footnoteref_2">2</a>. For some reason, the site is down at the time of writing.
+</div>
+<div class="footnote" id="_footnotedef_3">
+<a href="#_footnoteref_3">3</a>. This should work out of the box; you can email me with questions if it doesn&#8217;t.
+</div>
+</div>
+
+</div>
+<section class="post-footer">
+	<img class="profileImage" src="/zed-square-400px.jpg" />
+	<section><strong>Author |</strong> Zed is a former educator and currently a
+  <a href="https://www.zeddee.com/cv">professional explainer</a>.
+  He writes about software, video games, and narrative design.
+  If you have software or a system that needs explaining
+  (to frustrated users, or you just need someone to write
+  stuff down for you), you can contact him for work at
+  <a href="mailto://zed@nsdmdh.com">zed@nsdmdh.com</a>.</section>
+</section>
+
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+
+    
+        <a href="/posts">back</a>
+        
+            &#183;
+        
+    
+    <a href="/">
+        main
+    </a>
+       &#183; 
+    
+        
+            <a href="/services">
+                services
+            </a>
+        
+    
+    
+        
+            &#183; 
+            <a href="/what-is-shoot-bird">
+                打鳥 (shoot bird?)
+            </a>
+        
+            &#183; 
+            <a href="/posts">
+                blog
+            </a>
+        
+    
+
+</p>
+
+</div>
+
+
+        <div class="section footer"><span>©2018 <a href="https://www.zeddee.com/">zed</a>.</span>
+</div>
+    </div>
+</body>
+
+</html>

@@ -6,10 +6,19 @@
     <description>Recent content in Tags on Shoot Bird</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Nov 2018 04:21:08 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 01 Nov 2018 05:10:02 +0800</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bash</title>
+      <link>/tags/bash/</link>
+      <pubDate>Thu, 01 Nov 2018 05:10:02 +0800</pubDate>
+      
+      <guid>/tags/bash/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Cognitive Load</title>
@@ -17,6 +26,15 @@
       <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
       
       <guid>/tags/cognitive-load/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Command Line</title>
+      <link>/tags/command-line/</link>
+      <pubDate>Thu, 01 Nov 2018 05:10:02 +0800</pubDate>
+      
+      <guid>/tags/command-line/</guid>
       <description></description>
     </item>
     
@@ -68,7 +86,7 @@
     <item>
       <title>Technical Communication</title>
       <link>/tags/technical-communication/</link>
-      <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
+      <pubDate>Thu, 01 Nov 2018 05:10:02 +0800</pubDate>
       
       <guid>/tags/technical-communication/</guid>
       <description></description>

@@ -6,10 +6,19 @@
     <description>Recent content on Shoot Bird</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Nov 2018 04:21:08 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 01 Nov 2018 05:10:02 +0800</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Learn How to Use Terminal</title>
+      <link>/posts/learn-how-to-use-terminal/</link>
+      <pubDate>Thu, 01 Nov 2018 05:10:02 +0800</pubDate>
+      
+      <guid>/posts/learn-how-to-use-terminal/</guid>
+      <description>Table of Contents Overview Precision + Speed Quickly Copy+Paste Stuff Download YouTube videos Conclusion    Figure 1. Scary Computer Stuff (or How I Learnt to Stop Worrying and Love the Terminal).  Overview The terminal (and it&amp;#8217;s Windows counterparts, the Command Prompt and PowerShell) are terrifying to behold if you have no idea what you&amp;#8217;re doing. In When to Start Naming Things, we&amp;#8217;ve talked about text labels and design conventions in graphic interfaces.</description>
+    </item>
     
     <item>
       <title>When to Start Naming Things</title>
