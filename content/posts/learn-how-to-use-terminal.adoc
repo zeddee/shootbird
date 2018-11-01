@@ -16,9 +16,6 @@ image::/img/terminal/terminal-blink.gif[The Terminal]
 
 The link:https://support.apple.com/en-sg/guide/terminal/welcome/mac[terminal] (and it's Windows counterparts, the link:https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands[Command Prompt and PowerShell]) are terrifying to behold if you have no idea what you're doing. In link:/posts/when-to-start-naming-things[When to Start Naming Things], we've talked about text labels and design conventions in graphic interfaces. But what do you do when you're faced with nothing but a blinking text cursor, and nothing else? And why would you want to use such a thing in the first place?
 
-.Empty terminal.
-image::/img/terminal/terminal-empty.jpg[Empty terminal]
-
 == Precision + Speed
 
 Graphic interfaces are great at giving you precision on a slow drip. Given a list of files, you can be very precise in selecting files to delete given that you've had the time to:
