@@ -204,3 +204,25 @@ section.post-footer
     $thisColor: #229954
     border-color: $thisColor
     background-color: rgba($thisColor, 0.4)
+
+
+#content .content>pre
+  color: $light
+   
+#content .content>pre.highlight
+  color: $light
+  code>table
+    margin: 0
+    border: none
+    td
+      border: none
+    td.linenos
+      $thisColor: darken($light, 40%) 
+      color: $thisColor
+      border-right: 1px solid $thisColor
+      text-align: right
+    td.code
+      padding-left: 1em
+      text-align: left
+  .linenodiv
+    margin-bottom: 0
