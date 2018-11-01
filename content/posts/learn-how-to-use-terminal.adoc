@@ -1,0 +1,108 @@
+---
+title: "Learn How to Use Terminal"
+date: 2018-11-01T05:10:02+08:00
+showDate: true
+draft: false
+tags: ["bash","technical communication", "command line"]
+---
+:source-highlighter: pygments
+:toc: auto
+
+.Scary Computer Stuff (or How I Learnt to Stop Worrying and Love the Terminal).
+image::/img/terminal/terminal-blink.gif[The Terminal]
+
+
+== Overview
+
+The link:https://support.apple.com/en-sg/guide/terminal/welcome/mac[terminal] (and it's Windows counterparts, the link:https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/windows-commands[Command Prompt and PowerShell]) are terrifying to behold if you have no idea what you're doing. In link:/posts/when-to-start-naming-things[When to Start Naming Things], we've talked about text labels and design conventions in graphic interfaces. But what do you do when you're faced with nothing but a blinking text cursor, and nothing else? And why would you want to use such a thing in the first place?
+
+.Empty terminal.
+image::/img/terminal/terminal-empty.jpg[Empty terminal]
+
+== Precision + Speed
+
+Graphic interfaces are great at giving you precision on a slow drip. Given a list of files, you can be very precise in selecting files to delete given that you've had the time to:
+
+1. Hold down the `⌘` key and click each file in turn to select them.
+2. Pressing `⌘+delete` to move them to the trash.
+3. Right-clicking the 🗑 icon and selecting "Empty Trash".
+
+Or you could just type the following in the terminal to remove all `pdf` files in the `target-directory` folder:
+
+[source, bash]
+----
+cd target-directory
+rm *.pdf
+----
+
+WARNING: This completely skips moving files to the Trash. Once you do this, you cannot recover your files without using a disk forensics tool.)
+
+== Quickly Copy+Paste Stuff
+
+Another really useful thing you can do is this: on macOS, you have a tool called `pbcopy`, which allows you to send text to your clipboard. I use this to quickly copy and paste snippets of text for, let's say, emails. Here's how it works:
+
+. Open your terminal by going to **Applications > Utilitites > Terminal**, or by using spotlight: press `⌘+space` and type `terminal` to find it.
+. In the terminal, create a new directory by typing the following: `mkdir tmp`
+. Press enter to run the command.
+. Go into the `tmp` directory you've just created by running the following command: `cd tmp`
+. Make a `revert.txt` text file by running the following command: 
+
+[source, bash]
+----
+echo "As per my last email; please revert. Thanks." >> revert.txt
+----
+
+[start=6]
+. To quickly see the contents of the file, run `cat revert.txt` footnote:[`cat` is short for "concatenate", which also means you can run this on several files to display all their text as a single stream of output.]
+. Copy the contents of `revert.txt` to your clipboard by running `cat revert.txt | pbcopy`.
+. Press `⌘+v` to paste the contents of your clipboard. Done!
+
+NOTE: You can open the current directory in your Finder by running `open .`. In fact, you can open most things (including files) with the `open` command. For example, you can open the text file you just created by running `open revert.txt`. This only works on macOS.)
+
+The thing about these little nifty things you can do with the terminal is that their efficiencies add up. Being able to do this with one text file is nice, but having a whole library of text files you can do this with can potentially save you a lot of time. Plus, once you get used to it, navigating your filesystem using the terminal is a lot quicker, without the same distractions as clicking through the Finder, double-clicking and waiting for a file to open, and then realising its the wrong one and opening the next file (yes, I know QuickLook exists. I'm just trying to make a point).
+
+== Download YouTube videos
+
+If you're willing to really dig into this, you can install and run applications from the terminal directly. And I'd really recommend it, especially if you like YouTube and you're tired of being endlessly assailed by ads when you try to google "YouTube downloader" (or worse, if you're using a dubious ad-riddled piece of software to download these things). Enter link:https://brew.sh/[brew.sh].
+
+link:https://brew.sh/[brew.sh] is a package manager for macOS (there are similar things for Windows, but none come close to anything you can run in a `bash` terminal) that allows you to install applications by just running `brew install <application_name>`. Go to link:brewformulas.org[brewformulas.org] footnote:[For some reason, the site is down at the time of writing.] to find a list of applications you can install and run in the terminal.
+
+Now, for the important part — start downloading YouTube videos by doing the following:
+
+. Open the terminal. 
+. Install link:https://brew.sh/[brew.sh] by running this command displayed on their site. You'll probably have to enter your user password to complete the installation. footnote:[This should work out of the box; you can email me with questions if it doesn't.] if for some reason it doesn't]:
+
+[source, bash]
+----
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+----
+
+[start=3]
+. Install the `youtube-dl` tool. Run:
+
+[source, bash]
+----
+brew install youtube-dl
+----
+
+[start=4]
+. Go to a YouTube video, and copy its URL from the browser's address bar.
+. Go to your terminal and run:
+
+[source, bash]
+----
+youtube-dl -f mp4 <youtube-video-url>
+----
+
+[start=6]
+. Done!
+
+== Conclusion
+
+The terminal is scary as it is powerful. Once you've gotten the basics down, you'll be able to very quickly use more of its features. Plus, once you're fluent with the macOS terminal, you're essentially fluent in Linux (though I'm not sure how useful this is to you) because the macOS terminal and the Linux terminal both use the same command shell: `bash`.
+
+This means lots of skills are transferable: you can read and write files in the same way, and do things like check your computer's IP address by running `ifconfig` (deprecated in more recent versions of Linux).
+
+This also means that you can quickly graduate to using more advanced tools, like the link:https://gohugo.io[Hugo] static-site generator, which this site is built on. But that's a post for another time. 
+
+If you've got questions on how this possibly can help you at work or at play, you can email me at link:mailto://zed@nsdmdh.com[zed@nsdmdh.com].
