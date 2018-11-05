@@ -67,7 +67,7 @@ link:https://brew.sh/[brew.sh] is a package manager for macOS (there are similar
 Now, for the important part — start downloading YouTube videos by doing the following:
 
 . Open the terminal. 
-. Install link:https://brew.sh/[brew.sh] by running this command displayed on their site. You'll probably have to enter your user password to complete the installation. footnote:[This should work out of the box; you can email me with questions if it doesn't.] if for some reason it doesn't]:
+. Install link:https://brew.sh/[brew.sh] by running this command displayed on their site. You'll probably have to enter your user password to complete the installation. footnote:[This should work out of the box; you can email me with questions if it doesn't.]
 
 [source, bash]
 ----
