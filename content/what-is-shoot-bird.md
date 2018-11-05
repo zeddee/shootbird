@@ -4,11 +4,21 @@ date: 2018-10-22T17:54:04+08:00
 draft: false
 ---
 
-[Zed](https://www.zeddee.com) writes here at [Shoot Bird](/)
-about design, software, and ethics. He is also a [documentarian](/posts/why-technical-documentation) who
+[Zed](https://www.zeddee.com) is a [documentarian](/posts/why-technical-documentation) who
 has worked with software companies to produce end-user and developer
 documentation, as well as helped keep their developers sane by 
-writing stuff down for them.
+writing stuff down for them. He also writes [here](/blog)
+about design, software, and ethics.
+
+While not formally trained as a software developer, he's been thrown 
+(by well-meaning colleagues, and himself mostly) into enough development-heavy projects that
+has made him fluent in dev-speak, and able to hold his own when writing about
+[technical subjects](/hire-us). 
+
+His BA in Communications and brief experiences 
+in content marketing comes in useful
+when it comes to making sure that the content he is commissioned to write is human-friendly.
+
 Ping him at [zed@nsdmdh.com](mailto://zed@nsdmdh.com)
 for business enquiries, or if you want to talk about anything he's written about.
 
