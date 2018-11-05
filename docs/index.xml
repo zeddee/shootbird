@@ -43,15 +43,12 @@
     
     <item>
       <title>Services</title>
-      <link>/services/</link>
+      <link>/hire-us/</link>
       <pubDate>Tue, 23 Oct 2018 23:29:43 +0800</pubDate>
       
-      <guid>/services/</guid>
-      <description>Hire us. We&amp;rsquo;ve done stuff like this:
- Designed, built, and wrote: https://docs.groundlabs.com Samples:
- Ground Labs Documentation: ER2 — Exchange Domain Scanning Ground Labs Documentation: ER2 — Database Scanning  Individual guides (sample code + instructional content):
- MessageBird: Number Masking Guide (Go/Golang) MessageBird: SMS Marketing Subscriptions (Go/Golang)   Other things we can do:
- UI writing — or what to put on your &amp;ldquo;press this to save your changes&amp;rdquo; button.</description>
+      <guid>/hire-us/</guid>
+      <description>Hire us. We can help you:
+ Build out your software documentation from scratch. We establish your documentation beachhead. You decide how you want to maintain it. Edit and organize your docs. Users not finding the information they need, even if it&amp;rsquo;s already available? We can help you to edit and structure your documents so that important information is always easy to find. Write user-centric help. Soothe frustrated customers with docs or knowledge base articles that quickly help them solve problems.</description>
     </item>
     
     <item>

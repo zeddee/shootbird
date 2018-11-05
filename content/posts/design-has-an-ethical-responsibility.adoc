@@ -1,0 +1,9 @@
+---
+title: "Design has an Ethical Responsibility"
+date: 2018-11-02T22:03:28+08:00
+showDate: true
+draft: true
+tags: ["ethics","design"]
+---
+
+I've read bits and pieces of __Nudge__footnote:[Richard H. Thaler, Cass R. Sunstein, _Nudge_ (London: Penguin Books, 2009)], which helped articulate and solidify many of my feelings about design as a profession and as craft. These, in Greater Good Studio's link:https://vimeo.com/260803001[George Aye's] footnote:[George Aye, "SXSW 2018: The Designer’s Weakness: Understanding the Role of Power", Vimeo, available: https://vimeo.com/260803001] words, are "gut checks" or a cognitive dissonance that I've never been able to reconcile in the field of design.
