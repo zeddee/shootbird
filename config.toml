@@ -32,27 +32,29 @@ publishDir = "docs"
   stuff down for you), you can contact him for work at
   [zed@nsdmdh.com](mailto://zed@nsdmdh.com).
   """
+  mainSiteDescription = """
+  **ShootBird** is a small technical writing consultancy. We provide writing services for companies who want to build customer trust with well-researched and highly-readable content.
+  """
+  cta = "Ping [zed@nsdmdh.com](mailto://zed@nsdmdh.com) for questions and quotes."
 
 # Metadata
-    description         = "Off centre."            # Max 160 characters show in search results
+    description         = "Shoot Bird provides writing services for organisations who need well-researched technical content to build user trust and reduce customer support load."            # Max 160 characters show in search results
     twitterCard         = "summary_large_image"         # Card value “summary”, “summary_large_image”, “app”, or “player”
     primaryImage        = "/img/logo/shootbird_opengraph.png"                     # Image that shows on Twitter cards and OpenGraph links
     headerImage         = "/img/logo/shootbird_logo_beak.png"
-
-
-
-
-[[params.mainMenu]]
-    link = "/services"
-    text = "services"
 
 [[params.mainMenu]]
     link = "/what-is-shoot-bird"
     text = "打鳥 (shoot bird?)"
 
 [[params.mainMenu]]
+    link = "/hire-us"
+    text = "hire us"
+
+[[params.mainMenu]]
     link = "/posts"
     text = "blog"
+
 # [[params.mainMenu]]
 #     link = "/gallery"
 #     text = "gallery"

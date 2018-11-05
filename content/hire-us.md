@@ -4,7 +4,16 @@ date: 2018-10-23T23:29:43+08:00
 draft: false
 ---
 
-Hire us. We've done stuff like this:
+Hire us. We can help you:
+
+- **Build out your software documentation from scratch.** We establish your documentation beachhead. You decide how you want to maintain it.
+- **Edit and organize your docs.** Users not finding the information they need, even if it's already available? We can help you to edit and structure your documents so that important information is always easy to find.
+- **Write user-centric help.** Soothe frustrated customers with docs or knowledge base articles that quickly help them solve problems.
+- **Optimize your team's writing workflow.** We use open source and proprietary tools to make writing and publishing documents, online and for print, as painless as possible for small to medium-sized teams.
+
+*~*
+
+We've done stuff like this:
 
 * Designed, built, and wrote: https://docs.groundlabs.com
 * Samples:
@@ -22,4 +31,8 @@ Other things we can do:
 - Information and instructional design.
 - General tech consultancy (we help people figure out what ✨tech✨ things they're getting themselves into).
 
-For more **information** or a **quote**, email [Zed](https://www.zeddee.com/) at [zed@nsdmdh.com](mailto://zed@nsdmdh.com)
+For more **information** or a **quote**, email [Zed](https://www.zeddee.com/) at [zed@nsdmdh.com](mailto://zed@nsdmdh.com).
+
+*~*
+
+**Got a content-related problem that's not listed here?** Just drop us an [email](mailto://zed@nsdmdh.com) — we just might be able to help.

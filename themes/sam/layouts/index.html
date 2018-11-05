@@ -6,9 +6,15 @@
     </head>
     <body>
         <div class="section" id="splash">
-        {{ partial "header.html" . }}
+        <section>{{ partial "header.html" . }}</section>
+        <br/>
+        <section class="headerDescription">
+        {{ .Site.Params.mainSiteDescription | markdownify }}
         <br/>
         <br/>
+        {{ .Site.Params.cta | markdownify }}
+        </section>
+        <br/><br/>
             {{ if .Site.Params.mainMenu }}
                 {{ range .Site.Params.mainMenu }}
                     <div class="big-link">
