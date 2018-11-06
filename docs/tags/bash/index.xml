@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Bash on Shoot Bird</title>
+    <title>Bash on ShootBird</title>
     <link>/tags/bash/</link>
-    <description>Recent content in Bash on Shoot Bird</description>
+    <description>Recent content in Bash on ShootBird</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Nov 2018 05:10:02 +0800</lastBuildDate>
