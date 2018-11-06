@@ -38,13 +38,14 @@ publishDir = "docs"
   cta = "Ping [zed@nsdmdh.com](mailto://zed@nsdmdh.com) for questions and quotes."
 
 # Metadata
-    description         = "Shoot Bird provides writing services for organisations who need well-researched technical content to build user trust and reduce customer support load."            # Max 160 characters show in search results
+    # description         = "Shoot Bird provides writing services for organisations who need well-researched technical content to build user trust and reduce customer support load."            # Max 160 characters show in search results
+    description         = "We write tech things for you."
     twitterCard         = "summary_large_image"         # Card value “summary”, “summary_large_image”, “app”, or “player”
     primaryImage        = "/img/logo/shootbird_opengraph.png"                     # Image that shows on Twitter cards and OpenGraph links
     headerImage         = "/img/logo/shootbird_logo_beak.png"
 
 [[params.mainMenu]]
-    link = "/what-is-shoot-bird"
+    link = "/what-is-shootbird"
     text = "打鳥 (shoot bird?)"
 
 [[params.mainMenu]]
