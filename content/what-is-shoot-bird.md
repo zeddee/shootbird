@@ -11,20 +11,16 @@ writing stuff down for them. He also writes [here](/blog)
 about design, software, and ethics.
 
 While not formally trained as a software developer, he's been thrown 
-(by well-meaning colleagues, and himself mostly) into enough development-heavy projects that
+(by well-meaning colleagues and himself mostly) into enough development-heavy projects that
 has made him fluent in dev-speak, and able to hold his own when writing about
-[technical subjects](/hire-us). 
-
-His BA in Communications and brief experiences 
-in content marketing comes in useful
-when it comes to making sure that the content he is commissioned to write is human-friendly.
+[technical subjects](/hire-us) in a human-friendly manner.
 
 Ping him at [zed@nsdmdh.com](mailto://zed@nsdmdh.com)
 for business enquiries, or if you want to talk about anything he's written about.
 
 *~*
 
-打鳥 (.v, Hokkien; _pak jiao_), literally translates as "shoot bird"
+**打鳥** (.v, Hokkien; _pak jiao_), literally translates as "shoot bird"
 and is used to refer to the act of landing a wide shot
 i.e. missing the target.
 It's also used to describe a person who is literally a bad shot,
