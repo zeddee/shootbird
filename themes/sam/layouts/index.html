@@ -9,6 +9,7 @@
         <section>{{ partial "header.html" . }}</section>
         <br/>
         <section class="headerDescription">
+        <h2>{{ .Site.Params.description | markdownify }}</h2>
         {{ .Site.Params.mainSiteDescription | markdownify }}
         <br/>
         <br/>
