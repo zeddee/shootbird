@@ -60,7 +60,7 @@
 		
 		  Thu Nov 01, 2018
 			&#183;
-			943 words
+			984 words
 		
     
     <div class="tag-container">
@@ -145,7 +145,7 @@ rm *.pdf</code></pre>
 <div class="title">Warning</div>
 </td>
 <td class="content">
-This completely skips moving files to the Trash. Once you do this, you cannot recover your files without using a disk forensics tool.)
+<code>rm</code> completely skips moving files to the Trash. Once you do this, you cannot recover your files without using a disk forensics tool.)
 </td>
 </tr>
 </table>
@@ -188,8 +188,29 @@ This completely skips moving files to the Trash. Once you do this, you cannot re
 <p>To quickly see the contents of the file, run <code>cat revert.txt</code> <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup></p>
 </li>
 <li>
-<p>Copy the contents of <code>revert.txt</code> to your clipboard by running <code>cat revert.txt | pbcopy</code>.</p>
+<p>Copy the contents of <code>revert.txt</code> to your clipboard by running:</p>
 </li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span>cat revert.txt <span class="tok-p">|</span> pbcopy</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+The pipe <code>|</code> is used to hand over data from one command to another. In <code>cat revert.txt | pbcopy</code>, the <code>|</code> takes the result of <code>cat revert.txt</code> and tells the next command, <code>pbcopy</code> that they have to work with it.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="7">
 <li>
 <p>Press <code>⌘+v</code> to paste the contents of your clipboard. Done!</p>
 </li>
