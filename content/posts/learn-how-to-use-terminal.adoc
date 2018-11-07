@@ -32,7 +32,7 @@ cd target-directory
 rm *.pdf
 ----
 
-WARNING: This completely skips moving files to the Trash. Once you do this, you cannot recover your files without using a disk forensics tool.)
+WARNING: `rm` completely skips moving files to the Trash. Once you do this, you cannot recover your files without using a disk forensics tool.)
 
 == Quickly Copy+Paste Stuff
 
