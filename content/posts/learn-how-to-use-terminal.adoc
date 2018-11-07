@@ -51,7 +51,16 @@ echo "As per my last email; please revert. Thanks." >> revert.txt
 
 [start=6]
 . To quickly see the contents of the file, run `cat revert.txt` footnote:[`cat` is short for "concatenate", which also means you can run this on several files to display all their text as a single stream of output.]
-. Copy the contents of `revert.txt` to your clipboard by running `cat revert.txt | pbcopy`.
+. Copy the contents of `revert.txt` to your clipboard by running:
+
+[source, bash]
+----
+cat revert.txt | pbcopy
+----
+
+TIP: The pipe `|` is used to hand over data from one command to another. In `cat revert.txt | pbcopy`, the `|` takes the result of `cat revert.txt` and tells the next command, `pbcopy` that they have to work with it.
+
+[start=7]
 . Press `⌘+v` to paste the contents of your clipboard. Done!
 
 NOTE: You can open the current directory in your Finder by running `open .`. In fact, you can open most things (including files) with the `open` command. For example, you can open the text file you just created by running `open revert.txt`. This only works on macOS.)
