@@ -2,40 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>ShootBird</title>
-    <link>/</link>
+    <link>https:///www.shootbird.work/</link>
     <description>Recent content on ShootBird</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Nov 2018 05:10:02 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 12 Nov 2018 03:39:20 +0800</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https:///www.shootbird.work/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Unpacking Westworld S2E10</title>
+      <link>https:///www.shootbird.work/posts/westworld-s2e10/</link>
+      <pubDate>Mon, 12 Nov 2018 03:39:20 +0800</pubDate>
+      
+      <guid>https:///www.shootbird.work/posts/westworld-s2e10/</guid>
+      <description>I&amp;rsquo;m skipping the rest of Westworld S2 because it&amp;rsquo;s turned out to be a fairly straightforward season, and instead am going to focus on what its finale did. S2E10 very neatly ties off the narrative threads that it starts off, even explaining Bernard&amp;rsquo;s fragmented experience of time as a safety mechanism that he&amp;rsquo;s written into his own code to prevent anyone (even himself) from deciphering his memories.
+I think S2E10 not only serves as a fitting ending for the season, but also brings up several important points.</description>
+    </item>
+    
+    <item>
       <title>Learn How to Use Terminal</title>
-      <link>/posts/learn-how-to-use-terminal/</link>
+      <link>https:///www.shootbird.work/posts/learn-how-to-use-terminal/</link>
       <pubDate>Thu, 01 Nov 2018 05:10:02 +0800</pubDate>
       
-      <guid>/posts/learn-how-to-use-terminal/</guid>
+      <guid>https:///www.shootbird.work/posts/learn-how-to-use-terminal/</guid>
       <description>Table of Contents Overview Precision + Speed Quickly Copy+Paste Stuff Download YouTube videos Conclusion    Figure 1. Scary Computer Stuff (or How I Learnt to Stop Worrying and Love the Terminal).  Overview The terminal (and it&amp;#8217;s Windows counterparts, the Command Prompt and PowerShell) are terrifying to behold if you have no idea what you&amp;#8217;re doing. In When to Start Naming Things, we&amp;#8217;ve talked about text labels and design conventions in graphic interfaces.</description>
     </item>
     
     <item>
       <title>When to Start Naming Things</title>
-      <link>/posts/when-to-start-naming-things/</link>
+      <link>https:///www.shootbird.work/posts/when-to-start-naming-things/</link>
       <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
       
-      <guid>/posts/when-to-start-naming-things/</guid>
+      <guid>https:///www.shootbird.work/posts/when-to-start-naming-things/</guid>
       <description>First rule of magic: Don&amp;rsquo;t let anyone know your real name. Names have power.1
  Microcopy isn&amp;rsquo;t usually at the top of the list when it comes to developing interfaces — button text is usually straightforward when it comes to the nondescript &amp;ldquo;OK&amp;rdquo;/&amp;ldquo;Cancel&amp;rdquo;, &amp;ldquo;Confirm&amp;rdquo; or &amp;ldquo;Save&amp;rdquo;. In fact, given the high rate of smartphone penetration, the value of screen real-estate favours use of iconography over text to communicate functionality.</description>
     </item>
     
     <item>
       <title>Why Technical Documentation?</title>
-      <link>/posts/why-technical-documentation/</link>
+      <link>https:///www.shootbird.work/posts/why-technical-documentation/</link>
       <pubDate>Tue, 23 Oct 2018 23:42:28 +0800</pubDate>
       
-      <guid>/posts/why-technical-documentation/</guid>
+      <guid>https:///www.shootbird.work/posts/why-technical-documentation/</guid>
       <description>A technical writer asks questions and writes stuff down. This is more difficult than it sounds — allow me to demonstrate:
  Imagine that you&amp;#8217;ve started work at a café.
  On your first week there, you learn how the coffee machine works: where the beans go, how often it needs to be cleaned. In the middle of that week, you learn which customers are friendly, and who are not. You learn that the coffee machine has a quirk — every tenth pour will give you half the coffee that it usually does.</description>
@@ -43,20 +53,20 @@
     
     <item>
       <title>Services</title>
-      <link>/hire-us/</link>
+      <link>https:///www.shootbird.work/hire-us/</link>
       <pubDate>Tue, 23 Oct 2018 23:29:43 +0800</pubDate>
       
-      <guid>/hire-us/</guid>
+      <guid>https:///www.shootbird.work/hire-us/</guid>
       <description>Hire us. We can help you:
  Build out your software documentation from scratch. We establish your documentation beachhead. You decide how you want to maintain it. Edit and organize your docs. Users not finding the information they need, even if it&amp;rsquo;s already available? We can help you to edit and structure your documents so that important information is always easy to find. Write user-centric help. Soothe frustrated customers with docs or knowledge base articles that quickly help them solve problems.</description>
     </item>
     
     <item>
       <title>What Is ShootBird?</title>
-      <link>/what-is-shootbird/</link>
+      <link>https:///www.shootbird.work/what-is-shootbird/</link>
       <pubDate>Mon, 22 Oct 2018 17:54:04 +0800</pubDate>
       
-      <guid>/what-is-shootbird/</guid>
+      <guid>https:///www.shootbird.work/what-is-shootbird/</guid>
       <description>Zed is a documentarian who has worked with software companies to produce end-user and developer documentation, as well as helped keep their developers sane by writing stuff down for them. He also writes here about design, software, and ethics.
 While not formally trained as a software developer, he&amp;rsquo;s been thrown (by well-meaning colleagues and himself mostly) into enough development-heavy projects that has made him fluent in dev-speak, and holds his own when writing about technical subjects in a human-friendly manner.</description>
     </item>

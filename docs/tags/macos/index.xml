@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Macos on ShootBird</title>
-    <link>/tags/macos/</link>
+    <link>https:///www.shootbird.work/tags/macos/</link>
     <description>Recent content in Macos on ShootBird</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Nov 2018 04:21:08 +0800</lastBuildDate>
     
-	<atom:link href="/tags/macos/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https:///www.shootbird.work/tags/macos/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>When to Start Naming Things</title>
-      <link>/posts/when-to-start-naming-things/</link>
+      <link>https:///www.shootbird.work/posts/when-to-start-naming-things/</link>
       <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
       
-      <guid>/posts/when-to-start-naming-things/</guid>
+      <guid>https:///www.shootbird.work/posts/when-to-start-naming-things/</guid>
       <description>First rule of magic: Don&amp;rsquo;t let anyone know your real name. Names have power.1
  Microcopy isn&amp;rsquo;t usually at the top of the list when it comes to developing interfaces — button text is usually straightforward when it comes to the nondescript &amp;ldquo;OK&amp;rdquo;/&amp;ldquo;Cancel&amp;rdquo;, &amp;ldquo;Confirm&amp;rdquo; or &amp;ldquo;Save&amp;rdquo;. In fact, given the high rate of smartphone penetration, the value of screen real-estate favours use of iconography over text to communicate functionality.</description>
     </item>
