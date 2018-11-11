@@ -1,4 +1,4 @@
-baseurl                 = "/"               # Your domain name. Must end with "/"
+baseurl                 = "https:/www.shootbird.work/"               # Your domain name. Must end with "/"
 languageCode            = "en-us"
 defaultContentLanguage  = "en"
 isMultilingual          = false
@@ -9,6 +9,8 @@ pygmentsCodefences      = true
 # googleAnalytics         = ""             # Tracking code, eg. "UA-111111111-1"
 
 publishDir = "docs"
+enableRobotsTXT = true
+canonifyURLs = true
 
 [params]
     dateform            = "Mon Jan 02, 2006"
