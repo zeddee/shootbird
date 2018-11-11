@@ -1,4 +1,4 @@
-baseurl                 = "https:/www.shootbird.work/"               # Your domain name. Must end with "/"
+baseurl                 = "https://www.shootbird.work/"               # Your domain name. Must end with "/"
 languageCode            = "en-us"
 defaultContentLanguage  = "en"
 isMultilingual          = false
