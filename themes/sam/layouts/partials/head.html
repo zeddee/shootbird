@@ -13,13 +13,14 @@
 <meta name="twitter:image" content="{{ .Site.Params.primaryImage | default "tn.png" | absURL }}">
 <meta name="twitter:title" property="og:title" itemprop="title name" content="{{.Site.Title | default "Sam"}}">
 <meta name="twitter:description" property="og:description" itemprop="description" content="{{.Site.Params.description}}"}}>
-<meta name="og:type" content="website">
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}" />
 <meta name="og:url" content="{{.Site.BaseURL}}">
 <meta name="og:title" content="{{.Title}}">
 <meta name="og:image" itemprop="image primaryImageOfPage" content="{{ .Site.Params.primaryImage | absURL }}">
 {{ with .Params.images }}{{ range first 6 . }}
 <meta property="og:image" content="{{ . | absURL }}" />
 {{ end }}{{ end }}
+{{ block "title" . }}<title>{{ .Title }}</title>{{ end }}
 <link rel="shortcut icon" href="{{.Site.Params.favicon | default "sam.ico" | absURL }}" id="favicon">
 <link rel="stylesheet" href="{{ "css/style.css" | absURL}}">
 <!-- Google fonts-->
@@ -36,3 +37,4 @@
 </script>
 {{ end }}
 {{ partial "seo_schema" . }}
+
