@@ -15,6 +15,7 @@
 <meta name="twitter:description" property="og:description" itemprop="description" content="{{.Site.Params.description}}"}}">
 <meta name="og:type" content="website">
 <meta name="og:url" content="{{.Site.BaseURL}}">
+<meta name="og:title" content="{{.Title}}">
 <meta name="og:image" itemprop="image primaryImageOfPage" content="{{ .Site.Params.primaryImage | absURL }}">
 {{ with .Params.images }}{{ range first 6 . }}
 <meta property="og:image" content="{{ . | absURL }}" />
