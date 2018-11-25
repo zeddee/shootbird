@@ -10,14 +10,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 
-<meta name="description" content="Table of Contents 1. What&#8217;s Clear? 2. Explaining SQLite 3. Why write a program to get the data out? 4. Getting started 5. Checking your .sqlite file 6. Writing your Go program 6.1. Connect to the SQLite database 6.2. Get column headings from a table 6.3. Get column data types 6.4. Read data from the database   7. Postscript and the Why     One frustration I&#8217;ve had with task list applications on iOS and macOS is that they tend to hide where they store the data you&#8217;ve saved on it.">
+<meta name="description" content="Table of Contents 1. What&#8217;s Clear? 2. Explaining SQLite 3. Why write a program to get the data out? 4. Getting started 5. Checking your .sqlite file 6. Writing your Go program 6.1. Connect to the SQLite database 6.2. Get column headings from a table 6.3. Get column data types 6.4. Read data from the database   7. Postscript and the Why    Figure 1. Clear app.  One frustration I&#8217;ve had with task list applications on iOS and macOS is that they tend to hide where they store the data you&#8217;ve saved on it.">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:domain" content="https://www.shootbird.work/">
 
 <meta name="twitter:image" content="https://www.shootbird.work/img/logo/shootbird_opengraph.png">
 <meta name="twitter:title" property="og:title" itemprop="title name" content="Getting Stuff Out of a Todo App Like Clear">
-<meta name="twitter:description" property="og:description" itemprop="description" content="Table of Contents 1. What&#8217;s Clear? 2. Explaining SQLite 3. Why write a program to get the data out? 4. Getting started 5. Checking your .sqlite file 6. Writing your Go program 6.1. Connect to the SQLite database 6.2. Get column headings from a table 6.3. Get column data types 6.4. Read data from the database   7. Postscript and the Why     One frustration I&#8217;ve had with task list applications on iOS and macOS is that they tend to hide where they store the data you&#8217;ve saved on it."}}>
+<meta name="twitter:description" property="og:description" itemprop="description" content="Table of Contents 1. What&#8217;s Clear? 2. Explaining SQLite 3. Why write a program to get the data out? 4. Getting started 5. Checking your .sqlite file 6. Writing your Go program 6.1. Connect to the SQLite database 6.2. Get column headings from a table 6.3. Get column data types 6.4. Read data from the database   7. Postscript and the Why    Figure 1. Clear app.  One frustration I&#8217;ve had with task list applications on iOS and macOS is that they tend to hide where they store the data you&#8217;ve saved on it."}}>
 <meta property="og:type" content="article" />
 <meta name="og:url" content="https://www.shootbird.work/">
 <meta name="og:title" content="Getting Stuff Out of a Todo App Like Clear">
@@ -71,7 +71,7 @@
 		
 		  Wed Nov 21, 2018
 			&#183;
-			3214 words
+			3218 words
 		
     
     <div class="tag-container">
@@ -130,8 +130,9 @@
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="https://www.shootbird.work/img/posts/clearapp/clear.jpg" alt="Realmac Software&#8217;s Clear app.">
+<img src="https://www.shootbird.work/img/posts/clearapp/clear.png" alt="Realmac Software&#8217;s Clear app.">
 </div>
+<div class="title">Figure 1. Clear app.</div>
 </div>
 <div class="paragraph">
 <p>One frustration I&#8217;ve had with task list applications on iOS and macOS is that they tend to hide where they store the data you&#8217;ve saved on it. That&#8217;s fine … until you find out that whoever made the app has decided to stop maintaining it.</p>
@@ -140,7 +141,7 @@
 <p>You&#8217;re then stuck with a legacy app that is never going to get updated. This becomes an issue if you depend heavily on the application, and your operating system regularly sends old applications to the trash heap by labeling them as <a href="https://support.apple.com/en-sg/HT201861">"incompatible" with the current version of your OS</a>.</p>
 </div>
 <div class="paragraph">
-<p>Here, I&#8217;ll be showing you how to write a small Go program to get your data out of applications like Clear. The goal here is to show:</p>
+<p>Here, I&#8217;ll be showing you <strong>how to write a small Go program to get your data out of applications like Clear</strong>. The goal here is to show:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -171,19 +172,19 @@
 <div class="content">
 <img src="https://www.shootbird.work/img/posts/clearapp/clear-folder.jpg" alt="Finding out where Clear stores its data.">
 </div>
-<div class="title">Figure 1. Finding out where Clear stores its data. I eventually found it in <code>$HOME/Library/Containers/com.realmacsoftware.clear.mac/Data/Library/Application Support/com.realmacsoftware.clear.mac/LocalTasks.sqlite</code>.</div>
+<div class="title">Figure 2. Finding out where Clear stores its data. I eventually found it in <code>$HOME/Library/Containers/com.realmacsoftware.clear.mac/Data/Library/Application Support/com.realmacsoftware.clear.mac/LocalTasks.sqlite</code>.</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="https://www.shootbird.work/img/posts/clearapp/clear-things-folder.jpg" alt="This is also where you can find the data stores for other applications.">
 </div>
-<div class="title">Figure 2. If you look closely, you&#8217;ll also see that you can find where applications like Trello, Things, Pocket, Together etc. store their data. But we&#8217;re just going to focus on Clear for now.</div>
+<div class="title">Figure 3. If you look closely, you&#8217;ll also see that you can find where applications like Trello, Things, Pocket, Together etc. store their data. But we&#8217;re just going to focus on Clear for now.</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="https://www.shootbird.work/img/posts/clearapp/clear-sqlite-location.jpg" alt="This is what we&#8217;re looking for — the sqlite file.">
 </div>
-<div class="title">Figure 3. This is what you&#8217;re looking for: <code>LocalTask.sqlite</code></div>
+<div class="title">Figure 4. This is what you&#8217;re looking for: <code>LocalTask.sqlite</code></div>
 </div>
 <div class="paragraph">
 <p>Then, you can decide if you want to do it the easy way and use an application like <a href="https://sqlitebrowser.org/" class="bare">https://sqlitebrowser.org/</a> to open your <code>.sqlite</code> file, or you can be like me and choose to write a Go program to do it.</p>
