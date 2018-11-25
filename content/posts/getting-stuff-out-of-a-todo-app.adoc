@@ -11,13 +11,14 @@ images: ["/img/posts/clearapp/clear.jpg"]
 :sectlinks:
 :source-highlighter: pygments
 
-image::/img/posts/clearapp/clear.jpg[Realmac Software's Clear app.]
+.Clear app.
+image::/img/posts/clearapp/clear.png[Realmac Software's Clear app.]
 
 One frustration I've had with task list applications on iOS and macOS is that they tend to hide where they store the data you've saved on it. That's fine … until you find out that whoever made the app has decided to stop maintaining it. 
 
 You're then stuck with a legacy app that is never going to get updated. This becomes an issue if you depend heavily on the application, and your operating system regularly sends old applications to the trash heap by labeling them as link:https://support.apple.com/en-sg/HT201861["incompatible" with the current version of your OS].
 
-Here, I'll be showing you how to write a small Go program to get your data out of applications like Clear. The goal here is to show:
+Here, I'll be showing you **how to write a small Go program to get your data out of applications like Clear**. The goal here is to show:
 
 . How easy (or difficult, depending on your inclination) it is to use the Go programming language.
 . How a bit of problem solving can give us a bit more control over the devices/applications we use on a daily basis.
