@@ -4,11 +4,14 @@ date: 2018-11-21T23:14:41+08:00
 showDate: true
 draft: false
 tags: ["technical writing","tutorials","tech tips", "go programming", "golang"]
+images: ["/img/posts/clearapp/clear.jpg"]
 ---
 :toc: auto
 :sectnums:
 :sectlinks:
 :source-highlighter: pygments
+
+image::/img/posts/clearapp/clear.jpg[Realmac Software's Clear app.]
 
 One frustration I've had with task list applications on iOS and macOS is that they tend to hide where they store the data you've saved on it. That's fine … until you find out that whoever made the app has decided to stop maintaining it. 
 
