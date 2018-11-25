@@ -10,18 +10,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 
-<meta name="description" content="Table of Contents 1. What&#8217;s Clear? 2. Explaining SQLite 3. Why write a program to get the data out? 4. Getting started 5. Checking your .sqlite file 6. Writing your Go program 6.1. Connect to the SQLite database 6.2. Get column headings from a table 6.3. Get column data types 6.4. Read data from the database   7. Postscript and the Why   One frustration I&#8217;ve had with task list applications on iOS and macOS is that they tend to hide where they store the data you&#8217;ve saved on it.">
+<meta name="description" content="Table of Contents 1. What&#8217;s Clear? 2. Explaining SQLite 3. Why write a program to get the data out? 4. Getting started 5. Checking your .sqlite file 6. Writing your Go program 6.1. Connect to the SQLite database 6.2. Get column headings from a table 6.3. Get column data types 6.4. Read data from the database   7. Postscript and the Why     One frustration I&#8217;ve had with task list applications on iOS and macOS is that they tend to hide where they store the data you&#8217;ve saved on it.">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:domain" content="https://www.shootbird.work/">
 
 <meta name="twitter:image" content="https://www.shootbird.work/img/logo/shootbird_opengraph.png">
 <meta name="twitter:title" property="og:title" itemprop="title name" content="Getting Stuff Out of a Todo App Like Clear">
-<meta name="twitter:description" property="og:description" itemprop="description" content="Table of Contents 1. What&#8217;s Clear? 2. Explaining SQLite 3. Why write a program to get the data out? 4. Getting started 5. Checking your .sqlite file 6. Writing your Go program 6.1. Connect to the SQLite database 6.2. Get column headings from a table 6.3. Get column data types 6.4. Read data from the database   7. Postscript and the Why   One frustration I&#8217;ve had with task list applications on iOS and macOS is that they tend to hide where they store the data you&#8217;ve saved on it."}}>
+<meta name="twitter:description" property="og:description" itemprop="description" content="Table of Contents 1. What&#8217;s Clear? 2. Explaining SQLite 3. Why write a program to get the data out? 4. Getting started 5. Checking your .sqlite file 6. Writing your Go program 6.1. Connect to the SQLite database 6.2. Get column headings from a table 6.3. Get column data types 6.4. Read data from the database   7. Postscript and the Why     One frustration I&#8217;ve had with task list applications on iOS and macOS is that they tend to hide where they store the data you&#8217;ve saved on it."}}>
 <meta property="og:type" content="article" />
 <meta name="og:url" content="https://www.shootbird.work/">
 <meta name="og:title" content="Getting Stuff Out of a Todo App Like Clear">
 <meta name="og:image" itemprop="image primaryImageOfPage" content="https://www.shootbird.work/img/logo/shootbird_opengraph.png">
+
+<meta property="og:image" content="https://www.shootbird.work/img/posts/clearapp/clear.jpg" />
 
 <title>Getting Stuff Out of a Todo App Like Clear</title>
 <link rel="shortcut icon" href="https://www.shootbird.work/favicon.png" id="favicon">
@@ -125,6 +127,11 @@
 </li>
 <li><a href="#_postscript_and_the_why">7. Postscript and the Why</a></li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://www.shootbird.work/img/posts/clearapp/clear.jpg" alt="Realmac Software&#8217;s Clear app.">
+</div>
 </div>
 <div class="paragraph">
 <p>One frustration I&#8217;ve had with task list applications on iOS and macOS is that they tend to hide where they store the data you&#8217;ve saved on it. That&#8217;s fine … until you find out that whoever made the app has decided to stop maintaining it.</p>
