@@ -4,6 +4,7 @@ date: 2018-11-01T05:10:02+08:00
 showDate: true
 draft: false
 tags: ["bash","technical communication", "command line"]
+images: ["/img/terminal/terminal-blink.gif"]
 ---
 :source-highlighter: pygments
 :toc: auto
