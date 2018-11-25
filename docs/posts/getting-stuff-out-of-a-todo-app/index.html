@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Table of Contents 1. What&#8217;s Clear? 2. Explaining SQLite 3. Why write a program to get the data out? 4. Getting started 5. Checking your .sqlite file 6. Writing your Go program 6.1. Connect to the SQLite database 6.2. Get column headings from a table 6.3. Get column data types 6.4. Read data from the database   7. Postscript and the Why   One frustration I&#8217;ve had with task list applications on iOS and macOS is that they tend to hide where they store the data you&#8217;ve saved on it.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://www.shootbird.work/">
+
+<meta name="twitter:image" content="https://www.shootbird.work/img/logo/shootbird_opengraph.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Getting Stuff Out of a Todo App Like Clear">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Table of Contents 1. What&#8217;s Clear? 2. Explaining SQLite 3. Why write a program to get the data out? 4. Getting started 5. Checking your .sqlite file 6. Writing your Go program 6.1. Connect to the SQLite database 6.2. Get column headings from a table 6.3. Get column data types 6.4. Read data from the database   7. Postscript and the Why   One frustration I&#8217;ve had with task list applications on iOS and macOS is that they tend to hide where they store the data you&#8217;ve saved on it."}}>
+<meta property="og:type" content="article" />
+<meta name="og:url" content="https://www.shootbird.work/">
+<meta name="og:title" content="Getting Stuff Out of a Todo App Like Clear">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://www.shootbird.work/img/logo/shootbird_opengraph.png">
+
+<title>Getting Stuff Out of a Todo App Like Clear</title>
+<link rel="shortcut icon" href="https://www.shootbird.work/favicon.png" id="favicon">
+<link rel="stylesheet" href="https://www.shootbird.work/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129052246-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-129052246-1');
+</script>
+
+
+
+
+
+    
+
+    
+    
+    
+</head>
+
+<body>
+
+    <div class="wrap">
+			<header><a href="https://www.shootbird.work/" 
+  style="border-bottom:none;"
+  alt="Shoot Bird">
+	<img
+    style="width:3rem;"
+    src="https://www.shootbird.work/img/logo/shootbird_logo_beak.png"
+    alt="Shoot Bird" />
+</a>
+</header>
+        <div class="section" id="title">Getting Stuff Out of a Todo App Like Clear</div>
+
+        
+<div class="section" id="content">
+		
+		  Wed Nov 21, 2018
+			&#183;
+			3214 words
+		
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/technical-writing">
+                technical writing
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/tutorials">
+                tutorials
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/tech-tips">
+                tech tips
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/go-programming">
+                go programming
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/golang">
+                golang
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_whats_clear">1. What&#8217;s Clear?</a></li>
+<li><a href="#_explaining_sqlite">2. Explaining SQLite</a></li>
+<li><a href="#_why_write_a_program_to_get_the_data_out">3. Why write a program to get the data out?</a></li>
+<li><a href="#_getting_started">4. Getting started</a></li>
+<li><a href="#_checking_your_sqlite_file">5. Checking your <code>.sqlite</code> file</a></li>
+<li><a href="#_writing_your_go_program">6. Writing your Go program</a>
+<ul class="sectlevel2">
+<li><a href="#_connect_to_the_sqlite_database">6.1. Connect to the SQLite database</a></li>
+<li><a href="#_get_column_headings_from_a_table">6.2. Get column headings from a table</a></li>
+<li><a href="#_get_column_data_types">6.3. Get column data types</a></li>
+<li><a href="#_read_data_from_the_database">6.4. Read data from the database</a></li>
+</ul>
+</li>
+<li><a href="#_postscript_and_the_why">7. Postscript and the Why</a></li>
+</ul>
+</div>
+<div class="paragraph">
+<p>One frustration I&#8217;ve had with task list applications on iOS and macOS is that they tend to hide where they store the data you&#8217;ve saved on it. That&#8217;s fine … until you find out that whoever made the app has decided to stop maintaining it.</p>
+</div>
+<div class="paragraph">
+<p>You&#8217;re then stuck with a legacy app that is never going to get updated. This becomes an issue if you depend heavily on the application, and your operating system regularly sends old applications to the trash heap by labeling them as <a href="https://support.apple.com/en-sg/HT201861">"incompatible" with the current version of your OS</a>.</p>
+</div>
+<div class="paragraph">
+<p>Here, I&#8217;ll be showing you how to write a small Go program to get your data out of applications like Clear. The goal here is to show:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>How easy (or difficult, depending on your inclination) it is to use the Go programming language.</p>
+</li>
+<li>
+<p>How a bit of problem solving can give us a bit more control over the devices/applications we use on a daily basis.</p>
+</li>
+<li>
+<p>Why it&#8217;s important to get data out of an app like Clear.</p>
+</li>
+</ol>
+</div>
+<div class="sect1">
+<h2 id="_whats_clear"><a class="link" href="#_whats_clear">1. What&#8217;s Clear?</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Clear is a simple todo app that I&#8217;ve been using since circa 2013. To date, I&#8217;ve saved close to 2000 notes on it and still use it for very quickly jotting down ideas. The company that made the app <a href="https://forums.realmacsoftware.com/t/what-happened-to-clear-app/10965">has since taken it off their website</a>, and my last email from their customer support <sup class="footnote">[<a id="_footnoteref_1" class="footnote" href="#_footnotedef_1" title="View footnote.">1</a>]</sup> pointed me to a post on <a href="http://impending.com/#clear2faq">another company&#8217;s website</a> which appears to be developing a follow up to the original. I&#8217;m not blaming them; apps are expensive to maintain, and everybody has to move on at some point of time. But that&#8217;s a lot of insecurity there — if a change in iOS or macOS renders the app unusable, or even worse, inadvertently removes data from my Clear installation, then I&#8217;d be in a lot of trouble.</p>
+</div>
+<div class="paragraph">
+<p>The straightforward solution would be to run backups on the backing database. But what to run backups on? There isn&#8217;t an export function, and whatever it&#8217;s storing its data on is not readily obvious to the layperson. So I got digging, and found out that Clear uses a SQLite database buried deep inside the <code>~/Library/Containers</code> folder.</p>
+</div>
+<div class="paragraph">
+<p>I&#8217;ve taken a cue from <a href="things.sh"><a href="https://github.com/AlexanderWillner/things.sh" class="bare">https://github.com/AlexanderWillner/things.sh</a></a>, which also runs on a SQLite database, and wrote a small program that extracts data directly from the application database and saves it to a text file. You can check it out here: <a href="https://github.com/zeddee/clear-archiver">https://github.com/zeddee/clear-archiver</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://www.shootbird.work/img/posts/clearapp/clear-folder.jpg" alt="Finding out where Clear stores its data.">
+</div>
+<div class="title">Figure 1. Finding out where Clear stores its data. I eventually found it in <code>$HOME/Library/Containers/com.realmacsoftware.clear.mac/Data/Library/Application Support/com.realmacsoftware.clear.mac/LocalTasks.sqlite</code>.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://www.shootbird.work/img/posts/clearapp/clear-things-folder.jpg" alt="This is also where you can find the data stores for other applications.">
+</div>
+<div class="title">Figure 2. If you look closely, you&#8217;ll also see that you can find where applications like Trello, Things, Pocket, Together etc. store their data. But we&#8217;re just going to focus on Clear for now.</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://www.shootbird.work/img/posts/clearapp/clear-sqlite-location.jpg" alt="This is what we&#8217;re looking for — the sqlite file.">
+</div>
+<div class="title">Figure 3. This is what you&#8217;re looking for: <code>LocalTask.sqlite</code></div>
+</div>
+<div class="paragraph">
+<p>Then, you can decide if you want to do it the easy way and use an application like <a href="https://sqlitebrowser.org/" class="bare">https://sqlitebrowser.org/</a> to open your <code>.sqlite</code> file, or you can be like me and choose to write a Go program to do it.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_explaining_sqlite"><a class="link" href="#_explaining_sqlite">2. Explaining SQLite</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Databases are usually complex things that require lots of computing resources to run. Most web services, such as Wordpress, run a complex RDMS (relational database management system) behind the scenes to store everything, from your user details to your posts and media.</p>
+</div>
+<div class="paragraph">
+<p>If you&#8217;ve ever tried to move your stuff out of a Wordpress installation, you know that getting data out of Wordpress is not a matter of copying files from one location to another — there&#8217;s an easy-to-mess-up process of dumping content from one Wordpress database, and then loading it into another. But Wordpress is also one of the most popular content management systems because from within the application, it&#8217;s easy to create, edit, and manage a large amount of content. It&#8217;s just that outside of it, everything is hidden behind a brick wall.</p>
+</div>
+<div class="paragraph">
+<p>When you neither expect to manage a large amount of content nor you want to expend the resources to maintain a full-fledged database, then you can turn to embedded databases like <a href="https://www.sqlite.org/index.html">SQLite</a> and <a href="https://github.com/boltdb/bolt">BoltDB</a>.</p>
+</div>
+<div class="paragraph">
+<p>Embedded databases are databases that run off a single file — no infrastructure to set up, no servers to maintain. This is useful when your application doesn&#8217;t need to share its data — or if it has to, doesn&#8217;t need to allow many parties to read from and write to it at the same time. It also means that it&#8217;s easy to move your data around: you can&#8217;t really move a Wordpress site from one server to another because your content is stuck in the database server (well you can, but with planning and wrangling with virtual machines etc.); but you can just copy entire applications with their sqlite databases onto a USB drive, and it&#8217;ll still be able to run from there.</p>
+</div>
+<div class="paragraph">
+<p>When you build an application that uses a SQLite database, your data is saved to a <code>.sqlite</code> file that you can move to another system and use with zero setup. No servers, no login credentials (you can set up credentials if you need them, but we won&#8217;t deal with that right now). It&#8217;s almost like using an Excel spreadsheet — except that you&#8217;ve got to do a bit more work to use it.</p>
+</div>
+<div class="paragraph">
+<p>Other than being small, SQLite databases are very easy to back up. You just make a copy of the <code>.sqlite</code> file, and that&#8217;s it. That&#8217;s probably why Things and Clear are both using it — because having your database stored in a single small file makes it very easy to sync across cloud services like iCloud. And SQLite databases really do stay small. My Clear instance has over 2000 records, and the resulting <code>.sqlite</code> file is just around 750kb.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_why_write_a_program_to_get_the_data_out"><a class="link" href="#_why_write_a_program_to_get_the_data_out">3. Why write a program to get the data out?</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I wrote <a href="clear-archiver"><a href="https://github.com/zeddee/clear-archiver" class="bare">https://github.com/zeddee/clear-archiver</a></a> because:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>I was bored.</p>
+</li>
+<li>
+<p>I&#8217;ve been learning how to interact with databases with the Go programming langauge, and wanted to try and make something practical.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>But more importantly, it allows me to automate what would otherwise be a tedious backup process. Instead loading up a <code>.sqlite</code> file into an application to read it, and then exporting that data, I just run clear-archiver to dump data out from Clear.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_getting_started"><a class="link" href="#_getting_started">4. Getting started</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Everything here is written for macOS. The concepts are exactly the same, but details such as what to run in the command-line would vary between platforms. That being said, you&#8217;ll also need to be comfortable with the Terminal. If you&#8217;re not, read this primer on <a href="https://www.shootbird.work/posts/learn-how-to-use-terminal/">how to use the terminal</a> to help you get started.</p>
+</div>
+<div class="paragraph">
+<p>In addition, you&#8217;ll want to have a SQLite3 database ready to work with. This guide will assume that you&#8217;ll be working with your Clear database: copy from the following directory to your project directory so that you&#8217;re working on a safe copy of the database instead of the original.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span>cp ~/Library/Containers/com.realmacsoftware.clear.mac/Data/Library/Application Support/com.realmacsoftware.clear.mac/ &lt;your_project_directory&gt;</code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+If you don&#8217;t use Clear, or don&#8217;t want to mess with your Clear database, but still want to follow along, you can use any other SQLite database. You can get a sample database to work with here: <a href="http://www.sqlitetutorial.net/sqlite-sample-database/" class="bare">http://www.sqlitetutorial.net/sqlite-sample-database/</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>First, make sure you have the latest version of <a href="Go"><a href="https://golang.org" class="bare">https://golang.org</a></a> and <a href="SQLite3"><a href="https://sqlite.org/index.html" class="bare">https://sqlite.org/index.html</a></a> installed.</p>
+</div>
+<div class="paragraph">
+<p>To check, run in the terminal:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span>go version <span class="tok-c1">#=&gt; go version go1.11.2 darwin/amd64</span>
+sqlite3 --version <span class="tok-c1">#=&gt; 3.24.0 2018-06-04 14:10:15 95fbac39baaab1c3a84fdfc82ccb7f42398b2e92f18a2a57bce1d4a713cbaapl</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Next, install the SQLite3 drivers for Go with <code>go get</code>. Run:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span>go get -u -v github.com/mattn/go-sqlite3</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_checking_your_sqlite_file"><a class="link" href="#_checking_your_sqlite_file">5. Checking your <code>.sqlite</code> file</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The first thing we need to do is to check if our SQLite database is valid. That is, we need to make sure that we&#8217;re able to interact with the database file in the first place. We do this by opening the database file with the <code>sqlite3</code> command:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span><span class="tok-c1"># Usage: sqlite3 &lt;location-of-db&gt;</span>
+sqlite3 ~/data/database.sqlite</code></pre>
+</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+If you&#8217;re using the Chinook database from <a href="http://www.sqlitetutorial.net/sqlite-sample-database/" class="bare">http://www.sqlitetutorial.net/sqlite-sample-database/</a>, notice that they&#8217;ve provided a <code>.db</code> file instead of a <code>.sqlite</code> file. The extension doesn&#8217;t matter, so long as you can open it with the <code>sqlite3</code> command.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>If the command runs successfully, your Terminal displays the SQLite console:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span>SQLite version <span class="tok-m">3</span>.24.0 <span class="tok-m">2018</span>-06-04 <span class="tok-m">14</span>:10:15
+Enter <span class="tok-s2">&quot;.help&quot;</span> <span class="tok-k">for</span> usage hints.
+sqlite&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To make sure that you&#8217;re actually interacting with the database and not a dummy file, we&#8217;ll run a few queries.</p>
+</div>
+<div class="paragraph">
+<p>First, display all the tables in the database by running <code>.tables</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span>.tables
+<span class="tok-c1">#=&gt; If you run this with the Chinook database, sqlite lists the following tables.</span>
+<span class="tok-c1"># completed_tasks  modelmeta_int    tasks</span>
+<span class="tok-c1"># lists            task_reminders   version</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Next, list the contents of a table by running <code>SELECT * FROM &lt;table_name&gt;;</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span><span class="tok-c1"># Remember to include the trailing &quot;;&quot;</span>
+SELECT * FROM tasks<span class="tok-p">;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Did your commands work? Congratulations, you&#8217;ve successfully run SQL queries on a database!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_writing_your_go_program"><a class="link" href="#_writing_your_go_program">6. Writing your Go program</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Now we&#8217;re getting to the meaty part.</p>
+</div>
+<div class="paragraph">
+<p>Create a folder for your project. In it, create a file called <code>main.go</code> and open it in your text editor of choice. I recommend using VSCode with the Go tools installed.</p>
+</div>
+<div class="sect2">
+<h3 id="_connect_to_the_sqlite_database"><a class="link" href="#_connect_to_the_sqlite_database">6.1. Connect to the SQLite database</a></h3>
+<div class="paragraph">
+<p>In <code>main.go</code>, add the following lines of code:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="linenums"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</div></td><td class="code"><span></span>package main
+
+import (
+  &quot;database/sql&quot;
+  &quot;fmt&quot;
+  &quot;log&quot;
+
+  _ &quot;github.com/mattn/go-sqlite3&quot;
+)
+
+func main(){
+  dbLocation := &quot;./data/database.sqlite&quot; // Make sure you have this point at a valid SQLite file
+  db, err := sql.Open(&quot;sqlite3&quot;, dbLocation)
+  if err != nil {
+    log.Fatal(err)
+  }
+  defer db.Close()
+
+  err = db.Ping()
+  if err != nil {
+    log.Fatal(err)
+  } else {
+    fmt.Println(&quot;Contacted database successfully!&quot;)
+  }
+}
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>What we&#8217;re doing here is:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Importing the <code>database/sql</code> package from the Go standard library.</p>
+</li>
+<li>
+<p>Importing SQLite3 drivers for Go from <code>github.com/mattn/go-sqlite3</code>.</p>
+</li>
+<li>
+<p>Opening a database connection with <code>sql.Open()</code>, and assigning that connection to <code>db</code>.</p>
+</li>
+<li>
+<p>Checking if we&#8217;re able to connect to the database with <code>db.Ping()</code>. If <code>db.Ping()</code> runs successfully, we tell the terminal to display a success message; if not, we display an error.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+If you&#8217;re not familiar with Go, then the idea of having to constantly check if <code>err != nil</code> would be weird. Go treats errors as values instead of exceptions, which allows you to use them for flow control in your application. It also forces you to handle all errors explicitly, instead of hoping that nothing goes wrong in your application. You can skip an error check by replacing an <code>err</code> value with <code>_</code>. For example, instead of writing <code>db, err := sql.Open("sqlite3", dbLocation)</code>, you can write <code>db, _ := sql.Open("sqlite3", dbLocation)</code> (but we don&#8217;t recommend that).
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When you&#8217;re done, test your program by running in the terminal:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span>go run main.go
+<span class="tok-c1">#=&gt; 2018/11/23 16:49:01 Contacted database successfully!</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_get_column_headings_from_a_table"><a class="link" href="#_get_column_headings_from_a_table">6.2. Get column headings from a table</a></h3>
+<div class="paragraph">
+<p>Let&#8217;s do something more useful. We don&#8217;t know how the data in each table is organized, so we&#8217;d need to find out what&#8217;s supposed to go into each column.</p>
+</div>
+<div class="paragraph">
+<p>Let&#8217;s say that we want to find the column names for the <code>tasks</code> table. Here&#8217;s how we do it in Go. In <code>main.go</code>, at the bottom of your <code>main()</code> function, add the following lines of code:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="linenums"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</div></td><td class="code"><span></span>func main(){
+  // The code we wrote earlier...
+
+	rows, err := db.Query(`SELECT * FROM tasks LIMIT 1`)
+	if err != nil {
+		fmt.Println(err)
+	}
+	colNames, err := rows.Columns()
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println(colNames)
+}
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here, we&#8217;re:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Running a SQL query that (1) selects all columns from the <code>tasks</code> table, and (2) returning only one (the first) row. This gives us a <code>rows</code> object.</p>
+</li>
+<li>
+<p>We call the <code>.Columns()</code> method on the <code>rows</code> object (by writing <code>rows.Columns()</code>), that gives us a list of column names for the <code>tasks</code> table.</p>
+</li>
+<li>
+<p>We assign this to <code>colNames</code>, and print this out.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Run <code>go run main.go</code> in the terminal again, and you&#8217;ll see the column headings of the <code>tasks</code> table: <code>[id identifier list_identifier title prev_identifier next_identifier]</code>.</p>
+</div>
+<div class="paragraph">
+<p>But this only gives us the column headings, but not the <em>data types</em> for each column.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_get_column_data_types"><a class="link" href="#_get_column_data_types">6.3. Get column data types</a></h3>
+<div class="paragraph">
+<p>We also need the data types that are assigned to the columns of a table. Each column in a table has a specific data type that must be strictly followed when <em>saving</em> data to the database: if a column is assigned a TEXT data type, then you can only save text "strings" it. Attempting to save a number to that column would produce an error. When we <em>read</em> this data out with our Go program, we need to tell Go what exactly what data type to expect from the database, or <em>it</em> would give us an error. It&#8217;s also how reading information from databases with Go is like: it&#8217;s strict about the information that we read and write to a database (and rightly so).</p>
+</div>
+<div class="paragraph">
+<p>To get the data types of each column, we&#8217;ll modify the code we wrote earlier to get column names from the table. Instead of <code>rows.Columns()</code>, we&#8217;ll add new code that calls the <code>rows.ColumnTypes()</code> method instead:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="go"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</div></td><td class="code"><span></span><span class="tok-kd">func</span> <span class="tok-nx">main</span><span class="tok-p">(){</span>
+  <span class="tok-c1">// ...</span>
+
+  <span class="tok-nx">cols</span><span class="tok-p">,</span> <span class="tok-nx">err</span> <span class="tok-o">:=</span> <span class="tok-nx">rows</span><span class="tok-p">.</span><span class="tok-nx">ColumnTypes</span><span class="tok-p">()</span>
+  <span class="tok-k">if</span> <span class="tok-nx">err</span> <span class="tok-o">!=</span> <span class="tok-kc">nil</span> <span class="tok-p">{</span>
+    <span class="tok-nx">fmt</span><span class="tok-p">.</span><span class="tok-nx">Println</span><span class="tok-p">(</span><span class="tok-nx">err</span><span class="tok-p">)</span>
+  <span class="tok-p">}</span>
+  <span class="tok-k">for</span> <span class="tok-nx">index</span><span class="tok-p">,</span> <span class="tok-nx">value</span> <span class="tok-o">:=</span> <span class="tok-k">range</span> <span class="tok-nx">cols</span> <span class="tok-p">{</span>
+    <span class="tok-nx">fmt</span><span class="tok-p">.</span><span class="tok-nx">Printf</span><span class="tok-p">(</span><span class="tok-s">&quot;Col %d: %+v&quot;</span><span class="tok-p">,</span> <span class="tok-nx">index</span><span class="tok-p">,</span> <span class="tok-nx">value</span><span class="tok-p">)</span>
+  <span class="tok-p">}</span>
+<span class="tok-p">}</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>We get a list of <code>ColumnType</code> objects from our <code>rows.ColumnTypes()</code> call, which we assign to <code>cols</code>. We then loop over the list and print out each <code>ColumnType</code> object to get something like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="linenums"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4
+5
+6</div></td><td class="code"><span></span>Cols 0: &amp;{name:id hasNullable:true hasLength:false hasPrecisionScale:false nullable:true length:0 databaseType:INTEGER precision:0 scale:0 scanType:&lt;nil&gt;}
+Cols 1: &amp;{name:identifier hasNullable:true hasLength:false hasPrecisionScale:false nullable:true length:0 databaseType:TEXT precision:0 scale:0 scanType:&lt;nil&gt;}
+Cols 2: &amp;{name:list_identifier hasNullable:true hasLength:false hasPrecisionScale:false nullable:true length:0 databaseType:TEXT precision:0 scale:0 scanType:&lt;nil&gt;}
+Cols 3: &amp;{name:title hasNullable:true hasLength:false hasPrecisionScale:false nullable:true length:0 databaseType:TEXT precision:0 scale:0 scanType:&lt;nil&gt;}
+Cols 4: &amp;{name:prev_identifier hasNullable:true hasLength:false hasPrecisionScale:false nullable:true length:0 databaseType:TEXT precision:0 scale:0 scanType:&lt;nil&gt;}
+Cols 5: &amp;{name:next_identifier hasNullable:true hasLength:false hasPrecisionScale:false nullable:true length:0 databaseType:TEXT precision:0 scale:0 scanType:&lt;nil&gt;}
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+The <code>ColumnType</code> object is a "struct", which is one of the ways Go stores a collection of data. We can print out the contents of a struct by using the <code>%+v</code> string template to print out its fields and its labels: <code>fmt.Printf("%+v", &lt;ColumnType&gt;)</code>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>From our output, we can see that each column in the table is described by a struct. We&#8217;ve already got the contents of the <code>name</code> field with our <code>rows.Columns()</code> call. Now, we just need contents of the <code>databaseType</code> field. We can get this by modifying our <code>for</code> loop:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="go"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</div></td><td class="code"><span></span><span class="tok-kd">func</span> <span class="tok-nx">main</span><span class="tok-p">(){</span>
+  <span class="tok-c1">// ...</span>
+
+  <span class="tok-nx">cols</span><span class="tok-p">,</span> <span class="tok-nx">err</span> <span class="tok-o">:=</span> <span class="tok-nx">rows</span><span class="tok-p">.</span><span class="tok-nx">ColumnTypes</span><span class="tok-p">()</span>
+  <span class="tok-k">if</span> <span class="tok-nx">err</span> <span class="tok-o">!=</span> <span class="tok-kc">nil</span> <span class="tok-p">{</span>
+    <span class="tok-nx">fmt</span><span class="tok-p">.</span><span class="tok-nx">Println</span><span class="tok-p">(</span><span class="tok-nx">err</span><span class="tok-p">)</span>
+  <span class="tok-p">}</span>
+  <span class="tok-k">for</span> <span class="tok-nx">index</span><span class="tok-p">,</span> <span class="tok-nx">value</span> <span class="tok-o">:=</span> <span class="tok-k">range</span> <span class="tok-nx">cols</span> <span class="tok-p">{</span>
+    <span class="tok-nx">fmt</span><span class="tok-p">.</span><span class="tok-nx">Printf</span><span class="tok-p">(</span><span class="tok-s">&quot;Cols %d: %+v&quot;</span><span class="tok-p">,</span> <span class="tok-nx">index</span><span class="tok-p">,</span> <span class="tok-nx">value</span><span class="tok-p">.</span><span class="tok-nx">DatabaseTypeName</span><span class="tok-p">())</span>
+  <span class="tok-p">}</span>
+<span class="tok-p">}</span>
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When we run <code>main.go</code> again, it gives us a list of columns and their data types:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span>Cols <span class="tok-m">0</span>: INTEGER
+Cols <span class="tok-m">1</span>: TEXT
+Cols <span class="tok-m">2</span>: TEXT
+Cols <span class="tok-m">3</span>: TEXT
+Cols <span class="tok-m">4</span>: TEXT
+Cols <span class="tok-m">5</span>: TEXT</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now we know that the first column (Column <code>0</code>) is an <code>INTEGER</code> or a numerica type, and all other columns are <code>TEXT</code> or text string data types. Now we&#8217;ll be able to tell Go what data types it should expect when extracting data from the database.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+To learn more about data types in SQLite, see <a href="https://www.sqlite.org/datatype3.html" class="bare">https://www.sqlite.org/datatype3.html</a>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_read_data_from_the_database"><a class="link" href="#_read_data_from_the_database">6.4. Read data from the database</a></h3>
+<div class="paragraph">
+<p>We&#8217;re ready to get data out of our Clear database. First, empty out your <code>main()</code> function except for these lines of code:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="linenums"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+2
+3
+4
+5
+6
+7
+8</div></td><td class="code"><span></span>func main(){
+  dbLocation := &quot;./data/database.sqlite&quot; // Make sure you have this point at a valid SQLite file
+  db, err := sql.Open(&quot;sqlite3&quot;, dbLocation)
+  if err != nil {
+    log.Fatal(err)
+  }
+  defer db.Close()
+}
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Now that we&#8217;ve got a clean slate, we&#8217;ll create a <code>struct</code> type that works as a template to store data we&#8217;re extracting. Add this code above the <code>main()</code> function:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="linenums"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</div></td><td class="code"><span></span>type Task struct {
+	ID             int
+	Identifier     string
+	ListIdentifier string
+	Title          string
+	PrevIdentifier string
+	NextIdentifier string
+}
+
+func main(){
+  // ...
+}
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Then, we can add the following lines of code to <code>main()</code> itself:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="linenums"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</div></td><td class="code"><span></span>func main(){
+  // ...
+
+  rows, err := db.Query(`SELECT * FROM tasks`)
+  if err != nil {
+    log.Fatal(err)
+  }
+  var allTasks []Task
+  for rows.Next(){
+    r := Task{}
+    rows.Scan(&amp;r.ID, &amp;r.Identifier, &amp;r.ListIdentifier, &amp;r.Title, &amp;r.PrevIdentifier, &amp;r.NextIdentifier)
+    allTasks = append(allTasks, r)
+  }
+  fmt.Printf(allTasks)
+}
+</td></tr></table></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Run your program in the terminal: <code>go run main.go</code>. If everything works, you should see the contents of your <code>tasks</code> table displayed.</p>
+</div>
+<div class="paragraph">
+<p>What&#8217;s happening here is that we&#8217;re looping over all the rows we&#8217;ve gotten from our SQL query (<code>db.Query()</code>) with <code>for rows.Next(){}</code>.</p>
+</div>
+<div class="paragraph">
+<p>For each row, we&#8217;ve set up a temporary data storage structure <code>r</code> that takes on the shape of our <code>Task</code> struct type. We then "scan" the row and tell Go to slot the values we&#8217;re getting from the scanned row into <code>r</code>. We then add this particular <code>r</code> to our list of tasks: <code>allTasks</code>, and move on to the next row. When we run out of rows, <code>rows.Next()</code> will evaluate to <code>false</code>, and our program will stop looping over <code>rows</code>.</p>
+</div>
+<div class="paragraph">
+<p>By then, we should have saved data from all the rows to our <code>allTasks</code> list, which we then print out to the terminal.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_postscript_and_the_why"><a class="link" href="#_postscript_and_the_why">7. Postscript and the Why</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>You&#8217;re done! You&#8217;ve written a small Go program that reads from a SQLite database and prints its contents out to the terminal.</p>
+</div>
+<div class="paragraph">
+<p>Right now, your program will be missing stuff like the ability to save that data into a CSV file. We&#8217;re not getting into that in this guide, but you can see how it&#8217;s done in <a href="https://github.com/clear-archiver" class="bare">https://github.com/clear-archiver</a>. For now, you can save your program&#8217;s output to a file by "piping" the output:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="bash"><span></span><span class="tok-c1"># Pipe output to your clipboard, so you can paste it into a text editor</span>
+go run main.go <span class="tok-p">|</span> pbcopy
+
+<span class="tok-c1"># Pipe output to a file</span>
+go run main.go &gt; output.txt</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>But you get the idea. We&#8217;ve gotten data out of our Clear SQLite database, but you can use this method to get data out of any SQLite database.</p>
+</div>
+<div class="paragraph">
+<p><strong>More importantly</strong>, it&#8217;s an example of how we are able to create data mobility for ourselves if we are able understand and dissect the systems that we rely on. It&#8217;s also to show that data mobility is not difficult to implement.</p>
+</div>
+<div class="paragraph">
+<p>Under the GDPR, which kicked in May this year, the ability to export your data is now <strong>required</strong> by law in the EU. This means that it is illegal (under the GDPR) for any vendor to lock your data into their service. Now that you&#8217;ve read this, you also know a bit more about how "technically feasible" it is to move data out of what is usually regarded as an opaque medium (i.e. applications and databases).</p>
+</div>
+<div class="paragraph">
+<p>If there&#8217;s one thing that I want you to take away from this article, it&#8217;s that you <em>should insist on control over your data</em>. Because it&#8217;s not hard. Until next time.</p>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<hr>
+<div class="footnote" id="_footnotedef_1">
+<a href="#_footnoteref_1">1</a>. Early October 2017. To be very fair, I received very friendly and helpful correspondence.
+</div>
+</div>
+
+</div>
+<section class="post-footer">
+	<img class="profileImage" src="https://www.shootbird.work/zed-square-400px.jpg" />
+	<section><strong>Author |</strong> Zed is a former educator and currently a
+  <a href="https://www.zeddee.com/cv">professional explainer</a>.
+  He writes about software, video games, and narrative design.
+  If you have software or a system that needs explaining
+  (to frustrated users, or you just need someone to write
+  stuff down for you), you can contact him for work at
+  <a href="mailto://zed@nsdmdh.com">zed@nsdmdh.com</a>.</section>
+</section>
+
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+
+    
+        <a href="https://www.shootbird.work/posts">back</a>
+        
+            &#183;
+        
+    
+    <a href="https://www.shootbird.work/">
+        main
+    </a>
+       &#183; 
+    
+        
+            <a href="https://www.shootbird.work/what-is-shootbird">
+                打鳥 (shoot bird?)
+            </a>
+        
+    
+    
+        
+            &#183; 
+            <a href="https://www.shootbird.work/hire-us">
+                hire us
+            </a>
+        
+            &#183; 
+            <a href="https://www.shootbird.work/posts">
+                blog
+            </a>
+        
+    
+
+</p>
+
+</div>
+
+
+        <div class="section footer"><span>©2018 <a href="https://www.zeddee.com/">zed</a>.</span>
+</div>
+    </div>
+</body>
+
+</html>

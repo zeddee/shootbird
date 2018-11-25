@@ -6,10 +6,19 @@
     <description>Recent content on ShootBird</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 12 Nov 2018 03:39:20 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 21 Nov 2018 23:14:41 +0800</lastBuildDate>
     
 	<atom:link href="https://www.shootbird.work/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Getting Stuff Out of a Todo App Like Clear</title>
+      <link>https://www.shootbird.work/posts/getting-stuff-out-of-a-todo-app/</link>
+      <pubDate>Wed, 21 Nov 2018 23:14:41 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/posts/getting-stuff-out-of-a-todo-app/</guid>
+      <description>Table of Contents 1. What&amp;#8217;s Clear? 2. Explaining SQLite 3. Why write a program to get the data out? 4. Getting started 5. Checking your .sqlite file 6. Writing your Go program 6.1. Connect to the SQLite database 6.2. Get column headings from a table 6.3. Get column data types 6.4. Read data from the database   7. Postscript and the Why   One frustration I&amp;#8217;ve had with task list applications on iOS and macOS is that they tend to hide where they store the data you&amp;#8217;ve saved on it.</description>
+    </item>
     
     <item>
       <title>Unpacking Westworld S2E10</title>
