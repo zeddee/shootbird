@@ -1,0 +1,26 @@
+---
+title: "Struggling with complexity"
+date: 2018-11-30T00:42:53+08:00
+showDate: true
+draft: false
+tags: ["think complexity", "thinking", "nuance", "unbucket thinking"]
+images: ["/img/posts/cloud-med.jpg"]
+---
+
+image::/img/posts/cloud-med.jpg[Clouds]
+
+One of the things I constantly struggle with is managing complexity in writing. Write too complex a piece, and it'll sit there unread and unused. But stripping away complexity also strips away meaning, and risks context collapse (which I want to deal with soon).
+
+Stanford University's Prof. Robert Sapolsky seems to manage this balance between complexity and accessibility in link:https://www.youtube.com/watch?v=NNnIGh9g6fA&t=2878s[his course "BIO150, Introduction to Human Behavioural Biology"], available on YouTube. I highly recommend giving the hour-long lecture (and if you have the time, his whole series of lectures) a watch. If anything, you'll laugh a bit and learn a lot how humans are a lot like our genetic cousins.
+
+video::NNnIGh9g6fA[youtube, width=100%, height=400px]
+
+In his introductory YouTube lecture, Sapolsky lists James Gleick's _Chaos_ as a prescribed reading in his syllabus. How he describes the book sums up his approach to complex behaviour:
+
+> What this book does is introduce this radically different of thinking about biology, taking apart a world of reductionism. For 500 years, we all have been using a very simple model for thinking about living systems, which is: if you want to understand something that is complicated, you break it apart into its little pieces. 
+> 
+> And once you understand the little pieces, put it back together and you will understand the complex thing. And what Chaos as entire field is about — and this is pretty much the first book made for the lay-public about it — what _Chaos_ shows is: that's how you fix clocks. That's not how you fix behaviours. That's not how you understand behaviours. **Behaviour is not a clock. Behaviour is like a cloud, and we don't understand rainfall by breakng a cloud down into its component pieces and gluing them back together**.
+
+I don't think he means that you shouldn't break things down, but more that you shouldn't break things down and assume that you haven't lost any information in the process. I think it also means that we should have the license to keep things complex — that is, to not immediately cave and dismantle a complex thing so that we're only staring at its component parts.
+
+As a side note, there's a book that I've been meaning to read for a long time that also deals with complexity in a (relatively) accessible manner: Allen B. Downey's link:http://greenteapress.com/complexity/[_Think Complexity 2_]. The book aims to teach you how to think computationally with code, which strangely may put it at odds with Sapolsky's own approach to complexity. Downey and O'Reilly have very graciously released the book under a link:https://creativecommons.org/licenses/by-nc/3.0/[CC BY-NC 3.0], which just means you're free to download, read, share, and build upon the material (which means you can use it directly to teach a class!).
