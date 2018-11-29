@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nuance on ShootBird</title>
+    <link>https://www.shootbird.work/tags/nuance/</link>
+    <description>Recent content in Nuance on ShootBird</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 30 Nov 2018 00:42:53 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.shootbird.work/tags/nuance/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Struggling with complexity</title>
+      <link>https://www.shootbird.work/posts/struggling-with-complexity/</link>
+      <pubDate>Fri, 30 Nov 2018 00:42:53 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/posts/struggling-with-complexity/</guid>
+      <description>One of the things I constantly struggle with is managing complexity in writing. Write too complex a piece, and it&amp;#8217;ll sit there unread and unused. But stripping away complexity also strips away meaning, and risks context collapse (which I want to deal with soon).
+ Stanford University&amp;#8217;s Prof. Robert Sapolsky seems to manage this balance between complexity and accessibility in his course &#34;BIO150, Introduction to Human Behavioural Biology&#34;, available on YouTube.</description>
+    </item>
+    
+  </channel>
+</rss>
