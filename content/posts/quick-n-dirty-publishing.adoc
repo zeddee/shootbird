@@ -10,6 +10,8 @@ images: ["/img/posts/zed-surge.jpg"]
 
 I've had more than one friend has asked me to move stuff out of their SquareSpace sites, and each time I give them the same response: ¯\\_(ツ)_/¯
 
+TIP: I've written a follow-up post on example of sites that are published using SSGs on Github pages here: https://www.shootbird.work/posts/examples-of-github-hosted-sites/
+
 Both friends had the option of either copying the content of their site page by page and saving it, or just rewriting all their content from scratch.
 
 Site builders like SquareSpace and, to a less but significant extent, CMSes like Wordpress, lock your content in by saving it in formats that only they can understand. Last I checked, SquareSpace has [.linethrough]#no export functionality# (looks like link:https://support.squarespace.com/hc/en-us/articles/206566687-Exporting-your-site[SquareSpace now allows you to export your content], but still as a difficult-to-parse XML file), and a Wordpress-like CMS usually allows you to export your data in the form of link:https://en.support.wordpress.com/export/[zipped XML file]. In both cases, it's painful to save your content in a more permanent state like a folder of documents when you start out creating content on one of these platforms.

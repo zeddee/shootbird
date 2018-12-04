@@ -1,0 +1,59 @@
+---
+title: "Examples of Github Hosted Sites"
+date: 2018-12-04T13:49:44+08:00
+showDate: true
+draft: false
+tags: ["tutorial","HTML", "publishing", "Github"]
+images: []
+---
+:toc: auto
+
+Earlier, I wrote link:https://www.shootbird.work/posts/quick-n-dirty-publishing/[a piece on how to quickly publish a site to `surge.sh`] and keep 100% control over your content. In it, I also mentioned that you can publish to Github using their link:https://pages.github.com/[Github pages] feature.
+
+I'm writing a separate post on this because I want to show how powerful a publishing tool it is. Stick with me for a while.
+
+NOTE: Github has extensive documentation on how to use their link:https://pages.github.com/[Github pages] feature. 
+
+== 1. Github natively displays Markdown and similar text formats
+
+Putting a text file on Github essentially publishes it. If that text file is written in markdown or similar, then Github renders that file as a stylized doucment. For example, you can find the text source of this article here: <insert-url-here>
+
+When you head on over to that URL, you can see that Github renders the page within its own UI without my intervention:
+
+image::/img/posts/image-of-github-rendered-adoc.jpg[How Github renders an Asciidoctor file.]
+
+TIP: Github can render text formats other than markdown, such as rST and ASCIIDOC. This document is written in a variant of ASCIIDOC called link:https://asciidoctor.org[Asciidoctor].
+
+This means you can just upload text files and use Github itself as your CMS. link:https://ethereum.org[Ethereum] does this for their own project management meeting notes: https://github.com/ethereum/pm/tree/master/All%20Core%20Devs%20Meetings
+
+== 2. It's great for low maintenance content
+
+If you don't need to produce highly stylized content (and even if you do), and mostly need to just publish text documents on the web, hosting on Github is great.
+
+In particular, this use-case is particularly suited for **class syllabi**. Publishing on Github allows you to provide a single URL where students can find published content relevant to the course, and can continue to access that content after the course has ended. In addition, this makes the content public, which is great for the public domain.
+
+In addition to having a stable URL for your course material (and not having to go through the hassle of setting up and maintaining a Wordpress page), Github also very conveniently allows you to download the whole repository as a ZIP file for offline use. This is great for allowing students to work offline.
+
+Some examples that I've found:
+
+* link:http://cs231n.github.io/[CS231n Convolutional Neural Networks for Visual Recognition]
+** Source: https://github.com/cs231n/cs231n.github.io
+** Made with: https://jekyllrb.com
+* link:https://fairmlclass.github.io/[CS 294: Fairness in Machine Learning]
+** Source: https://github.com/fairmlclass/fairmlclass.github.io
+** Made with: https://jekyllrb.com
+* link:https://digital-methods-sydney.github.io/ws-201812/[Topic Models in R]
+** Source: https://github.com/Digital-Methods-Sydney/ws-201812
+** Made with: https://jekyllrb.com
+
+== 3. You can publish interactive content
+
+Github user link:https://github.com/kueh-lapis[kueh-lapis] published a page titled link:https://kueh-lapis.github.io/ahtc-ago-comparison/[How bad are Workers' Party leaders?] that showed an interactive chart comparing allegations of mismanaged funds investigated by the AGO. So, yes, **you can do this with Github pages**.
+
+TIP: Notice that `kueh-lapis`'s github profile is empty; this means that they've made their repositories private, because we know that they must have at least one active repository on their account.
+
+== Takeaways
+
+- Publishing on Github is a great way to make low-maintenance content publicly available.
+- It's robust enough to support interactive content.
+- It can be also used to publish and store text files that don't look half bad (This is great managing and editing work from a team of writers).
