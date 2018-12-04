@@ -4,7 +4,7 @@ date: 2018-12-04T13:49:44+08:00
 showDate: true
 draft: false
 tags: ["tutorial","HTML", "publishing", "Github"]
-images: []
+images: ["/img/posts/github-render-asciidoc.jpg"]
 ---
 :toc: auto
 
@@ -16,11 +16,11 @@ NOTE: Github has extensive documentation on how to use their link:https://pages.
 
 == 1. Github natively displays Markdown and similar text formats
 
-Putting a text file on Github essentially publishes it. If that text file is written in markdown or similar, then Github renders that file as a stylized doucment. For example, you can find the text source of this article here: <insert-url-here>
+Putting a text file on Github essentially publishes it. If that text file is written in markdown or similar, then Github renders that file as a stylized doucment. For example, you can find the text source of this article link:https://github.com/zeddee/shootbird/blob/7a88cbd8da12cc413f258214136c9ee08786962d/content/posts/examples-of-github-hosted-sites.adoc[here].
 
 When you head on over to that URL, you can see that Github renders the page within its own UI without my intervention:
 
-image::/img/posts/image-of-github-rendered-adoc.jpg[How Github renders an Asciidoctor file.]
+image::/img/posts/github-render-asciidoc.jpg[How Github renders an Asciidoctor file.]
 
 TIP: Github can render text formats other than markdown, such as rST and ASCIIDOC. This document is written in a variant of ASCIIDOC called link:https://asciidoctor.org[Asciidoctor].
 
