@@ -4,7 +4,7 @@ date: 2018-12-04T12:26:38+08:00
 showDate: true
 draft: false
 tags: ["tutorial","HTML", "publishing", "Github", "surge.sh"]
-images: ["/img/posts/zed-surge.sh"]
+images: ["/img/posts/zed-surge.jpg"]
 ---
 :toc: auto
 
