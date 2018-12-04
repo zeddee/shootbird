@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.shootbird.work/posts/quick-n-dirty-publishing/</loc>
+    <lastmod>2018-12-04T12:26:38+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.shootbird.work/posts/struggling-with-complexity/</loc>
     <lastmod>2018-11-30T00:42:53+08:00</lastmod>
   </url>
@@ -90,6 +95,12 @@
   </url>
   
   <url>
+    <loc>https://www.shootbird.work/tags/github/</loc>
+    <lastmod>2018-12-04T12:26:38+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.shootbird.work/tags/go-programming/</loc>
     <lastmod>2018-11-21T23:14:41+08:00</lastmod>
     <priority>0</priority>
@@ -98,6 +109,12 @@
   <url>
     <loc>https://www.shootbird.work/tags/golang/</loc>
     <lastmod>2018-11-21T23:14:41+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/html/</loc>
+    <lastmod>2018-12-04T12:26:38+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -121,7 +138,13 @@
   
   <url>
     <loc>https://www.shootbird.work/posts/</loc>
-    <lastmod>2018-11-30T00:42:53+08:00</lastmod>
+    <lastmod>2018-12-04T12:26:38+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/publishing/</loc>
+    <lastmod>2018-12-04T12:26:38+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -133,7 +156,13 @@
   
   <url>
     <loc>https://www.shootbird.work/</loc>
-    <lastmod>2018-11-30T00:42:53+08:00</lastmod>
+    <lastmod>2018-12-04T12:26:38+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/surge.sh/</loc>
+    <lastmod>2018-12-04T12:26:38+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -170,6 +199,12 @@
   <url>
     <loc>https://www.shootbird.work/tags/thinking/</loc>
     <lastmod>2018-11-30T00:42:53+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/tutorial/</loc>
+    <lastmod>2018-12-04T12:26:38+08:00</lastmod>
     <priority>0</priority>
   </url>
   

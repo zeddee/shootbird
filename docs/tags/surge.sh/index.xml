@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Surge.sh on ShootBird</title>
+    <link>https://www.shootbird.work/tags/surge.sh/</link>
+    <description>Recent content in Surge.sh on ShootBird</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 04 Dec 2018 12:26:38 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.shootbird.work/tags/surge.sh/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quick n&#39; Dirty Web Publishing; or Don&#39;t Publish with a Site Builder</title>
+      <link>https://www.shootbird.work/posts/quick-n-dirty-publishing/</link>
+      <pubDate>Tue, 04 Dec 2018 12:26:38 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/posts/quick-n-dirty-publishing/</guid>
+      <description>Table of Contents What is surge.sh Install your tools Create a simple HTML document Deploy Update Caveat Emptor Other tools and further reading Takeaways   I&amp;#8217;ve had more than one friend has asked me to move stuff out of their SquareSpace sites, and each time I give them the same response: ¯\_(ツ)_/¯
+ Both friends had the option of either copying the content of their site page by page and saving it, or just rewriting all their content from scratch.</description>
+    </item>
+    
+  </channel>
+</rss>

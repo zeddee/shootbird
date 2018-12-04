@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Table of Contents What is surge.sh Install your tools Create a simple HTML document Deploy Update Caveat Emptor Other tools and further reading Takeaways   I&#8217;ve had more than one friend has asked me to move stuff out of their SquareSpace sites, and each time I give them the same response: ¯\_(ツ)_/¯
+ Both friends had the option of either copying the content of their site page by page and saving it, or just rewriting all their content from scratch.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://www.shootbird.work/">
+
+<meta name="twitter:image" content="https://www.shootbird.work/img/logo/shootbird_opengraph.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Quick n&#39; Dirty Web Publishing; or Don&#39;t Publish with a Site Builder">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Table of Contents What is surge.sh Install your tools Create a simple HTML document Deploy Update Caveat Emptor Other tools and further reading Takeaways   I&#8217;ve had more than one friend has asked me to move stuff out of their SquareSpace sites, and each time I give them the same response: ¯\_(ツ)_/¯
+ Both friends had the option of either copying the content of their site page by page and saving it, or just rewriting all their content from scratch."}}>
+<meta property="og:type" content="article" />
+<meta name="og:url" content="https://www.shootbird.work/">
+<meta name="og:title" content="Quick n&#39; Dirty Web Publishing; or Don&#39;t Publish with a Site Builder">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://www.shootbird.work/img/logo/shootbird_opengraph.png">
+
+<meta property="og:image" content="https://www.shootbird.work/img/posts/zed-surge.sh" />
+
+<title>Quick n&#39; Dirty Web Publishing; or Don&#39;t Publish with a Site Builder</title>
+<link rel="shortcut icon" href="https://www.shootbird.work/favicon.png" id="favicon">
+<link rel="stylesheet" href="https://www.shootbird.work/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129052246-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-129052246-1');
+</script>
+
+
+
+
+
+    
+
+    
+    
+    
+</head>
+
+<body>
+
+    <div class="wrap">
+			<header><a href="https://www.shootbird.work/" 
+  style="border-bottom:none;"
+  alt="Shoot Bird">
+	<img
+    style="width:3rem;"
+    src="https://www.shootbird.work/img/logo/shootbird_logo_beak.png"
+    alt="Shoot Bird" />
+</a>
+</header>
+        <div class="section" id="title">Quick n&#39; Dirty Web Publishing; or Don&#39;t Publish with a Site Builder</div>
+
+        
+<div class="section" id="content">
+		
+		  Tue Dec 04, 2018
+			&#183;
+			1457 words
+		
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/tutorial">
+                tutorial
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/html">
+                HTML
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/publishing">
+                publishing
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/github">
+                Github
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/surge.sh">
+                surge.sh
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_what_is_surge_sh">What is surge.sh</a></li>
+<li><a href="#_install_your_tools">Install your tools</a></li>
+<li><a href="#_create_a_simple_html_document">Create a simple HTML document</a></li>
+<li><a href="#_deploy">Deploy</a></li>
+<li><a href="#_update">Update</a></li>
+<li><a href="#_caveat_emptor">Caveat Emptor</a></li>
+<li><a href="#_other_tools_and_further_reading">Other tools and further reading</a></li>
+<li><a href="#_takeaways">Takeaways</a></li>
+</ul>
+</div>
+<div class="paragraph">
+<p>I&#8217;ve had more than one friend has asked me to move stuff out of their SquareSpace sites, and each time I give them the same response: ¯\_(ツ)_/¯</p>
+</div>
+<div class="paragraph">
+<p>Both friends had the option of either copying the content of their site page by page and saving it, or just rewriting all their content from scratch.</p>
+</div>
+<div class="paragraph">
+<p>Site builders like SquareSpace and, to a less but significant extent, CMSes like Wordpress, lock your content in by saving it in formats that only they can understand. Last I checked, SquareSpace has <span class="linethrough">no export functionality</span> (looks like <a href="https://support.squarespace.com/hc/en-us/articles/206566687-Exporting-your-site">SquareSpace now allows you to export your content</a>, but still as a difficult-to-parse XML file), and a Wordpress-like CMS usually allows you to export your data in the form of <a href="https://en.support.wordpress.com/export/">zipped XML file</a>. In both cases, it&#8217;s painful to save your content in a more permanent state like a folder of documents when you start out creating content on one of these platforms.</p>
+</div>
+<div class="paragraph">
+<p>There are two fixes that I usually recommend:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Write offline, or on a platform like Google Docs where your content is easily saved and exported. When it&#8217;s time to publish that post, just copy the content over and apply the formatting you need. I write on tools like link:https://code.visualstudio.com/
+[VS Code (free)] and <a href="https://ia.net/writer">IA Writer (paid, but pretty worth it)</a>. If I need to collaborate over a doc, I use Google Docs.</p>
+</li>
+<li>
+<p><strong>Publish your own plain HTML website.</strong></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Option 2 is not as hard as it sounds. In fact, I&#8217;ll show how you can get you up and running in fifteen minutes tops and <strong>for free</strong> using <a href="https://surge.sh">surge.sh</a>.</p>
+</div>
+<div class="sect1">
+<h2 id="_what_is_surge_sh">What is surge.sh</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://surge.sh">Surge.sh</a> is a hosting service that allows you to quickly publish content on the web by running this command in your project folder:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">surge</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That&#8217;s it. Really.</p>
+</div>
+<div class="paragraph">
+<p>There&#8217;s of course some setup involved, which I&#8217;ll get to in a bit.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_install_your_tools">Install your tools</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Install <a href="https://nodejs.org/en/download/">Node.js</a>.</p>
+</li>
+<li>
+<p>Once done, install surge.sh by running: <code>npm install -g surge</code></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_simple_html_document">Create a simple HTML document</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Make a project directory. I&#8217;ll assume that you&#8217;ve named it <code>~/Documents/myproject</code> (if you&#8217;re working on Windows, this would be something like <code>C:\Users\&lt;username&gt;\My Documents</code>).</p>
+</div>
+<div class="paragraph">
+<p>I promised you&#8217;d be up and running in 15 minutes or less so I&#8217;m not going to walk you through building a full-fledged site. You can upload anything to surge.sh that consists of HTML, CSS, and Javascript and it&#8217;ll just work — but for brevity, here&#8217;s a test HTML document that we&#8217;ll be uploading:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;My Surging Website&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;harro.&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>That&#8217;s it. Create a file called <code>index.html</code> in your project folder <code>~/Documents/myproject</code>, paste the above HTML in it and save the document.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_deploy">Deploy</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Open the <a href="https://www.shootbird.work/posts/learn-how-to-use-terminal/">terminal</a> (or if you&#8217;re on Windows, the command prompt) and navigate to your project folder by typing: <code>cd &lt;project_directory&gt;</code></p>
+</li>
+<li>
+<p>Make sure you&#8217;ve got the <code>index.html</code> file we created earlier in this folder. Run <code>ls</code> to list the contents of the directory to check this.</p>
+</li>
+<li>
+<p>Once you&#8217;re ready to publish, run the command: <code>surge</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><code>surge</code> will ask you to confirm a few details; for now, hit <code>Enter</code> to use the default settings — I want you to first get comfortable with the general workflow, and handle configuration details later.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="https://www.shootbird.work/img/posts/zed-surge.jpg" alt="Run the surge command.">
+</div>
+<div class="title">Figure 1. Running the <code>surge</code> command on Zed&#8217;s machine.</div>
+</div>
+<div class="paragraph">
+<p>When <code>surge</code> has gotten the information it needs, it publishes your page and displays the following message: <code>Success! - Published to &lt;your-url-here&gt;</code></p>
+</div>
+<div class="paragraph">
+<p>Go to <code>&lt;your-url-here&gt;</code> to see your freshly published <code>index.html</code> page. If for some reason you need more proof that this works, you can go to mine (published as per above, Figure 1): <a href="http://highfalutin-zoo.surge.sh" class="bare">http://highfalutin-zoo.surge.sh</a></p>
+</div>
+<div class="paragraph">
+<p>If successful, going to <code>&lt;your-url-here&gt;</code> should show you a page with a very big "harro", just as we intended.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_update">Update</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>That&#8217;s just the first deployment. You can update your site just by running the <code>surge</code> command again.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>In your project folder, create a new file named <code>about.html</code> and add the following code into it:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-html" data-lang="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;About ME&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;ALL ABOUT ME&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>Save your <code>about.html</code> file.</p>
+</li>
+<li>
+<p>Go to your terminal, and run the <code>surge</code> command in your project folder again.</p>
+</li>
+<li>
+<p>Go to <code>&lt;your-url-here&gt;/about.html</code></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You should find your very informative "ALL ABOUT ME" page right there.</p>
+</div>
+<div class="paragraph">
+<p>You&#8217;ve succesfully published and updated your site on a hosting service!</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_caveat_emptor">Caveat Emptor</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>I named this article "Quick n' Dirty Web Publishing" because it&#8217;s quick <strong>and</strong> it&#8217;s really dirty. You get content up really quickly, which is great for:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Prototyping sites and, if you&#8217;re up for it, React/Vue apps.</p>
+</li>
+<li>
+<p>Quickly making content and files public.</p>
+</li>
+<li>
+<p>You can set it up with a <a href="https://surge.sh/help/adding-a-custom-domain">custom domain</a> for free.</p>
+</li>
+<li>
+<p>You get <a href="https://surge.sh/help/using-https-by-default">free HTTPS support</a> (that requires a bit of wrangling, but still — free).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Plus</strong> it&#8217;s really really easy to use.</p>
+</div>
+<div class="paragraph">
+<p>But the service has the following limitations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It&#8217;s a bare-bones service. Any customization that you need to make, you&#8217;ll need to be comfortable digging into configuration files and the command line.</p>
+</li>
+<li>
+<p>The service is opaque. Once you run the <code>surge</code> command, all your files go behind their server walls and you&#8217;ll never see them. Your only insurance for keeping your files the way you want them to is to make sure that you <strong>keep your own copies of them</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>I find that, as someone who doesn&#8217;t run a software shop, <code>surge.sh</code> works best for me as a <strong>learning tool</strong>. I can quickly run through writing and deploying my own web applications without having to buy a hosting service. But to build and store stuff that need a longer lifespan, I&#8217;d either pay for <code>surge.sh</code>, or host it somewhere else.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_other_tools_and_further_reading">Other tools and further reading</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The other question is: does this mean I&#8217;ll have to write all my content as HTML files?</p>
+</div>
+<div class="paragraph">
+<p>The answer is of course: <strong>no</strong> (please don&#8217;t).</p>
+</div>
+<div class="paragraph">
+<p>One of the things you can use is something called a <a href="https://learn.cloudcannon.com/jekyll/why-use-a-static-site-generator/"><strong>static-site-generator</strong></a> (<strong>SSG</strong>). <a href="https://www.shootbird.work/">This site</a> is built on one; you can find the source code <a href="https://github.com/zeddee/shootbird/">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>(Or you could, you know, write a document on Google Docs or Microsoft Word, export that as a HTML file, and upload that to a service like <code>surge.sh</code>.)</p>
+</div>
+<div class="paragraph">
+<p>It takes a while to learn, but you&#8217;ll get the hang of it. You write your content as <a href="https://www.markdownguide.org">Markdown</a> text files, and crunch them through an SSG which then spits out your HTML/CSS/JS for you in a neat package. You can then upload that to whatever hosting service you&#8217;re using. The popular SSGs also have themes you can quickly apply to your site.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s a list of static-site-generators that I&#8217;ve used:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.jekyllrb.com/">Jekyll</a> (I recommend using this if you&#8217;re just starting out; simple, and easy to customize and theme.)</p>
+</li>
+<li>
+<p><a href="https://www.gatsbyjs.org/">Gatsby</a> (If you&#8217;re fluent in React.)</p>
+</li>
+<li>
+<p><a href="https://gohugo.io">Hugo</a> (If you&#8217;re fluent in Golang; Shootbird.work is built with Hugo.)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each has extensive documentation that can get you started (if you&#8217;re stuck, <a href="https://www.shootbird.work/hire-us/">we can help</a>).</p>
+</div>
+<div class="paragraph">
+<p>The other thing is <strong>hosting</strong>: other than <code>surge.sh</code>, there are many other hosting services that allow you to just push your content up to their servers and get a url that you can access it with.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s a brief list:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://pages.github.com">Github pages</a> (We&#8217;re using this.)</p>
+</li>
+<li>
+<p><a href="https://about.gitlab.com/product/pages/">Gitlab pages</a></p>
+</li>
+<li>
+<p><a href="https://neocities.org">Neocities</a> (spiritual successor to Geocities, if you remember what that is)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Publishing on Github and Gitlab pages both require a bit of extra knowledge:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Knowing how to work a Git repository. <a href="https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud">Atlassian has a pretty good Git tutorial here</a>.</p>
+</li>
+<li>
+<p>Configuring your Git repository so that it meets the publishing requirements of these platforms (see the docs for individual platforms).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>There are also well-documented by the platforms themselves, so do give that a read. (I have a load of stuff that I want to cover on SSGs, but this is outside that scope for now.)</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_takeaways">Takeaways</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>CMSes and Site Builders are set up so that it&#8217;s difficult for you to move and save content (even between sites on their own platforms).</p>
+</li>
+<li>
+<p>When it&#8217;s time to tear down a site on a CMS or Site Builder, you&#8217;ll have to deal with XML exports that are usually written in special schemas/formats that are difficult to read and extract data from.</p>
+</li>
+<li>
+<p>You can publish your own site quickly, easily, and independently with freely available tools.</p>
+</li>
+<li>
+<p>Publishing your site on a hosting service like <code>surge.sh</code>, <code>github pages</code>, or <code>gitlab pages</code> takes a bit more work, but you have full control over your site content.</p>
+</li>
+<li>
+<p>If you really want 100% control of your site, you can use full-fledged hosting services like Digital Ocean, but they cost. Cheaper hosting services are available, but I&#8217;ve never had a positive experience on these (I might be missing seomething). I usually go for the small US$5 droplets on Digital Ocean, or the free hosting service on Github (though I <em>have</em> been thinking of buying a developer account).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+<section class="post-footer">
+	<img class="profileImage" src="https://www.shootbird.work/zed-square-400px.jpg" />
+	<section><strong>Author |</strong> Zed is a former educator and currently a
+  <a href="https://www.zeddee.com/cv">professional explainer</a>.
+  He writes about software, video games, and narrative design.
+  If you have software or a system that needs explaining
+  (to frustrated users, or you just need someone to write
+  stuff down for you), you can contact him for work at
+  <a href="mailto://zed@nsdmdh.com">zed@nsdmdh.com</a>.</section>
+</section>
+
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+
+    
+        <a href="https://www.shootbird.work/posts">back</a>
+        
+            &#183;
+        
+    
+    <a href="https://www.shootbird.work/">
+        main
+    </a>
+       &#183; 
+    
+        
+            <a href="https://www.shootbird.work/what-is-shootbird">
+                打鳥 (shoot bird?)
+            </a>
+        
+    
+    
+        
+            &#183; 
+            <a href="https://www.shootbird.work/hire-us">
+                hire us
+            </a>
+        
+            &#183; 
+            <a href="https://www.shootbird.work/posts">
+                blog
+            </a>
+        
+    
+
+</p>
+
+</div>
+
+
+        <div class="section footer"><span>©2018 <a href="https://www.zeddee.com/">zed</a>.</span>
+</div>
+    </div>
+</body>
+
+</html>
