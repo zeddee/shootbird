@@ -1,0 +1,164 @@
+---
+title: "Quick n' Dirty Web Publishing; or Don't Publish with a Site Builder"
+date: 2018-12-04T12:26:38+08:00
+showDate: true
+draft: false
+tags: ["tutorial","HTML", "publishing", "Github", "surge.sh"]
+images: ["/img/posts/zed-surge.sh"]
+---
+:toc: auto
+
+I've had more than one friend has asked me to move stuff out of their SquareSpace sites, and each time I give them the same response: ¯\\_(ツ)_/¯
+
+Both friends had the option of either copying the content of their site page by page and saving it, or just rewriting all their content from scratch.
+
+Site builders like SquareSpace and, to a less but significant extent, CMSes like Wordpress, lock your content in by saving it in formats that only they can understand. Last I checked, SquareSpace has [.linethrough]#no export functionality# (looks like link:https://support.squarespace.com/hc/en-us/articles/206566687-Exporting-your-site[SquareSpace now allows you to export your content], but still as a difficult-to-parse XML file), and a Wordpress-like CMS usually allows you to export your data in the form of link:https://en.support.wordpress.com/export/[zipped XML file]. In both cases, it's painful to save your content in a more permanent state like a folder of documents when you start out creating content on one of these platforms.
+
+There are two fixes that I usually recommend:
+
+. Write offline, or on a platform like Google Docs where your content is easily saved and exported. When it's time to publish that post, just copy the content over and apply the formatting you need. I write on tools like link:https://code.visualstudio.com/
+[VS Code (free)] and link:https://ia.net/writer[IA Writer (paid, but pretty worth it)]. If I need to collaborate over a doc, I use Google Docs.
+. **Publish your own plain HTML website.**
+
+Option 2 is not as hard as it sounds. In fact, I'll show how you can get you up and running in fifteen minutes tops and **for free** using link:https://surge.sh[surge.sh].
+
+== What is surge.sh
+
+link:https://surge.sh[Surge.sh] is a hosting service that allows you to quickly publish content on the web by running this command in your project folder:
+
+[source, bash]
+----
+surge
+----
+
+That's it. Really.
+
+There's of course some setup involved, which I'll get to in a bit.
+
+== Install your tools
+
+. Install link:https://nodejs.org/en/download/[Node.js].
+. Once done, install surge.sh by running: ``npm install -g surge``
+
+== Create a simple HTML document
+
+Make a project directory. I'll assume that you've named it `~/Documents/myproject` (if you're working on Windows, this would be something like `C:\Users\<username>\My Documents`).
+
+I promised you'd be up and running in 15 minutes or less so I'm not going to walk you through building a full-fledged site. You can upload anything to surge.sh that consists of HTML, CSS, and Javascript and it'll just work — but for brevity, here's a test HTML document that we'll be uploading:
+
+[source, html]
+----
+<!DOCTYPE html>
+<html>
+<head><title>My Surging Website</title></head>
+<body>
+<h1>harro.</h1>
+</body>
+</html>
+----
+
+That's it. Create a file called `index.html` in your project folder `~/Documents/myproject`, paste the above HTML in it and save the document.
+
+== Deploy
+
+. Open the link:https://www.shootbird.work/posts/learn-how-to-use-terminal/[terminal] (or if you're on Windows, the command prompt) and navigate to your project folder by typing: ``cd <project_directory>``
+. Make sure you've got the `index.html` file we created earlier in this folder. Run `ls` to list the contents of the directory to check this.
+. Once you're ready to publish, run the command: ``surge``
+
+`surge` will ask you to confirm a few details; for now, hit `Enter` to use the default settings — I want you to first get comfortable with the general workflow, and handle configuration details later.
+
+.Running the `surge` command on Zed's machine.
+image::/img/posts/zed-surge.jpg[Run the surge command.]
+
+When `surge` has gotten the information it needs, it publishes your page and displays the following message: ``Success! - Published to <your-url-here>``
+
+Go to ``<your-url-here>`` to see your freshly published `index.html` page. If for some reason you need more proof that this works, you can go to mine (published as per above, Figure 1): http://highfalutin-zoo.surge.sh
+
+If successful, going to `<your-url-here>` should show you a page with a very big "harro", just as we intended.
+
+== Update
+
+That's just the first deployment. You can update your site just by running the `surge` command again.
+
+. In your project folder, create a new file named ``about.html`` and add the following code into it:
+
+[source, html]
+----
+<!DOCTYPE html>
+<html>
+<head><title>About ME</title></head>
+<body>
+<h1>ALL ABOUT ME</h1>
+</body>
+</html>
+----
+
+[start=2]
+. Save your `about.html` file.
+. Go to your terminal, and run the `surge` command in your project folder again.
+. Go to `<your-url-here>/about.html`
+
+You should find your very informative "ALL ABOUT ME" page right there.
+
+You've succesfully published and updated your site on a hosting service!
+
+== Caveat Emptor
+
+I named this article "Quick n' Dirty Web Publishing" because it's quick **and** it's really dirty. You get content up really quickly, which is great for:
+
+- Prototyping sites and, if you're up for it, React/Vue apps.
+- Quickly making content and files public.
+- You can set it up with a link:https://surge.sh/help/adding-a-custom-domain[custom domain] for free.
+- You get link:https://surge.sh/help/using-https-by-default[free HTTPS support] (that requires a bit of wrangling, but still — free).
+
+**Plus** it's really really easy to use.
+
+But the service has the following limitations:
+
+- It's a bare-bones service. Any customization that you need to make, you'll need to be comfortable digging into configuration files and the command line.
+- The service is opaque. Once you run the `surge` command, all your files go behind their server walls and you'll never see them. Your only insurance for keeping your files the way you want them to is to make sure that you **keep your own copies of them**.
+
+I find that, as someone who doesn't run a software shop, `surge.sh` works best for me as a **learning tool**. I can quickly run through writing and deploying my own web applications without having to buy a hosting service. But to build and store stuff that need a longer lifespan, I'd either pay for `surge.sh`, or host it somewhere else.
+
+== Other tools and further reading
+
+The other question is: does this mean I'll have to write all my content as HTML files?
+
+The answer is of course: **no** (please don't). 
+
+One of the things you can use is something called a link:https://learn.cloudcannon.com/jekyll/why-use-a-static-site-generator/[**static-site-generator**] (**SSG**). link:https://www.shootbird.work/[This site] is built on one; you can find the source code link:https://github.com/zeddee/shootbird/[here]. 
+
+(Or you could, you know, write a document on Google Docs or Microsoft Word, export that as a HTML file, and upload that to a service like ``surge.sh``.)
+
+It takes a while to learn, but you'll get the hang of it. You write your content as link:https://www.markdownguide.org[Markdown] text files, and crunch them through an SSG which then spits out your HTML/CSS/JS for you in a neat package. You can then upload that to whatever hosting service you're using. The popular SSGs also have themes you can quickly apply to your site.
+
+Here's a list of static-site-generators that I've used:
+
+- link:https://www.jekyllrb.com/[Jekyll] (I recommend using this if you're just starting out; simple, and easy to customize and theme.)
+- link:https://www.gatsbyjs.org/[Gatsby] (If you're fluent in React.)
+- link:https://gohugo.io[Hugo] (If you're fluent in Golang; Shootbird.work is built with Hugo.)
+
+Each has extensive documentation that can get you started (if you're stuck, link:https://www.shootbird.work/hire-us/[we can help]).
+
+The other thing is **hosting**: other than ``surge.sh``, there are many other hosting services that allow you to just push your content up to their servers and get a url that you can access it with.
+
+Here's a brief list:
+
+- link:https://pages.github.com[Github pages] (We're using this.)
+- link:https://about.gitlab.com/product/pages/[Gitlab pages]
+- link:https://neocities.org[Neocities] (spiritual successor to Geocities, if you remember what that is)
+
+Publishing on Github and Gitlab pages both require a bit of extra knowledge:
+
+- Knowing how to work a Git repository. link:https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud[Atlassian has a pretty good Git tutorial here].
+- Configuring your Git repository so that it meets the publishing requirements of these platforms (see the docs for individual platforms).
+
+There are also well-documented by the platforms themselves, so do give that a read. (I have a load of stuff that I want to cover on SSGs, but this is outside that scope for now.)
+
+== Takeaways
+
+- CMSes and Site Builders are set up so that it's difficult for you to move and save content (even between sites on their own platforms).
+- When it's time to tear down a site on a CMS or Site Builder, you'll have to deal with XML exports that are usually written in special schemas/formats that are difficult to read and extract data from.
+- You can publish your own site quickly, easily, and independently with freely available tools.
+- Publishing your site on a hosting service like `surge.sh`, `github pages`, or `gitlab pages` takes a bit more work, but you have full control over your site content.
+- If you really want 100% control of your site, you can use full-fledged hosting services like Digital Ocean, but they cost. Cheaper hosting services are available, but I've never had a positive experience on these (I might be missing seomething). I usually go for the small US$5 droplets on Digital Ocean, or the free hosting service on Github (though I _have_ been thinking of buying a developer account).
