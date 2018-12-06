@@ -6,10 +6,20 @@
     <description>Recent content in Posts on ShootBird</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 04 Dec 2018 13:49:44 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 07 Dec 2018 01:05:56 +0800</lastBuildDate>
     
 	<atom:link href="https://www.shootbird.work/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>How to ask questions about an AI/ML claim</title>
+      <link>https://www.shootbird.work/posts/how-to-ask-questions-about-ai-ml/</link>
+      <pubDate>Fri, 07 Dec 2018 01:05:56 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/posts/how-to-ask-questions-about-ai-ml/</guid>
+      <description>AI is not magic. Movies have overwrought this idea that we&amp;#8217;re making tiny microprocessor equivalents of the human brain that can talk, think, and act like us. But the reality is quite different.
+ Here, I&amp;#8217;ll cover how to question an AI/ML claim, because the hardest part about asking questions about a subject is knowing where to start. Hopefully, this would provide you with better tooling with which to think about AI/ML and move past outdated movie tropes.</description>
+    </item>
     
     <item>
       <title>Examples of Github Hosted Sites</title>

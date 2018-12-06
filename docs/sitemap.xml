@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.shootbird.work/posts/how-to-ask-questions-about-ai-ml/</loc>
+    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.shootbird.work/posts/examples-of-github-hosted-sites/</loc>
     <lastmod>2018-12-04T13:49:44+08:00</lastmod>
   </url>
@@ -53,6 +58,18 @@
   </url>
   
   <url>
+    <loc>https://www.shootbird.work/tags/ai/</loc>
+    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/artificial-intelligence/</loc>
+    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.shootbird.work/tags/bash/</loc>
     <lastmod>2018-11-01T05:10:02+08:00</lastmod>
     <priority>0</priority>
@@ -78,6 +95,12 @@
   <url>
     <loc>https://www.shootbird.work/tags/comment/</loc>
     <lastmod>2018-11-12T03:39:20+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/complexity/</loc>
+    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -130,8 +153,20 @@
   </url>
   
   <url>
+    <loc>https://www.shootbird.work/tags/machine-learning/</loc>
+    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.shootbird.work/tags/macos/</loc>
     <lastmod>2018-11-01T04:21:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/ml/</loc>
+    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -143,7 +178,7 @@
   
   <url>
     <loc>https://www.shootbird.work/posts/</loc>
-    <lastmod>2018-12-04T13:49:44+08:00</lastmod>
+    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -161,7 +196,7 @@
   
   <url>
     <loc>https://www.shootbird.work/</loc>
-    <lastmod>2018-12-04T13:49:44+08:00</lastmod>
+    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -173,7 +208,7 @@
   
   <url>
     <loc>https://www.shootbird.work/tags/</loc>
-    <lastmod>2018-11-01T05:10:02+08:00</lastmod>
+    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
     <priority>0</priority>
   </url>
   

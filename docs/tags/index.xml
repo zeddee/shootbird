@@ -6,10 +6,28 @@
     <description>Recent content in Tags on ShootBird</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Nov 2018 05:10:02 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 07 Dec 2018 01:05:56 +0800</lastBuildDate>
     
 	<atom:link href="https://www.shootbird.work/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ai</title>
+      <link>https://www.shootbird.work/tags/ai/</link>
+      <pubDate>Fri, 07 Dec 2018 01:05:56 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Artificial Intelligence</title>
+      <link>https://www.shootbird.work/tags/artificial-intelligence/</link>
+      <pubDate>Fri, 07 Dec 2018 01:05:56 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/artificial-intelligence/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Bash</title>
@@ -44,6 +62,15 @@
       <pubDate>Mon, 12 Nov 2018 03:39:20 +0800</pubDate>
       
       <guid>https://www.shootbird.work/tags/comment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Complexity</title>
+      <link>https://www.shootbird.work/tags/complexity/</link>
+      <pubDate>Fri, 07 Dec 2018 01:05:56 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/complexity/</guid>
       <description></description>
     </item>
     
@@ -120,11 +147,29 @@
     </item>
     
     <item>
+      <title>Machine Learning</title>
+      <link>https://www.shootbird.work/tags/machine-learning/</link>
+      <pubDate>Fri, 07 Dec 2018 01:05:56 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Macos</title>
       <link>https://www.shootbird.work/tags/macos/</link>
       <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
       
       <guid>https://www.shootbird.work/tags/macos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ml</title>
+      <link>https://www.shootbird.work/tags/ml/</link>
+      <pubDate>Fri, 07 Dec 2018 01:05:56 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/ml/</guid>
       <description></description>
     </item>
     
