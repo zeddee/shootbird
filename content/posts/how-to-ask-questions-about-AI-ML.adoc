@@ -1,0 +1,49 @@
+---
+title: "How to ask questions about an AI/ML claim"
+date: 2018-12-07T01:05:56+08:00
+draft: false
+showDate: true
+tags: ["AI","ML","artificial intelligence", "machine learning", "complexity"]
+images: [""]
+---
+
+AI is not magic. Movies have overwrought this idea that we're making tiny microprocessor equivalents of the human brain that can talk, think, and act like us. But the reality is quite different. 
+
+Here, I'll cover how to question an AI/ML claim, because the hardest part about asking questions about a subject is knowing where to start. Hopefully, this would provide you with better tooling with which to think about AI/ML and move past outdated movie tropes.
+
+NOTE: I'm dumping my initial thoughts here while working on other things, so the article will be a bit rough and updated as I go along. But the general idea will stay constant: you should be thinking about these questions when approaching an AI/ML claim critically.
+
+== Mental model
+
+The first thing you'll have to understand when parsing an AI/ML claim is that you're still dealing with machines, and machines need instructions to operate. This makes very clear the boundary of AI/ML generated "thought" — that whatever an AI/ML system produces, it'll be limited by human design.
+
+Then what about AI/ML systems that teach themselves things? This is also known as unsupervised learning — machines learn how to give themselves instructions, and make decisions or predictions that they weren't explictly designed or instructed for. But these instructions are still based on an original set of instructions that act as a guideline for how to generate these new instructions. 
+
+So the limiting factor of human design still remains — because of the limitations of the human mind and how we design systems, an AI/ML system is usually only good at one thing. There's a reason why Alphago only plays board games (2 dimensional, well-defined operating spaces), Boston Dynamics' robots don't talk, and Alexa doesn't have legs.
+
+Until we finally reach a point where Generalized AI becomes "conscious" in the fashion of _Deus Ex Machina_ or _Her_, where machines independently generate instructions, this limitation is unlikely to change. footnote:[But that's another question for another day. The _Westworld_ TV series explores this idea, so I higly recommend that you give it a watch and, if you feel like it, read my link:https://www.zeddee.com/posts/westworld-2016/[other] link:https://www.shootbird.work/posts/westworld-s2e10/[posts] on this.]
+
+The second thing that you'll have to keep in mind is that AI/ML only work because they're been _trained_ on a set of data. You need to feed AI/ML a relevant and sufficiently large dataset in order to get it to do what you want. An instance of this is how Google trains its image recognition algorithms by serving users "I am not a robot" captchas where you help label images in their computer vision training dataset. There are exceptions to this, but it still falls back on idea number 1: whatever the machine is capable of is still limited by human design. You can design a system to generate its own training data, but that training data is still bounded by the rules of your algorithm design.
+
+So, two things to keep in mind while approaching AI/ML issues:
+
+. AI/ML act according to an initial set of instructions.
+. AI/ML must be trained on a relevant dataset.
+
+== Questions to ask
+
+Holding these two ideas in your head, we can then ask the following questions about the claim:
+
+. **What problem do they claim to solve?** Are they claiming to solve a general problem (red flag) or a specific problem? Claiming to solve a general problem is a red flag becauseAn example of a general problem vs a specific problem would be AI with general game playing intelligence vs AI that knows how to play poker/DOTA etc. AI/ML-related solutions are usually specific: e.g. image recognition for matching faces to an ID database, natural language processing systems that you can talk to and make requests to apps, recognizing patterns in weather etc.
+. **What are they feeding their algorithms as training data?** https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G
+. **How are they getting their training data?** Here, we get into issues of (1) ethics, and (2) whether the source is reliable.
+* Who or where does this data come from? 
+* If you're getting human-related data, is your dataset broad and diverse enough?
+. How is the AI/ML system ingesting the data they are making predictions from?
+* Is the way that data is ingested comparible with the claims that they are making? E.g. DOTA AI claims game playing ability superior to humans, but is getting information about the game including player actions directly from an API, which means that the AI (1) already has a speed advantage (2) does not have to parse or interact with the complexity of the interface and visual noise that is part of gameplay (3) etc
+. How do they validate their AI/ML performance? Are they using the same dataset? (Red flag)
+. What is the claim of prediction accuracy? A high accuracy for predictions/decision making (~99%) tells us that the AI/ML model is **overfitting** — i.e. it's highly likely that its not going to be able to handle a real-world situation where data may vary from its training data set. Here, I'm thinking of the mathematician who was trying to figure out why his mathematical model of a polygon technically wouldn't work for a set of given dimensions, but when he made a paper model of it, it was totally feasible. The reason behind it was because _paper bends_. The real-world is a lot more fault tolerant and complex than any computational model.
+
+== Misc
+
+A tool to bootstrap an ethical checklist for your Python data projects: https://github.com/drivendataorg/deon/
