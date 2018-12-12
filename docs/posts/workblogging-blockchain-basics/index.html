@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="For some reason, I&#8217;ve found myself elbow-deep in Ethereum&#8217;s geth Github repository and am googling the finer points of token issuance and &#34;where does Bitcoin come from&#34;.
+ In an effort to stay sane and make sure that if things fall out of my head, some of those things can be at least found here where future-me can point to and say &#34;hey, you looked this up&#34;, I&#8217;m writing what I&#8217;ve found so far here.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://www.shootbird.work/">
+
+<meta name="twitter:image" content="https://www.shootbird.work/img/logo/shootbird_opengraph.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Workblogging: Blockchain Basics">
+<meta name="twitter:description" property="og:description" itemprop="description" content="For some reason, I&#8217;ve found myself elbow-deep in Ethereum&#8217;s geth Github repository and am googling the finer points of token issuance and &#34;where does Bitcoin come from&#34;.
+ In an effort to stay sane and make sure that if things fall out of my head, some of those things can be at least found here where future-me can point to and say &#34;hey, you looked this up&#34;, I&#8217;m writing what I&#8217;ve found so far here."}}>
+<meta property="og:type" content="article" />
+<meta name="og:url" content="https://www.shootbird.work/">
+<meta name="og:title" content="Workblogging: Blockchain Basics">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://www.shootbird.work/img/logo/shootbird_opengraph.png">
+
+<title>Workblogging: Blockchain Basics</title>
+<link rel="shortcut icon" href="https://www.shootbird.work/favicon.png" id="favicon">
+<link rel="stylesheet" href="https://www.shootbird.work/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129052246-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-129052246-1');
+</script>
+
+
+
+
+
+    
+
+    
+    
+    
+</head>
+
+<body>
+
+    <div class="wrap">
+			<header><a href="https://www.shootbird.work/" 
+  style="border-bottom:none;"
+  alt="Shoot Bird">
+	<img
+    style="width:3rem;"
+    src="https://www.shootbird.work/img/logo/shootbird_logo_beak.png"
+    alt="Shoot Bird" />
+</a>
+</header>
+        <div class="section" id="title">Workblogging: Blockchain Basics</div>
+
+        
+<div class="section" id="content">
+		
+		  Thu Dec 13, 2018
+			&#183;
+			764 words
+		
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/blockchain">
+                blockchain
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/cryptocurrencies">
+                cryptocurrencies
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/bitcoin">
+                bitcoin
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/ethereum">
+                ethereum
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/crypto">
+                crypto
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/workblogging">
+                workblogging
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    <div class="paragraph">
+<p>For some reason, I&#8217;ve found myself elbow-deep in Ethereum&#8217;s <code>geth</code> <a href="https://github.com/ethereum/go-ethereum/">Github repository</a> and am googling the finer points of token issuance and "where does Bitcoin come from".</p>
+</div>
+<div class="paragraph">
+<p>In an effort to stay sane and make sure that if things fall out of my head, some of those things can be at least found here where future-me can point to and say "hey, you looked this up", I&#8217;m writing what I&#8217;ve found so far here. Hopefully, it&#8217;ll also be useful for you.</p>
+</div>
+<div class="paragraph">
+<p>So here we go.</p>
+</div>
+<div class="sect1">
+<h2 id="_concepts_accounts">Concepts: Accounts</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>To transact on a blockchain network, you need an account.</p>
+</li>
+<li>
+<p>Sometimes, these accounts are called wallets.</p>
+</li>
+<li>
+<p>Each account is represented by one or more addresses, depending on the rules established by the blockchain network.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The Bitcoin network allows a single account to have multiple addresses. Bitcoin sent to any of these addresses will be credited to the same account.</p>
+</li>
+<li>
+<p>Ethereum allows only one address per account.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Your account is not tied to your identity — no emails, no names, no phone numbers. The only way your account is definitively yours is that you know the key to open it.</p>
+</li>
+<li>
+<p>You can own one or more accounts.</p>
+</li>
+<li>
+<p>As far as the blockchain is concerned, you don&#8217;t exist on the blockchain — only your account does.</p>
+</li>
+<li>
+<p>You can trace transactions to an account, but to tie an account to a person, you must have other corroborating evidence e.g. having that account managed by a platform that associates your email address with it.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_concepts_private_and_public_keys_addresses">Concepts: Private and Public Keys, Addresses</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Each account has a private and a public key.</p>
+</li>
+<li>
+<p>Private and public keys must operate in pairs to be cryptographically secure. (In Bitcoin&#8217;s case, because each account has multiple addresses, each address must have its own private-public key pair.)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Because there are many technically-correct ways to generate a key pair, we&#8217;ll keep it simple and assume here that we&#8217;re only talking about generating a key pair for the Ethereum network.</p>
+</div>
+<div class="paragraph">
+<p>For each Ethereum account:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A 256-bit private key is randomly generated. This must be kept secret.</p>
+</li>
+<li>
+<p>Using this private key, a 512-bit public key is derived.</p>
+</li>
+<li>
+<p>The 512-bit public key is then hashed to produce a public key hex, which then functions as the account&#8217;s address.</p>
+</li>
+<li>
+<p>A hash is a one-way function that takes some data, runs it through an algorithm, and produces a fixed-length string of characters.</p>
+</li>
+<li>
+<p>Ethereum uses the Keccak256 hashing algorithm to hash the 512-bit public key into a 160-bit public key hash.</p>
+</li>
+<li>
+<p>That 160-bit public key hash is then written out in base-16 (hex). What we get is a 40-character string (prefixed with <code>0x</code>) like this: <code>0xc54f51438cdf5fe2f05ead3e6d53b6559b81a320</code></p>
+</li>
+<li>
+<p>This is your account address.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_concepts_blockchain_as_datastore">Concepts: Blockchain as datastore</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>A blockchain is a decentralized and immutable store of data.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Decentraized:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>All nodes in the blockchain network must agree/come to a consensus about the data written to the chain.</p>
+</li>
+<li>
+<p>The network is designed to withstand manipulation by bad actors.</p>
+</li>
+<li>
+<p>In a chain running a Proof of Work consensus mechanism, an actor must control 51% of the computing power on the chain to manipulate what data is written to the chain.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Immutable:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Data once written to the chain cannot be changed or removed. This means that you can only read or write records to the chain, but you cannot remove anything from it once written.</p>
+</li>
+<li>
+<p>The only mitigation or recourse, then, would be to write a new record to the chain stating that the previously written data should be disregarded (or otherwise, depending).</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_concepts_cryptocurrencies_and_money_supply">Concepts: Cryptocurrencies and money supply</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Cryptocurrencies ≠ Blockchain</p>
+</li>
+<li>
+<p>Remember that blockchains are (1) distributed, and (2) immutable.</p>
+</li>
+<li>
+<p>Cryptocurrencies work by using the blockchain as an immutable record of who owns how much currency.</p>
+</li>
+<li>
+<p>When a transaction is made, a new record is written to the blockchain stating X amount of currency deducted from Account A is now credited to Account B.</p>
+</li>
+<li>
+<p>Money supply is determined by the design of the blockchain network.</p>
+</li>
+<li>
+<p>How much money supply there is for a particular cryptocurrency depends on how the cryptocurrency is designed to contain and produce.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Bitcoin is designed to have a maximum of 21 million bitcoins in circulation. The Bitcoin network is designed to release a fixed amount of Bitcoin for every block mined on the network. This trickle of Bitcoins for every block mined decreases over time, such that for every 210,000 blocks mined, the amount of bitcoins generated is halved.</p>
+</li>
+<li>
+<p>Ethereum has no money supply cap. Each block mined adds a fixed amount of Ethereum to the money supply.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_work_in_progress">Work in progress:</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>What is the "crypto" in "cryptocurrency"?</p>
+</li>
+<li>
+<p>Smart Contracts are bots on a blockchain.</p>
+</li>
+<li>
+<p>What makes a Token.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+<section class="post-footer">
+	<img class="profileImage" src="https://www.shootbird.work/zed-square-400px.jpg" />
+	<section><strong>Author |</strong> Zed is a former educator and currently a
+  <a href="https://www.zeddee.com/cv">professional explainer</a>.
+  He writes about software, video games, and narrative design.
+  If you have software or a system that needs explaining
+  (to frustrated users, or you just need someone to write
+  stuff down for you), you can contact him for work at
+  <a href="mailto://zed@nsdmdh.com">zed@nsdmdh.com</a>.</section>
+</section>
+
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+
+    
+        <a href="https://www.shootbird.work/posts">back</a>
+        
+            &#183;
+        
+    
+    <a href="https://www.shootbird.work/">
+        main
+    </a>
+       &#183; 
+    
+        
+            <a href="https://www.shootbird.work/what-is-shootbird">
+                打鳥 (shoot bird?)
+            </a>
+        
+    
+    
+        
+            &#183; 
+            <a href="https://www.shootbird.work/hire-us">
+                hire us
+            </a>
+        
+            &#183; 
+            <a href="https://www.shootbird.work/posts">
+                blog
+            </a>
+        
+    
+
+</p>
+
+</div>
+
+
+        <div class="section footer"><span>©2018 <a href="https://www.zeddee.com/">zed</a>.</span>
+</div>
+    </div>
+</body>
+
+</html>

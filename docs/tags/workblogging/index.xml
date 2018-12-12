@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Workblogging on ShootBird</title>
+    <link>https://www.shootbird.work/tags/workblogging/</link>
+    <description>Recent content in Workblogging on ShootBird</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 13 Dec 2018 03:12:33 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.shootbird.work/tags/workblogging/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Workblogging: Blockchain Basics</title>
+      <link>https://www.shootbird.work/posts/workblogging-blockchain-basics/</link>
+      <pubDate>Thu, 13 Dec 2018 03:12:33 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/posts/workblogging-blockchain-basics/</guid>
+      <description>For some reason, I&amp;#8217;ve found myself elbow-deep in Ethereum&amp;#8217;s geth Github repository and am googling the finer points of token issuance and &#34;where does Bitcoin come from&#34;.
+ In an effort to stay sane and make sure that if things fall out of my head, some of those things can be at least found here where future-me can point to and say &#34;hey, you looked this up&#34;, I&amp;#8217;m writing what I&amp;#8217;ve found so far here.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.shootbird.work/posts/workblogging-blockchain-basics/</loc>
+    <lastmod>2018-12-13T03:12:33+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.shootbird.work/posts/how-to-ask-questions-about-ai-ml/</loc>
     <lastmod>2018-12-07T01:05:56+08:00</lastmod>
   </url>
@@ -76,6 +81,18 @@
   </url>
   
   <url>
+    <loc>https://www.shootbird.work/tags/bitcoin/</loc>
+    <lastmod>2018-12-13T03:12:33+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/blockchain/</loc>
+    <lastmod>2018-12-13T03:12:33+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.shootbird.work/categories/</loc>
     <priority>0</priority>
   </url>
@@ -105,6 +122,18 @@
   </url>
   
   <url>
+    <loc>https://www.shootbird.work/tags/crypto/</loc>
+    <lastmod>2018-12-13T03:12:33+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/cryptocurrencies/</loc>
+    <lastmod>2018-12-13T03:12:33+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.shootbird.work/tags/dark-patterns/</loc>
     <lastmod>2018-11-01T04:21:08+08:00</lastmod>
     <priority>0</priority>
@@ -119,6 +148,12 @@
   <url>
     <loc>https://www.shootbird.work/tags/documentation/</loc>
     <lastmod>2018-10-23T23:42:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/ethereum/</loc>
+    <lastmod>2018-12-13T03:12:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -178,7 +213,7 @@
   
   <url>
     <loc>https://www.shootbird.work/posts/</loc>
-    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
+    <lastmod>2018-12-13T03:12:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -196,7 +231,7 @@
   
   <url>
     <loc>https://www.shootbird.work/</loc>
-    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
+    <lastmod>2018-12-13T03:12:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -269,6 +304,12 @@
   <url>
     <loc>https://www.shootbird.work/tags/westworld/</loc>
     <lastmod>2018-11-12T03:39:20+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/workblogging/</loc>
+    <lastmod>2018-12-13T03:12:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
