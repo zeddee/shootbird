@@ -17,7 +17,7 @@ So here we go.
 * To transact on a blockchain network, you need an account. 
 * Sometimes, these accounts are called wallets.
 * Each account is represented by one or more addresses, depending on the rules established by the blockchain network. 
-** The Bitcoin network allows a single account to have multiple addresses. Bitcoin sent to any of these addresses will be credited to the same account. 
+** The Bitcoin network allows a single account to have link:multiple addresses. Bitcoin sent to any of these addresses will be credited to the same account. 
 ** Ethereum allows only one address per account.
 * Your account is not tied to your identity — no emails, no names, no phone numbers. The only way your account is definitively yours is that you know the key to open it.
 * You can own one or more accounts.
@@ -27,11 +27,11 @@ So here we go.
 == Concepts: Private and Public Keys, Addresses
 
 * Each account has a private and a public key. 
-* Private and public keys must operate in pairs to be cryptographically secure. (In Bitcoin's case, because each account has multiple addresses, each address must have its own private-public key pair.)
+* Private and public keys must operate in pairs to be cryptographically secure. (In link:https://en.bitcoin.it/wiki/Technical_background_of_version_1_Bitcoin_addresses[Bitcoin's case], because each account has multiple addresses, each address must have its own private-public key pair.)
 
 Because there are many technically-correct ways to generate a key pair, we'll keep it simple and assume here that we're only talking about generating a key pair for the Ethereum network.
 
-For each Ethereum account:
+link:https://ethereum.stackexchange.com/a/3619[For each Ethereum account]:
 
 * A 256-bit private key is randomly generated. This must be kept secret.
 * Using this private key, a 512-bit public key is derived.
@@ -49,7 +49,7 @@ Decentraized:
 
 * All nodes in the blockchain network must agree/come to a consensus about the data written to the chain.
 * The network is designed to withstand manipulation by bad actors. 
-* In a chain running a Proof of Work consensus mechanism, an actor must control 51% of the computing power on the chain to manipulate what data is written to the chain.
+* In a chain running a Proof of Work link:https://hackernoon.com/consensus-mechanisms-explained-pow-vs-pos-89951c66ae10[consensus mechanism], an actor must control 51% of the computing power on the chain to manipulate what data is written to the chain.
 
 Immutable:
 
@@ -66,6 +66,13 @@ Immutable:
 * How much money supply there is for a particular cryptocurrency depends on how the cryptocurrency is designed to contain and produce.
 ** Bitcoin is designed to have a maximum of 21 million bitcoins in circulation. The Bitcoin network is designed to release a fixed amount of Bitcoin for every block mined on the network. This trickle of Bitcoins for every block mined decreases over time, such that for every 210,000 blocks mined, the amount of bitcoins generated is halved.
 ** Ethereum has no money supply cap. Each block mined adds a fixed amount of Ethereum to the money supply.
+
+== Other resources:
+
+- Ether denominations: https://gwei.io/
+- Ether has a "Gas Price Oracle" that suggests a transaction fee: https://github.com/ethereum/go-ethereum/wiki/Gas-Price-Oracle
+- Quantum robustness of ECDSA algorithms (or lack-thereof): https://medium.com/asecuritysite-when-bob-met-alice/the-most-significant-future-risk-around-blockchain-ecdsa-361b245219dc
+- ERC20 token factory: https://github.com/ConsenSys/Token-Factory
 
 == Work in progress:
 
