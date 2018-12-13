@@ -140,6 +140,7 @@ From reading this type definition, we know that:
 . An `AddressBook` is a list of people, which uses the `Person` struct. So we know that the `AddressBook` type contains the `ID`, `Name`, `Phone` number, and `Email` address of each person in it.
 
 And most importantly, we know the data types to expect when using the data of these types:
+
 . We know that `ID` is a number and not, say, a hexadecimal string like `2c34788af99f9ca074434e362d584d54`.
 . We know that the phone number of each person is stored as text.
 . We also know that the first name and last name are not differentiated in our records — our program doesn't care.
