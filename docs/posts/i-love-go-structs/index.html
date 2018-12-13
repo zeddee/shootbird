@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Table of Contents 1. Why types are important 2. Custom Types 3. Structs 4. Going deeper 5. Postscript   I&#8217;d like to take a moment here and talk about how much I love Go&#8217;s type system, and more importantly, how Go&#8217;s struct type has changed my life.
+ 1. Why types are important   Go is a statically-typed language.
+  This means that you have to define the data type of each variable you use in your code.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://www.shootbird.work/">
+
+<meta name="twitter:image" content="https://www.shootbird.work/img/logo/shootbird_opengraph.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="I ❤️ Go: Types and Structs">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Table of Contents 1. Why types are important 2. Custom Types 3. Structs 4. Going deeper 5. Postscript   I&#8217;d like to take a moment here and talk about how much I love Go&#8217;s type system, and more importantly, how Go&#8217;s struct type has changed my life.
+ 1. Why types are important   Go is a statically-typed language.
+  This means that you have to define the data type of each variable you use in your code."}}>
+<meta property="og:type" content="article" />
+<meta name="og:url" content="https://www.shootbird.work/">
+<meta name="og:title" content="I ❤️ Go: Types and Structs">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://www.shootbird.work/img/logo/shootbird_opengraph.png">
+
+<title>I ❤️ Go: Types and Structs</title>
+<link rel="shortcut icon" href="https://www.shootbird.work/favicon.png" id="favicon">
+<link rel="stylesheet" href="https://www.shootbird.work/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129052246-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-129052246-1');
+</script>
+
+
+
+
+
+    
+
+    
+    
+    
+</head>
+
+<body>
+
+    <div class="wrap">
+			<header><a href="https://www.shootbird.work/" 
+  style="border-bottom:none;"
+  alt="Shoot Bird">
+	<img
+    style="width:3rem;"
+    src="https://www.shootbird.work/img/logo/shootbird_logo_beak.png"
+    alt="Shoot Bird" />
+</a>
+</header>
+        <div class="section" id="title">I ❤️ Go: Types and Structs</div>
+
+        
+<div class="section" id="content">
+		
+		  Fri Dec 14, 2018
+			&#183;
+			1437 words
+		
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/golang">
+                Golang
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/go">
+                Go
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/programming">
+                programming
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_1_why_types_are_important">1. Why types are important</a></li>
+<li><a href="#_2_custom_types">2. Custom Types</a></li>
+<li><a href="#_3_structs">3. Structs</a></li>
+<li><a href="#_4_going_deeper">4. Going deeper</a></li>
+<li><a href="#_5_postscript">5. Postscript</a></li>
+</ul>
+</div>
+<div class="paragraph">
+<p>I&#8217;d like to take a moment here and talk about how much I love Go&#8217;s type system, and more importantly, how Go&#8217;s <code>struct</code> type has changed my life.</p>
+</div>
+<div class="sect1">
+<h2 id="_1_why_types_are_important">1. Why types are important</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Go is a statically-typed language.</p>
+</li>
+<li>
+<p>This means that you have to define the data type of each variable you use in your code.</p>
+</li>
+<li>
+<p>This is the programming equivalent of calling your shots in a game of pool.</p>
+</li>
+<li>
+<p>Types that we usually see in programming languages are <code>string</code>s (text characters), <code>int</code>s (numbers).</p>
+</li>
+<li>
+<p>Types are important because writing them into a program tells it how to handle a specific type of data that we&#8217;re feeding to it.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>An example (albeit simplistic) of why this is important:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Imagine you&#8217;re working with a list of phone numbers: <code>[44034633, 60242165, 68524214, 15706247, 51469010]</code></p>
+</li>
+<li>
+<p>If you want to add the country code <code>+65</code> to each phone number in the list, you&#8217;d instinctively want to do something like <code>65 + 44034633</code>.</p>
+</li>
+<li>
+<p>If you&#8217;ve told your program that <code>65</code> and <code>44034633</code> should be treated like text and not like numbers — i.e. as <code>string</code> types — then you&#8217;d get the expected result: <code>6544034633</code></p>
+</li>
+<li>
+<p>If you haven&#8217;t told your program that <code>65</code> and <code>44034633</code> should be treated like text, your program may inadvertently treat them as numbers, giving you: <code>44034698</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>A more complex example would be working with <code>Time</code>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Time</code> is a data type in Go.</p>
+</li>
+<li>
+<p>This is frustrating at first: why can&#8217;t you just write the time in <a href="https://tools.ietf.org/html/rfc1123">RFC1123</a>/<a href="https://tools.ietf.org/html/rfc822#section-5.1">RFC822</a> formats? (e.g. 15:40:08) and have your program understand it?</p>
+</li>
+<li>
+<p>Reason 1: Because computers understand time in terms of <a href="https://en.wikipedia.org/wiki/Unix_time">Unix time</a>: the number of seconds since 1 January 1970, 00:00:00 (<a href="https://time.is/Unix_time_now" class="bare">https://time.is/Unix_time_now</a>).</p>
+</li>
+<li>
+<p>Reason 2: You can&#8217;t add time values like normal numbers. Adding <code>40</code> minutes to <code>30</code> minutes will give you <code>70</code> minutes, but unless you have a way to get your program to understand that there are <code>60</code> minutes to an hour, you&#8217;ll have issues getting your program to understand that you wanted your alarm set at <code>8:10PM</code> and not <code>7:70PM</code>.</p>
+</li>
+<li>
+<p>Go handles this by forcing you make an explicit conversion from a time like "4 hours" to the <code>Time</code> type (run the code <a href="https://play.golang.org/p/9t-PCd5AAFk">here</a>):</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-go" data-lang="go">package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	timenow := time.Now() // Get the time now.
+	fourhours, _ := time.ParseDuration("4h") // Create a value for a duration of four hours.
+	timeFourHoursFromNow := timenow.Add(fourhours) // Add four hours to the time now.
+	fmt.Println(timeFourHoursFromNow)
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Notice how the controlled bounds of each type — <code>Time</code> and <code>Duration</code> — makes sure that we don&#8217;t try to mash together values that aren&#8217;t compatible with each other. You can&#8217;t add an <code>int</code> to <code>Time</code> or <code>Duration</code>. In fact, you can&#8217;t add a <code>Duration</code> to a <code>Time</code> unless it&#8217;s through the <code>Time.Add(&lt;duration&gt;)</code> method.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_2_custom_types">2. Custom Types</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>One of the best things about Go is that it allows you to define your own data types. For example (code <a href="https://play.golang.org/p/1QPLo4jTy5R">here</a>):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-go" data-lang="go">package main
+
+import (
+	"fmt"
+	"reflect"
+)
+
+type Vegetable string
+type Vegetables []Vegetable
+type Fruit string
+type Fruits []Fruit
+
+func main() {
+  fruits := []Fruit{"Tomato"}
+  fruits2 := []Fruit{"Apple"}
+  veggies := []Vegetable{"Pizza"}
+  veggies2 := []Vegetable{"Cabbage"}
+
+  fruits3 := append(fruits, fruits2...)
+  fmt.Println(fruits3)
+  veggies3 := append(veggies, veggies2...)
+  fmt.Println(veggies3)
+
+  //cantdothis := append(fruits, veggies)
+  //fmt.Println(cantdothis)
+
+  fmt.Println("Tomato is a:", reflect.TypeOf(fruits3[0]))
+  fmt.Println("Pizza is a:", reflect.TypeOf(veggies3[0]))
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here,</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>We&#8217;ve defined a <code>Vegetable</code> and <code>Fruit</code> type, which both have a base type of <code>string</code></p>
+</li>
+<li>
+<p>We&#8217;ve also defined a <code>Vegetables</code> and <code>Fruits</code> type, which are lists of <code>Vegetable</code> and <code>Fruit</code> respectively.</p>
+</li>
+<li>
+<p>In our small program, we can add <code>fruits</code> and <code>fruits2</code> together to form <code>fruits3</code>.</p>
+</li>
+<li>
+<p>We also can add <code>veggies</code> and <code>veggies2</code> together to form <code>veggies3</code>.</p>
+</li>
+<li>
+<p>But we can&#8217;t add <code>fruits</code> and <code>veggies</code> together because we&#8217;ve set them as different data types <code>Fruits</code> <code>and `Vegetables</code> respectively.</p>
+</li>
+<li>
+<p>We can check the type of a variable by calling <code>reflect.TypeOf(&lt;var&gt;)</code> on it.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Custom types are useful because it helps you define and describe your data very handily. We&#8217;ll get into that in the next section when we finally get to talking about structs.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_3_structs">3. Structs</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A Go <code>struct</code> is a data type. But unlike data types like <code>Time</code>, <code>string</code>, and <code>int</code>, it doesn&#8217;t designate a type of value, but instead is used to group data types together under a single name. That&#8217;s why it&#8217;s also known as an <strong>aggregate type</strong>.</p>
+</div>
+<div class="paragraph">
+<p>It allows us to do stuff like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-go" data-lang="go">type Veg string
+type Meat string
+type Fruit string
+
+type Meal struct {
+  Vegetables  Veg    // &lt;Field&gt;  &lt;Type&gt;
+  Meats       Meat   // &lt;Field&gt;  &lt;Type&gt;
+  Fruits      Fruit  // &lt;Field&gt;  &lt;Type&gt;
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Here, we&#8217;ve set up a <code>Meal</code> struct that describes what generally goes into a meal: 1x <code>Veg</code>, 1x <code>Meat</code>, and 1x <code>Fruit</code>. Apart from being able to programmatically compare two different meals (e.g. does <code>meal1</code> contain the same <code>Veg</code>, <code>Meat</code>, and <code>Fruit</code>) like how we compared our <code>Fruits</code> and <code>Vegetables</code>, this makes our data <em>very readable</em>. Another developer who comes to our code and wants to figure out what <code>Meal</code>s are can read the type definition and instantly know what data should go into it, and how it plays with the rest of the program.</p>
+</div>
+<div class="paragraph">
+<p>A more practical example would be describing a list of people:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-go" data-lang="go">type Person struct {
+  ID int
+  Name string
+  Phone string
+  Email string
+}
+
+type AddressBook []Person</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>From reading this type definition, we know that:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Each person has four attributes that we save in our program: an <code>ID</code> (which is a number), a <code>Name</code>, a <code>Phone</code> number (which we save as text), and an <code>Email</code> address.</p>
+</li>
+<li>
+<p>An <code>AddressBook</code> is a list of people, which uses the <code>Person</code> struct. So we know that the <code>AddressBook</code> type contains the <code>ID</code>, <code>Name</code>, <code>Phone</code> number, and <code>Email</code> address of each person in it.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>And most importantly, we know the data types to expect when using the data of these types:
+. We know that <code>ID</code> is a number and not, say, a hexadecimal string like <code>2c34788af99f9ca074434e362d584d54</code>.
+. We know that the phone number of each person is stored as text.
+. We also know that the first name and last name are not differentiated in our records — our program doesn&#8217;t care.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_4_going_deeper">4. Going deeper</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>All this really kicked in for me <em>only</em> when I needed to figure out what other Go developers were thinking. Earlier this week I was stuck trying to figure out why, to <a href="https://www.shootbird.work/posts/workblogging-blockchain-basics/">extract an Ethereum wallet address from a private key</a>, I had to write these lines of code:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-go" data-lang="go">publicKey := privateKey.Public()
+publicKeyECDSA, ok := publicKey.(*ecdsa.PublicKey)
+if !ok {
+  log.Fatal("error casting public key to ECDSA")
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This, of course, stumped me. Calling <code>privateKey.Public()</code> should have already given me the <code>PublicKey</code>, but it apparently didn&#8217;t — I had to get it by making an additional (and strange) <code>publicKey.(*ecdsa.PublicKey)</code> call.</p>
+</div>
+<div class="paragraph">
+<p>Digging into the Go source code, I realised what was happening:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-go" data-lang="go">// From $GOROOT/libexec/src/crypto/ecdsa/ecdsa.go
+
+// PublicKey represents an ECDSA public key.
+type PublicKey struct {
+	elliptic.Curve
+	X, Y *big.Int
+}
+
+// PrivateKey represents an ECDSA private key.
+type PrivateKey struct {
+	PublicKey
+	D *big.Int
+}
+
+//...
+
+// Public returns the public key corresponding to priv.
+func (priv *PrivateKey) Public() crypto.PublicKey {
+	return &amp;priv.PublicKey
+}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>A given <code>PrivateKey</code> allows you to get its associated <code>PublicKey</code> by calling its <code>Public()</code> method.</p>
+</li>
+<li>
+<p>But the curious thing is that it returns a value that&#8217;s of type <code>crypto.PublicKey</code> instead of <code>PublicKey</code>, which means that it&#8217;s <em>not</em> returning the <code>PublicKey</code> type we see defined above the method, but another type that&#8217;s defined in the <code>crypto</code> library:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-go" data-lang="go">// From $GOROOT/libexec/src/crypto/crypto.go
+
+// PublicKey represents a public key using an unspecified algorithm.
+type PublicKey interface{}
+
+// PrivateKey represents a private key using an unspecified algorithm.
+type PrivateKey interface{}</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>I don&#8217;t fully understand this, but I assume that it&#8217;s so that different libraries can use the same <code>crypto</code> library as its base.</p>
+</li>
+<li>
+<p>So, in order to get the ECDSA public key that we need to use as our Ethererum address, we need to cast the PublicKey as type <code>*ecdsa.PublicKey</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_5_postscript">5. Postscript</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Lost? I am too. But I&#8217;m learning from it. The legibility of Go&#8217;s type system and its structs help with this — being able to very quickly see and parse the internals of Go and the libraries that I have to write about gives me a better understanding of the systems I&#8217;m using and why they act the way they do.</p>
+</div>
+<div class="paragraph">
+<p>Now, I&#8217;ve also got one more descriptive tool under my belt: the Go struct. It&#8217;s a useful way of describing packs of data and their types that I&#8217;ll be using more of when writing. I hope this has been of use to you as well. Until next time.</p>
+</div>
+</div>
+</div>
+
+</div>
+<section class="post-footer">
+	<img class="profileImage" src="https://www.shootbird.work/zed-square-400px.jpg" />
+	<section><strong>Author |</strong> Zed is a former educator and currently a
+  <a href="https://www.zeddee.com/cv">professional explainer</a>.
+  He writes about software, video games, and narrative design.
+  If you have software or a system that needs explaining
+  (to frustrated users, or you just need someone to write
+  stuff down for you), you can contact him for work at
+  <a href="mailto://zed@nsdmdh.com">zed@nsdmdh.com</a>.</section>
+</section>
+
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+
+    
+        <a href="https://www.shootbird.work/posts">back</a>
+        
+            &#183;
+        
+    
+    <a href="https://www.shootbird.work/">
+        main
+    </a>
+       &#183; 
+    
+        
+            <a href="https://www.shootbird.work/what-is-shootbird">
+                打鳥 (shoot bird?)
+            </a>
+        
+    
+    
+        
+            &#183; 
+            <a href="https://www.shootbird.work/hire-us">
+                hire us
+            </a>
+        
+            &#183; 
+            <a href="https://www.shootbird.work/posts">
+                blog
+            </a>
+        
+    
+
+</p>
+
+</div>
+
+
+        <div class="section footer"><span>©2018 <a href="https://www.zeddee.com/">zed</a>.</span>
+</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on ShootBird</title>
+    <link>https://www.shootbird.work/tags/go/</link>
+    <description>Recent content in Go on ShootBird</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 14 Dec 2018 01:30:26 +0800</lastBuildDate>
+    
+	<atom:link href="https://www.shootbird.work/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>I ❤️ Go: Types and Structs</title>
+      <link>https://www.shootbird.work/posts/i-love-go-structs/</link>
+      <pubDate>Fri, 14 Dec 2018 01:30:26 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/posts/i-love-go-structs/</guid>
+      <description>Table of Contents 1. Why types are important 2. Custom Types 3. Structs 4. Going deeper 5. Postscript   I&amp;#8217;d like to take a moment here and talk about how much I love Go&amp;#8217;s type system, and more importantly, how Go&amp;#8217;s struct type has changed my life.
+ 1. Why types are important   Go is a statically-typed language.
+  This means that you have to define the data type of each variable you use in your code.</description>
+    </item>
+    
+  </channel>
+</rss>

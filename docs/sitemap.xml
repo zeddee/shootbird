@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.shootbird.work/posts/i-love-go-structs/</loc>
+    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.shootbird.work/posts/workblogging-blockchain-basics/</loc>
     <lastmod>2018-12-13T03:12:33+08:00</lastmod>
   </url>
@@ -164,6 +169,12 @@
   </url>
   
   <url>
+    <loc>https://www.shootbird.work/tags/go/</loc>
+    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.shootbird.work/tags/go-programming/</loc>
     <lastmod>2018-11-21T23:14:41+08:00</lastmod>
     <priority>0</priority>
@@ -171,7 +182,7 @@
   
   <url>
     <loc>https://www.shootbird.work/tags/golang/</loc>
-    <lastmod>2018-11-21T23:14:41+08:00</lastmod>
+    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -213,7 +224,13 @@
   
   <url>
     <loc>https://www.shootbird.work/posts/</loc>
-    <lastmod>2018-12-13T03:12:33+08:00</lastmod>
+    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/programming/</loc>
+    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -231,7 +248,7 @@
   
   <url>
     <loc>https://www.shootbird.work/</loc>
-    <lastmod>2018-12-13T03:12:33+08:00</lastmod>
+    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
     <priority>0</priority>
   </url>
   
