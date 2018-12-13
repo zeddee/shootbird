@@ -1,0 +1,209 @@
+---
+title: "I ❤️ Go: Types and Structs"
+date: 2018-12-14T01:30:26+08:00
+draft: false
+showDate: true
+tags: ["Golang", "Go", "programming"]
+---
+:toc: auto
+
+I'd like to take a moment here and talk about how much I love Go's type system, and more importantly, how Go's `struct` type has changed my life.
+
+== 1. Why types are important
+
+* Go is a statically-typed language.
+* This means that you have to define the data type of each variable you use in your code.
+* This is the programming equivalent of calling your shots in a game of pool.
+* Types that we usually see in programming languages are ``string``s (text characters), ``int``s (numbers).
+* Types are important because writing them into a program tells it how to handle a specific type of data that we're feeding to it.
+
+An example (albeit simplistic) of why this is important:
+
+* Imagine you're working with a list of phone numbers: ``[44034633, 60242165, 68524214, 15706247, 51469010]``
+* If you want to add the country code ``+65`` to each phone number in the list, you'd instinctively want to do something like ``65 + 44034633``.
+* If you've told your program that ``65`` and ``44034633`` should be treated like text and not like numbers — i.e. as `string` types — then you'd get the expected result: ``6544034633``
+* If you haven't told your program that ``65`` and ``44034633`` should be treated like text, your program may inadvertently treat them as numbers, giving you: ``44034698``.
+
+A more complex example would be working with `Time`:
+
+* `Time` is a data type in Go.
+* This is frustrating at first: why can't you just write the time in link:https://tools.ietf.org/html/rfc1123[RFC1123]/link:https://tools.ietf.org/html/rfc822#section-5.1[RFC822] formats? (e.g. 15:40:08) and have your program understand it?
+* Reason 1: Because computers understand time in terms of link:https://en.wikipedia.org/wiki/Unix_time[Unix time]: the number of seconds since 1 January 1970, 00:00:00 (https://time.is/Unix_time_now).
+* Reason 2: You can't add time values like normal numbers. Adding ``40`` minutes to ``30`` minutes will give you ``70`` minutes, but unless you have a way to get your program to understand that there are ``60`` minutes to an hour, you'll have issues getting your program to understand that you wanted your alarm set at ``8:10PM`` and not ``7:70PM``.
+* Go handles this by forcing you make an explicit conversion from a time like "4 hours" to the `Time` type (run the code link:https://play.golang.org/p/9t-PCd5AAFk[here]):
+
+[source, go]
+----
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	timenow := time.Now() // Get the time now.
+	fourhours, _ := time.ParseDuration("4h") // Create a value for a duration of four hours.
+	timeFourHoursFromNow := timenow.Add(fourhours) // Add four hours to the time now.
+	fmt.Println(timeFourHoursFromNow)
+}
+----
+
+* Notice how the controlled bounds of each type — `Time` and `Duration` — makes sure that we don't try to mash together values that aren't compatible with each other. You can't add an `int` to `Time` or `Duration`. In fact, you can't add a `Duration` to a `Time` unless it's through the `Time.Add(<duration>)` method.
+
+== 2. Custom Types
+
+One of the best things about Go is that it allows you to define your own data types. For example (code link:https://play.golang.org/p/1QPLo4jTy5R[here]):
+
+[source, go]
+----
+package main
+
+import (
+	"fmt"
+	"reflect"
+)
+
+type Vegetable string
+type Vegetables []Vegetable
+type Fruit string
+type Fruits []Fruit
+
+func main() {
+  fruits := []Fruit{"Tomato"}
+  fruits2 := []Fruit{"Apple"}
+  veggies := []Vegetable{"Pizza"}
+  veggies2 := []Vegetable{"Cabbage"}
+
+  fruits3 := append(fruits, fruits2...)
+  fmt.Println(fruits3)
+  veggies3 := append(veggies, veggies2...)
+  fmt.Println(veggies3)
+
+  //cantdothis := append(fruits, veggies)
+  //fmt.Println(cantdothis)
+
+  fmt.Println("Tomato is a:", reflect.TypeOf(fruits3[0]))
+  fmt.Println("Pizza is a:", reflect.TypeOf(veggies3[0]))
+}
+----
+
+Here, 
+
+. We've defined a `Vegetable` and `Fruit` type, which both have a base type of `string`
+. We've also defined a `Vegetables` and `Fruits` type, which are lists of `Vegetable` and `Fruit` respectively.
+. In our small program, we can add `fruits` and `fruits2` together to form `fruits3`.
+. We also can add `veggies` and `veggies2` together to form `veggies3`.
+. But we can't add `fruits` and `veggies` together because we've set them as different data types `Fruits` `and `Vegetables` respectively.
+. We can check the type of a variable by calling `reflect.TypeOf(<var>)` on it.
+
+Custom types are useful because it helps you define and describe your data very handily. We'll get into that in the next section when we finally get to talking about structs.
+
+== 3. Structs
+
+A Go `struct` is a data type. But unlike data types like `Time`, `string`, and `int`, it doesn't designate a type of value, but instead is used to group data types together under a single name. That's why it's also known as an *aggregate type*.
+
+It allows us to do stuff like this:
+
+[source, go]
+----
+type Veg string
+type Meat string
+type Fruit string
+
+type Meal struct {
+  Vegetables  Veg    // <Field>  <Type>
+  Meats       Meat   // <Field>  <Type>
+  Fruits      Fruit  // <Field>  <Type>
+}
+----
+
+Here, we've set up a `Meal` struct that describes what generally goes into a meal: 1x `Veg`, 1x `Meat`, and 1x `Fruit`. Apart from being able to programmatically compare two different meals (e.g. does `meal1` contain the same `Veg`, `Meat`, and `Fruit`) like how we compared our `Fruits` and `Vegetables`, this makes our data _very readable_. Another developer who comes to our code and wants to figure out what ``Meal``s are can read the type definition and instantly know what data should go into it, and how it plays with the rest of the program.
+
+A more practical example would be describing a list of people:
+
+[source, go]
+----
+type Person struct {
+  ID int
+  Name string
+  Phone string
+  Email string
+}
+
+type AddressBook []Person
+----
+
+From reading this type definition, we know that:
+
+. Each person has four attributes that we save in our program: an `ID` (which is a number), a `Name`, a `Phone` number (which we save as text), and an `Email` address.
+. An `AddressBook` is a list of people, which uses the `Person` struct. So we know that the `AddressBook` type contains the `ID`, `Name`, `Phone` number, and `Email` address of each person in it.
+
+And most importantly, we know the data types to expect when using the data of these types:
+. We know that `ID` is a number and not, say, a hexadecimal string like `2c34788af99f9ca074434e362d584d54`.
+. We know that the phone number of each person is stored as text.
+. We also know that the first name and last name are not differentiated in our records — our program doesn't care.
+
+== 4. Going deeper
+
+All this really kicked in for me _only_ when I needed to figure out what other Go developers were thinking. Earlier this week I was stuck trying to figure out why, to link:https://www.shootbird.work/posts/workblogging-blockchain-basics/[extract an Ethereum wallet address from a private key], I had to write these lines of code:
+
+[source, go]
+----
+publicKey := privateKey.Public()
+publicKeyECDSA, ok := publicKey.(*ecdsa.PublicKey)
+if !ok {
+  log.Fatal("error casting public key to ECDSA")
+}
+----
+
+This, of course, stumped me. Calling `privateKey.Public()` should have already given me the `PublicKey`, but it apparently didn't — I had to get it by making an additional (and strange) `publicKey.(*ecdsa.PublicKey)` call. 
+
+Digging into the Go source code, I realised what was happening:
+
+[source, go]
+----
+// From $GOROOT/libexec/src/crypto/ecdsa/ecdsa.go
+
+// PublicKey represents an ECDSA public key.
+type PublicKey struct {
+	elliptic.Curve
+	X, Y *big.Int
+}
+
+// PrivateKey represents an ECDSA private key.
+type PrivateKey struct {
+	PublicKey
+	D *big.Int
+}
+
+//...
+
+// Public returns the public key corresponding to priv.
+func (priv *PrivateKey) Public() crypto.PublicKey {
+	return &priv.PublicKey
+}
+----
+
+* A given `PrivateKey` allows you to get its associated `PublicKey` by calling its `Public()` method. 
+* But the curious thing is that it returns a value that's of type `crypto.PublicKey` instead of `PublicKey`, which means that it's _not_ returning the `PublicKey` type we see defined above the method, but another type that's defined in the `crypto` library:
+
+[source, go]
+----
+// From $GOROOT/libexec/src/crypto/crypto.go
+
+// PublicKey represents a public key using an unspecified algorithm.
+type PublicKey interface{}
+
+// PrivateKey represents a private key using an unspecified algorithm.
+type PrivateKey interface{}
+----
+
+* I don't fully understand this, but I assume that it's so that different libraries can use the same `crypto` library as its base.
+* So, in order to get the ECDSA public key that we need to use as our Ethererum address, we need to cast the PublicKey as type `*ecdsa.PublicKey`.
+
+== 5. Postscript
+
+Lost? I am too. But I'm learning from it. The legibility of Go's type system and its structs help with this — being able to very quickly see and parse the internals of Go and the libraries that I have to write about gives me a better understanding of the systems I'm using and why they act the way they do.
+
+Now, I've also got one more descriptive tool under my belt: the Go struct. It's a useful way of describing packs of data and their types that I'll be using more of when writing. I hope this has been of use to you as well. Until next time.
