@@ -1,0 +1,3 @@
+[submodule "themes/light-sam"]
+	path = themes/light-sam
+	url = git@github.com:zeddee/light-sam.git
