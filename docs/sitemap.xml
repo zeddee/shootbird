@@ -38,11 +38,6 @@
   </url>
   
   <url>
-    <loc>https://www.shootbird.work/posts/westworld-s2e10/</loc>
-    <lastmod>2018-11-12T03:39:20+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.shootbird.work/posts/learn-how-to-use-terminal/</loc>
     <lastmod>2018-11-01T05:10:02+08:00</lastmod>
   </url>
@@ -111,12 +106,6 @@
   <url>
     <loc>https://www.shootbird.work/tags/command-line/</loc>
     <lastmod>2018-11-01T05:10:02+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/tags/comment/</loc>
-    <lastmod>2018-11-12T03:39:20+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -241,12 +230,6 @@
   </url>
   
   <url>
-    <loc>https://www.shootbird.work/tags/science-fiction/</loc>
-    <lastmod>2018-11-12T03:39:20+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.shootbird.work/</loc>
     <lastmod>2018-12-14T01:30:26+08:00</lastmod>
     <priority>0</priority>
@@ -315,12 +298,6 @@
   <url>
     <loc>https://www.shootbird.work/tags/ux/</loc>
     <lastmod>2018-11-01T04:21:08+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/tags/westworld/</loc>
-    <lastmod>2018-11-12T03:39:20+08:00</lastmod>
     <priority>0</priority>
   </url>
   
