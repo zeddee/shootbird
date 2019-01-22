@@ -4,12 +4,24 @@ date: 2018-12-07T01:05:56+08:00
 draft: false
 showDate: true
 tags: ["AI","ML","artificial intelligence", "machine learning", "complexity"]
-images: [""]
 ---
+:toc: auto
+//:lastupdated: [updated 22 Jan 2019]
 
-AI is not magic. Movies have overwrought this idea that we're making tiny microprocessor equivalents of the human brain that can talk, think, and act like us. But the reality is quite different. 
+//{lastupdated}
 
-Here, I'll cover how to question an AI/ML claim, because the hardest part about asking questions about a subject is knowing where to start. Hopefully, this would provide you with better tooling with which to think about AI/ML and move past outdated movie tropes.
+TIP: Joi Ito's opening address at the
+link:https://www.youtube.com/watch?v=MyW6eAGV-eM&list=PLj62-wQeg_DjuoWS4A_VYzLWtEVUZj1IO[The Ethics and Governance of AI]
+conference, 3 Feb 2018, is a good primer on the current AI landscape.
+He goes into how he thinks about AI and the industry's recent developments.
+
+AI is not magic.
+Movies have overwrought this idea that we're making silicon and metal equivalents
+of the human brain that can talk, think, and act like us.
+Some of these claims may hold water, some may not; some may be mis-construed or over-hyped.
+This short writeup aims to equip you with a mental toolset to tell hype from reality.
+
+I'll cover how to question an AI/ML claim, because the hardest part about asking questions about a subject is knowing where to start. Hopefully, this would provide you with better tooling with which to think about AI/ML and move past outdated movie tropes.
 
 NOTE: I'm dumping my initial thoughts here while working on other things, so the article will be a bit rough and updated as I go along. But the general idea will stay constant: you should be thinking about these questions when approaching an AI/ML claim critically.
 
@@ -17,7 +29,7 @@ NOTE: I'm dumping my initial thoughts here while working on other things, so the
 
 The first thing you'll have to understand when parsing an AI/ML claim is that you're still dealing with machines, and machines need instructions to operate. This makes very clear the boundary of AI/ML generated "thought" — that whatever an AI/ML system produces, it'll be limited by human design.
 
-Then what about AI/ML systems that teach themselves things? This is also known as unsupervised learning — machines learn how to give themselves instructions, and make decisions or predictions that they weren't explictly designed or instructed for. But these instructions are still based on an original set of instructions that act as a guideline for how to generate these new instructions. 
+Then what about AI/ML systems that teach themselves things? They use what is known as unsupervised learning algorithms. Machines using unsupervised learning algorithms learn how to give themselves instructions, and make decisions or predictions that they weren't explictly designed or instructed for. But these instructions are still based on an original set of instructions that act as a guideline for how to generate these new instructions. 
 
 So the limiting factor of human design still remains — because of the limitations of the human mind and how we design systems, an AI/ML system is usually only good at one thing. There's a reason why Alphago only plays board games (2 dimensional, well-defined operating spaces), Boston Dynamics' robots don't talk, and Alexa doesn't have legs.
 
