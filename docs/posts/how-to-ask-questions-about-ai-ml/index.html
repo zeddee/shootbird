@@ -10,22 +10,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 
-<meta name="description" content="AI is not magic. Movies have overwrought this idea that we&#8217;re making tiny microprocessor equivalents of the human brain that can talk, think, and act like us. But the reality is quite different.
- Here, I&#8217;ll cover how to question an AI/ML claim, because the hardest part about asking questions about a subject is knowing where to start. Hopefully, this would provide you with better tooling with which to think about AI/ML and move past outdated movie tropes.">
+<meta name="description" content="Table of Contents Mental model Questions to ask Misc     Tip  Joi Ito&#8217;s opening address at the The Ethics and Governance of AI conference, 3 Feb 2018, is a good primer on the current AI landscape. He goes into how he thinks about AI and the industry&#8217;s recent developments.     AI is not magic. Movies have overwrought this idea that we&#8217;re making silicon and metal equivalents of the human brain that can talk, think, and act like us.">
 
 <meta name="twitter:card" content="summary">
 <meta name="twitter:domain" content="https://www.shootbird.work/">
 
 <meta name="twitter:image" content="https://www.shootbird.work/img/logo/shootbird_opengraph.png">
 <meta name="twitter:title" property="og:title" itemprop="title name" content="How to ask questions about an AI/ML claim">
-<meta name="twitter:description" property="og:description" itemprop="description" content="AI is not magic. Movies have overwrought this idea that we&#8217;re making tiny microprocessor equivalents of the human brain that can talk, think, and act like us. But the reality is quite different.
- Here, I&#8217;ll cover how to question an AI/ML claim, because the hardest part about asking questions about a subject is knowing where to start. Hopefully, this would provide you with better tooling with which to think about AI/ML and move past outdated movie tropes."}}>
+<meta name="twitter:description" property="og:description" itemprop="description" content="Table of Contents Mental model Questions to ask Misc     Tip  Joi Ito&#8217;s opening address at the The Ethics and Governance of AI conference, 3 Feb 2018, is a good primer on the current AI landscape. He goes into how he thinks about AI and the industry&#8217;s recent developments.     AI is not magic. Movies have overwrought this idea that we&#8217;re making silicon and metal equivalents of the human brain that can talk, think, and act like us."}}>
 <meta property="og:type" content="article" />
 <meta name="og:url" content="https://www.shootbird.work/">
 <meta name="og:title" content="How to ask questions about an AI/ML claim">
 <meta name="og:image" itemprop="image primaryImageOfPage" content="https://www.shootbird.work/img/logo/shootbird_opengraph.png">
-
-<meta property="og:image" content="https://www.shootbird.work/" />
 
 <title>How to ask questions about an AI/ML claim</title>
 <link rel="shortcut icon" href="https://www.shootbird.work/favicon.png" id="favicon">
@@ -73,7 +69,7 @@
 		
 		  Fri Dec 07, 2018
 			&#183;
-			907 words
+			986 words
 		
     
     <div class="tag-container">
@@ -111,11 +107,38 @@
     </div>
     
     <hr/>
-    <div class="paragraph">
-<p>AI is not magic. Movies have overwrought this idea that we&#8217;re making tiny microprocessor equivalents of the human brain that can talk, think, and act like us. But the reality is quite different.</p>
+    <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_mental_model">Mental model</a></li>
+<li><a href="#_questions_to_ask">Questions to ask</a></li>
+<li><a href="#_misc">Misc</a></li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Tip</div>
+</td>
+<td class="content">
+Joi Ito&#8217;s opening address at the
+<a href="https://www.youtube.com/watch?v=MyW6eAGV-eM&amp;list=PLj62-wQeg_DjuoWS4A_VYzLWtEVUZj1IO">The Ethics and Governance of AI</a>
+conference, 3 Feb 2018, is a good primer on the current AI landscape.
+He goes into how he thinks about AI and the industry&#8217;s recent developments.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Here, I&#8217;ll cover how to question an AI/ML claim, because the hardest part about asking questions about a subject is knowing where to start. Hopefully, this would provide you with better tooling with which to think about AI/ML and move past outdated movie tropes.</p>
+<p>AI is not magic.
+Movies have overwrought this idea that we&#8217;re making silicon and metal equivalents
+of the human brain that can talk, think, and act like us.
+Some of these claims may hold water, some may not; some may be mis-construed or over-hyped.
+This short writeup aims to equip you with a mental toolset to tell hype from reality.</p>
+</div>
+<div class="paragraph">
+<p>I&#8217;ll cover how to question an AI/ML claim, because the hardest part about asking questions about a subject is knowing where to start. Hopefully, this would provide you with better tooling with which to think about AI/ML and move past outdated movie tropes.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -136,7 +159,7 @@ I&#8217;m dumping my initial thoughts here while working on other things, so the
 <p>The first thing you&#8217;ll have to understand when parsing an AI/ML claim is that you&#8217;re still dealing with machines, and machines need instructions to operate. This makes very clear the boundary of AI/ML generated "thought" — that whatever an AI/ML system produces, it&#8217;ll be limited by human design.</p>
 </div>
 <div class="paragraph">
-<p>Then what about AI/ML systems that teach themselves things? This is also known as unsupervised learning — machines learn how to give themselves instructions, and make decisions or predictions that they weren&#8217;t explictly designed or instructed for. But these instructions are still based on an original set of instructions that act as a guideline for how to generate these new instructions.</p>
+<p>Then what about AI/ML systems that teach themselves things? They use what is known as unsupervised learning algorithms. Machines using unsupervised learning algorithms learn how to give themselves instructions, and make decisions or predictions that they weren&#8217;t explictly designed or instructed for. But these instructions are still based on an original set of instructions that act as a guideline for how to generate these new instructions.</p>
 </div>
 <div class="paragraph">
 <p>So the limiting factor of human design still remains — because of the limitations of the human mind and how we design systems, an AI/ML system is usually only good at one thing. There&#8217;s a reason why Alphago only plays board games (2 dimensional, well-defined operating spaces), Boston Dynamics' robots don&#8217;t talk, and Alexa doesn&#8217;t have legs.</p>
