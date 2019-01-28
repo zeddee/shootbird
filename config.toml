@@ -32,12 +32,12 @@ canonifyURLs = true
   If you have software or a system that needs explaining
   (to frustrated users, or you just need someone to write
   stuff down for you), you can contact him for work at
-  [zed@nsdmdh.com](mailto://zed@nsdmdh.com).
+  [zed@shootbird.work](mailto://zed@shootbird.work).
   """
   mainSiteDescription = """
   **ShootBird** is a small technical writing consultancy. We provide writing services for companies who want to build customer trust with well-researched and highly-readable content.
   """
-  cta = "Ping [zed@nsdmdh.com](mailto://zed@nsdmdh.com) for questions and quotes."
+  cta = "Ping [zed@shootbird.work](mailto://zed@shootbird.work) for questions and quotes."
 
 # Metadata
     # description         = "Shoot Bird provides writing services for organisations who need well-researched technical content to build user trust and reduce customer support load."            # Max 160 characters show in search results
