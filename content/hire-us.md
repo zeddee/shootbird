@@ -23,6 +23,8 @@ We've done stuff like this:
 * Individual guides (sample code + instructional content): 
   * [MessageBird: Number Masking Guide (Go/Golang)](https://github.com/messagebirdguides/masked-numbers-guide-go)
   * [MessageBird: SMS Marketing Subscriptions (Go/Golang)](https://github.com/messagebirdguides/subscriptions-guide-go)
+  * [Blockchain: Creating a DApp in Go with Geth](https://kauri.io/article/60a36c1b17d645939f63415218dc24f9/v1/creating-a-dapp-in-go-with-geth)
+
 
 Other things we can do:
 
