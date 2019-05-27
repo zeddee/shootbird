@@ -33,8 +33,8 @@ Other things we can do:
 - Information and instructional design.
 - General tech consultancy (we help people figure out what ✨tech✨ things they're getting themselves into).
 
-For more **information** or a **quote**, email [Zed](https://www.zeddee.com/) at [zed@nsdmdh.com](mailto://zed@nsdmdh.com).
+For more **information** or a **quote**, email [Zed](https://www.zeddee.com/) at [zed@shootbird.work](mailto://zed@shootbird.work).
 
 *~*
 
-**Got a content-related problem that's not listed here?** Just drop us an [email](mailto://zed@nsdmdh.com) — we just might be able to help.
+**Got a content-related problem that's not listed here?** Just drop us an [email](mailto://zed@shootbird.work) — we just might be able to help.

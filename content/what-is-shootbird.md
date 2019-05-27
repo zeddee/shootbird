@@ -15,7 +15,7 @@ While not formally trained as a software developer, he's been thrown
 has made him fluent in dev-speak, and holds his own when writing about
 [technical subjects](/hire-us) in a human-friendly manner.
 
-Ping him at [zed@nsdmdh.com](mailto://zed@nsdmdh.com)
+Ping him at [zed@shootbird.work](mailto://zed@shootbird.work)
 for business enquiries, or if you want to talk about anything he's written about.
 
 *~*
@@ -39,4 +39,4 @@ service of finding a meatier target than if you were on target.
 
 *~*
 
-Contact [zed@nsdmdh.com](mailto://zed@nsdmdh.com) for work/questions.
+Contact [zed@shootbird.work](mailto://zed@shootbird.work) for work/questions.
