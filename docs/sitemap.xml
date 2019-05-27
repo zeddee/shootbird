@@ -3,81 +3,49 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.shootbird.work/tags/go/</loc>
+    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.shootbird.work/posts/i-love-go-structs/</loc>
     <lastmod>2018-12-14T01:30:26+08:00</lastmod>
   </url>
   
   <url>
+    <loc>https://www.shootbird.work/posts/</loc>
+    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/</loc>
+    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/</loc>
+    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/golang/</loc>
+    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/programming/</loc>
+    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.shootbird.work/posts/workblogging-blockchain-basics/</loc>
     <lastmod>2018-12-13T03:12:33+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/posts/how-to-ask-questions-about-ai-ml/</loc>
-    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/posts/examples-of-github-hosted-sites/</loc>
-    <lastmod>2018-12-04T13:49:44+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/posts/quick-n-dirty-publishing/</loc>
-    <lastmod>2018-12-04T12:26:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/posts/struggling-with-complexity/</loc>
-    <lastmod>2018-11-30T00:42:53+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/posts/getting-stuff-out-of-a-todo-app/</loc>
-    <lastmod>2018-11-21T23:14:41+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/posts/learn-how-to-use-terminal/</loc>
-    <lastmod>2018-11-01T05:10:02+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/posts/when-to-start-naming-things/</loc>
-    <lastmod>2018-11-01T04:21:08+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/posts/why-technical-documentation/</loc>
-    <lastmod>2018-10-23T23:42:28+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/hire-us/</loc>
-    <lastmod>2018-10-23T23:29:43+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/what-is-shootbird/</loc>
-    <lastmod>2018-10-22T17:54:04+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/tags/ai/</loc>
-    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/tags/artificial-intelligence/</loc>
-    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/tags/bash/</loc>
-    <lastmod>2018-11-01T05:10:02+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -89,29 +57,6 @@
   <url>
     <loc>https://www.shootbird.work/tags/blockchain/</loc>
     <lastmod>2018-12-13T03:12:33+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/tags/cognitive-load/</loc>
-    <lastmod>2018-11-01T04:21:08+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/tags/command-line/</loc>
-    <lastmod>2018-11-01T05:10:02+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/tags/complexity/</loc>
-    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -128,62 +73,43 @@
   </url>
   
   <url>
-    <loc>https://www.shootbird.work/tags/dark-patterns/</loc>
-    <lastmod>2018-11-01T04:21:08+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/tags/design/</loc>
-    <lastmod>2018-11-01T04:21:08+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/tags/documentation/</loc>
-    <lastmod>2018-10-23T23:42:28+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.shootbird.work/tags/ethereum/</loc>
     <lastmod>2018-12-13T03:12:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.shootbird.work/tags/github/</loc>
-    <lastmod>2018-12-04T13:49:44+08:00</lastmod>
+    <loc>https://www.shootbird.work/tags/workblogging/</loc>
+    <lastmod>2018-12-13T03:12:33+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.shootbird.work/tags/go/</loc>
-    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
+    <loc>https://www.shootbird.work/tags/ai/</loc>
+    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.shootbird.work/tags/go-programming/</loc>
-    <lastmod>2018-11-21T23:14:41+08:00</lastmod>
+    <loc>https://www.shootbird.work/posts/how-to-ask-questions-about-ai-ml/</loc>
+    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/ml/</loc>
+    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.shootbird.work/tags/golang/</loc>
-    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
+    <loc>https://www.shootbird.work/tags/artificial-intelligence/</loc>
+    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.shootbird.work/tags/html/</loc>
-    <lastmod>2018-12-04T13:49:44+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/tags/imovie/</loc>
-    <lastmod>2018-11-01T04:21:08+08:00</lastmod>
+    <loc>https://www.shootbird.work/tags/complexity/</loc>
+    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -194,32 +120,19 @@
   </url>
   
   <url>
-    <loc>https://www.shootbird.work/tags/macos/</loc>
-    <lastmod>2018-11-01T04:21:08+08:00</lastmod>
+    <loc>https://www.shootbird.work/posts/examples-of-github-hosted-sites/</loc>
+    <lastmod>2018-12-04T13:49:44+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/github/</loc>
+    <lastmod>2018-12-04T13:49:44+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.shootbird.work/tags/ml/</loc>
-    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/tags/nuance/</loc>
-    <lastmod>2018-11-30T00:42:53+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/posts/</loc>
-    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/tags/programming/</loc>
-    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
+    <loc>https://www.shootbird.work/tags/html/</loc>
+    <lastmod>2018-12-04T13:49:44+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -230,9 +143,14 @@
   </url>
   
   <url>
-    <loc>https://www.shootbird.work/</loc>
-    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
+    <loc>https://www.shootbird.work/tags/tutorial/</loc>
+    <lastmod>2018-12-04T13:49:44+08:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/posts/quick-n-dirty-publishing/</loc>
+    <lastmod>2018-12-04T12:26:38+08:00</lastmod>
   </url>
   
   <url>
@@ -242,26 +160,13 @@
   </url>
   
   <url>
-    <loc>https://www.shootbird.work/tags/</loc>
-    <lastmod>2018-12-07T01:05:56+08:00</lastmod>
-    <priority>0</priority>
+    <loc>https://www.shootbird.work/posts/struggling-with-complexity/</loc>
+    <lastmod>2018-11-30T00:42:53+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.shootbird.work/tags/tech-tips/</loc>
-    <lastmod>2018-11-21T23:14:41+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/tags/technical-communication/</loc>
-    <lastmod>2018-11-01T05:10:02+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/tags/technical-writing/</loc>
-    <lastmod>2018-11-21T23:14:41+08:00</lastmod>
+    <loc>https://www.shootbird.work/tags/nuance/</loc>
+    <lastmod>2018-11-30T00:42:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -278,8 +183,31 @@
   </url>
   
   <url>
-    <loc>https://www.shootbird.work/tags/tutorial/</loc>
-    <lastmod>2018-12-04T13:49:44+08:00</lastmod>
+    <loc>https://www.shootbird.work/tags/unbucket-thinking/</loc>
+    <lastmod>2018-11-30T00:42:53+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/posts/getting-stuff-out-of-a-todo-app/</loc>
+    <lastmod>2018-11-21T23:14:41+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/go-programming/</loc>
+    <lastmod>2018-11-21T23:14:41+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/tech-tips/</loc>
+    <lastmod>2018-11-21T23:14:41+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/technical-writing/</loc>
+    <lastmod>2018-11-21T23:14:41+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -290,8 +218,60 @@
   </url>
   
   <url>
-    <loc>https://www.shootbird.work/tags/unbucket-thinking/</loc>
-    <lastmod>2018-11-30T00:42:53+08:00</lastmod>
+    <loc>https://www.shootbird.work/posts/learn-how-to-use-terminal/</loc>
+    <lastmod>2018-11-01T05:10:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/bash/</loc>
+    <lastmod>2018-11-01T05:10:02+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/command-line/</loc>
+    <lastmod>2018-11-01T05:10:02+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/technical-communication/</loc>
+    <lastmod>2018-11-01T05:10:02+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/posts/when-to-start-naming-things/</loc>
+    <lastmod>2018-11-01T04:21:08+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/cognitive-load/</loc>
+    <lastmod>2018-11-01T04:21:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/dark-patterns/</loc>
+    <lastmod>2018-11-01T04:21:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/design/</loc>
+    <lastmod>2018-11-01T04:21:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/imovie/</loc>
+    <lastmod>2018-11-01T04:21:08+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/macos/</loc>
+    <lastmod>2018-11-01T04:21:08+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -302,8 +282,28 @@
   </url>
   
   <url>
-    <loc>https://www.shootbird.work/tags/workblogging/</loc>
-    <lastmod>2018-12-13T03:12:33+08:00</lastmod>
+    <loc>https://www.shootbird.work/posts/why-technical-documentation/</loc>
+    <lastmod>2018-10-23T23:42:28+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/documentation/</loc>
+    <lastmod>2018-10-23T23:42:28+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/hire-us/</loc>
+    <lastmod>2018-10-23T23:29:43+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/what-is-shootbird/</loc>
+    <lastmod>2018-10-22T17:54:04+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/categories/</loc>
     <priority>0</priority>
   </url>
   

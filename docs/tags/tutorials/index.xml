@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tutorials on ShootBird</title>
+    <title>tutorials on ShootBird</title>
     <link>https://www.shootbird.work/tags/tutorials/</link>
-    <description>Recent content in Tutorials on ShootBird</description>
+    <description>Recent content in tutorials on ShootBird</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 21 Nov 2018 23:14:41 +0800</lastBuildDate>

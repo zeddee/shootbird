@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Machine Learning on ShootBird</title>
+    <title>machine learning on ShootBird</title>
     <link>https://www.shootbird.work/tags/machine-learning/</link>
-    <description>Recent content in Machine Learning on ShootBird</description>
+    <description>Recent content in machine learning on ShootBird</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 07 Dec 2018 01:05:56 +0800</lastBuildDate>

@@ -6,40 +6,40 @@
     <description>Recent content in Tags on ShootBird</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 07 Dec 2018 01:05:56 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 14 Dec 2018 01:30:26 +0800</lastBuildDate>
     
 	<atom:link href="https://www.shootbird.work/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Ai</title>
-      <link>https://www.shootbird.work/tags/ai/</link>
-      <pubDate>Fri, 07 Dec 2018 01:05:56 +0800</pubDate>
+      <title>Go</title>
+      <link>https://www.shootbird.work/tags/go/</link>
+      <pubDate>Fri, 14 Dec 2018 01:30:26 +0800</pubDate>
       
-      <guid>https://www.shootbird.work/tags/ai/</guid>
+      <guid>https://www.shootbird.work/tags/go/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Artificial Intelligence</title>
-      <link>https://www.shootbird.work/tags/artificial-intelligence/</link>
-      <pubDate>Fri, 07 Dec 2018 01:05:56 +0800</pubDate>
+      <title>golang</title>
+      <link>https://www.shootbird.work/tags/golang/</link>
+      <pubDate>Fri, 14 Dec 2018 01:30:26 +0800</pubDate>
       
-      <guid>https://www.shootbird.work/tags/artificial-intelligence/</guid>
+      <guid>https://www.shootbird.work/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Bash</title>
-      <link>https://www.shootbird.work/tags/bash/</link>
-      <pubDate>Thu, 01 Nov 2018 05:10:02 +0800</pubDate>
+      <title>programming</title>
+      <link>https://www.shootbird.work/tags/programming/</link>
+      <pubDate>Fri, 14 Dec 2018 01:30:26 +0800</pubDate>
       
-      <guid>https://www.shootbird.work/tags/bash/</guid>
+      <guid>https://www.shootbird.work/tags/programming/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Bitcoin</title>
+      <title>bitcoin</title>
       <link>https://www.shootbird.work/tags/bitcoin/</link>
       <pubDate>Thu, 13 Dec 2018 03:12:33 +0800</pubDate>
       
@@ -48,7 +48,7 @@
     </item>
     
     <item>
-      <title>Blockchain</title>
+      <title>blockchain</title>
       <link>https://www.shootbird.work/tags/blockchain/</link>
       <pubDate>Thu, 13 Dec 2018 03:12:33 +0800</pubDate>
       
@@ -57,34 +57,7 @@
     </item>
     
     <item>
-      <title>Cognitive Load</title>
-      <link>https://www.shootbird.work/tags/cognitive-load/</link>
-      <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/cognitive-load/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Command Line</title>
-      <link>https://www.shootbird.work/tags/command-line/</link>
-      <pubDate>Thu, 01 Nov 2018 05:10:02 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/command-line/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Complexity</title>
-      <link>https://www.shootbird.work/tags/complexity/</link>
-      <pubDate>Fri, 07 Dec 2018 01:05:56 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/complexity/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Crypto</title>
+      <title>crypto</title>
       <link>https://www.shootbird.work/tags/crypto/</link>
       <pubDate>Thu, 13 Dec 2018 03:12:33 +0800</pubDate>
       
@@ -93,7 +66,7 @@
     </item>
     
     <item>
-      <title>Cryptocurrencies</title>
+      <title>cryptocurrencies</title>
       <link>https://www.shootbird.work/tags/cryptocurrencies/</link>
       <pubDate>Thu, 13 Dec 2018 03:12:33 +0800</pubDate>
       
@@ -102,38 +75,65 @@
     </item>
     
     <item>
-      <title>Dark Patterns</title>
-      <link>https://www.shootbird.work/tags/dark-patterns/</link>
-      <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/dark-patterns/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Design</title>
-      <link>https://www.shootbird.work/tags/design/</link>
-      <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/design/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Documentation</title>
-      <link>https://www.shootbird.work/tags/documentation/</link>
-      <pubDate>Tue, 23 Oct 2018 23:42:28 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/documentation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ethereum</title>
+      <title>ethereum</title>
       <link>https://www.shootbird.work/tags/ethereum/</link>
       <pubDate>Thu, 13 Dec 2018 03:12:33 +0800</pubDate>
       
       <guid>https://www.shootbird.work/tags/ethereum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>workblogging</title>
+      <link>https://www.shootbird.work/tags/workblogging/</link>
+      <pubDate>Thu, 13 Dec 2018 03:12:33 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/workblogging/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>AI</title>
+      <link>https://www.shootbird.work/tags/ai/</link>
+      <pubDate>Fri, 07 Dec 2018 01:05:56 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ML</title>
+      <link>https://www.shootbird.work/tags/ml/</link>
+      <pubDate>Fri, 07 Dec 2018 01:05:56 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/ml/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>artificial intelligence</title>
+      <link>https://www.shootbird.work/tags/artificial-intelligence/</link>
+      <pubDate>Fri, 07 Dec 2018 01:05:56 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/artificial-intelligence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>complexity</title>
+      <link>https://www.shootbird.work/tags/complexity/</link>
+      <pubDate>Fri, 07 Dec 2018 01:05:56 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/complexity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>machine learning</title>
+      <link>https://www.shootbird.work/tags/machine-learning/</link>
+      <pubDate>Fri, 07 Dec 2018 01:05:56 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/machine-learning/</guid>
       <description></description>
     </item>
     
@@ -147,34 +147,7 @@
     </item>
     
     <item>
-      <title>Go</title>
-      <link>https://www.shootbird.work/tags/go/</link>
-      <pubDate>Fri, 14 Dec 2018 01:30:26 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go Programming</title>
-      <link>https://www.shootbird.work/tags/go-programming/</link>
-      <pubDate>Wed, 21 Nov 2018 23:14:41 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/go-programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>https://www.shootbird.work/tags/golang/</link>
-      <pubDate>Fri, 14 Dec 2018 01:30:26 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Html</title>
+      <title>HTML</title>
       <link>https://www.shootbird.work/tags/html/</link>
       <pubDate>Tue, 04 Dec 2018 13:49:44 +0800</pubDate>
       
@@ -183,61 +156,7 @@
     </item>
     
     <item>
-      <title>Imovie</title>
-      <link>https://www.shootbird.work/tags/imovie/</link>
-      <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/imovie/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Machine Learning</title>
-      <link>https://www.shootbird.work/tags/machine-learning/</link>
-      <pubDate>Fri, 07 Dec 2018 01:05:56 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/machine-learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Macos</title>
-      <link>https://www.shootbird.work/tags/macos/</link>
-      <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/macos/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ml</title>
-      <link>https://www.shootbird.work/tags/ml/</link>
-      <pubDate>Fri, 07 Dec 2018 01:05:56 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/ml/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nuance</title>
-      <link>https://www.shootbird.work/tags/nuance/</link>
-      <pubDate>Fri, 30 Nov 2018 00:42:53 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/nuance/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programming</title>
-      <link>https://www.shootbird.work/tags/programming/</link>
-      <pubDate>Fri, 14 Dec 2018 01:30:26 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/programming/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Publishing</title>
+      <title>publishing</title>
       <link>https://www.shootbird.work/tags/publishing/</link>
       <pubDate>Tue, 04 Dec 2018 13:49:44 +0800</pubDate>
       
@@ -246,61 +165,7 @@
     </item>
     
     <item>
-      <title>Surge.sh</title>
-      <link>https://www.shootbird.work/tags/surge.sh/</link>
-      <pubDate>Tue, 04 Dec 2018 12:26:38 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/surge.sh/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tech Tips</title>
-      <link>https://www.shootbird.work/tags/tech-tips/</link>
-      <pubDate>Wed, 21 Nov 2018 23:14:41 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/tech-tips/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Technical Communication</title>
-      <link>https://www.shootbird.work/tags/technical-communication/</link>
-      <pubDate>Thu, 01 Nov 2018 05:10:02 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/technical-communication/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Technical Writing</title>
-      <link>https://www.shootbird.work/tags/technical-writing/</link>
-      <pubDate>Wed, 21 Nov 2018 23:14:41 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/technical-writing/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Think Complexity</title>
-      <link>https://www.shootbird.work/tags/think-complexity/</link>
-      <pubDate>Fri, 30 Nov 2018 00:42:53 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/think-complexity/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Thinking</title>
-      <link>https://www.shootbird.work/tags/thinking/</link>
-      <pubDate>Fri, 30 Nov 2018 00:42:53 +0800</pubDate>
-      
-      <guid>https://www.shootbird.work/tags/thinking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tutorial</title>
+      <title>tutorial</title>
       <link>https://www.shootbird.work/tags/tutorial/</link>
       <pubDate>Tue, 04 Dec 2018 13:49:44 +0800</pubDate>
       
@@ -309,16 +174,43 @@
     </item>
     
     <item>
-      <title>Tutorials</title>
-      <link>https://www.shootbird.work/tags/tutorials/</link>
-      <pubDate>Wed, 21 Nov 2018 23:14:41 +0800</pubDate>
+      <title>surge.sh</title>
+      <link>https://www.shootbird.work/tags/surge.sh/</link>
+      <pubDate>Tue, 04 Dec 2018 12:26:38 +0800</pubDate>
       
-      <guid>https://www.shootbird.work/tags/tutorials/</guid>
+      <guid>https://www.shootbird.work/tags/surge.sh/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Unbucket Thinking</title>
+      <title>nuance</title>
+      <link>https://www.shootbird.work/tags/nuance/</link>
+      <pubDate>Fri, 30 Nov 2018 00:42:53 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/nuance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>think complexity</title>
+      <link>https://www.shootbird.work/tags/think-complexity/</link>
+      <pubDate>Fri, 30 Nov 2018 00:42:53 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/think-complexity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>thinking</title>
+      <link>https://www.shootbird.work/tags/thinking/</link>
+      <pubDate>Fri, 30 Nov 2018 00:42:53 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/thinking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>unbucket thinking</title>
       <link>https://www.shootbird.work/tags/unbucket-thinking/</link>
       <pubDate>Fri, 30 Nov 2018 00:42:53 +0800</pubDate>
       
@@ -327,7 +219,115 @@
     </item>
     
     <item>
-      <title>Ux</title>
+      <title>go programming</title>
+      <link>https://www.shootbird.work/tags/go-programming/</link>
+      <pubDate>Wed, 21 Nov 2018 23:14:41 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/go-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tech tips</title>
+      <link>https://www.shootbird.work/tags/tech-tips/</link>
+      <pubDate>Wed, 21 Nov 2018 23:14:41 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/tech-tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>technical writing</title>
+      <link>https://www.shootbird.work/tags/technical-writing/</link>
+      <pubDate>Wed, 21 Nov 2018 23:14:41 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/technical-writing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tutorials</title>
+      <link>https://www.shootbird.work/tags/tutorials/</link>
+      <pubDate>Wed, 21 Nov 2018 23:14:41 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/tutorials/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>https://www.shootbird.work/tags/bash/</link>
+      <pubDate>Thu, 01 Nov 2018 05:10:02 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>command line</title>
+      <link>https://www.shootbird.work/tags/command-line/</link>
+      <pubDate>Thu, 01 Nov 2018 05:10:02 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/command-line/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>technical communication</title>
+      <link>https://www.shootbird.work/tags/technical-communication/</link>
+      <pubDate>Thu, 01 Nov 2018 05:10:02 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/technical-communication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>cognitive load</title>
+      <link>https://www.shootbird.work/tags/cognitive-load/</link>
+      <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/cognitive-load/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dark patterns</title>
+      <link>https://www.shootbird.work/tags/dark-patterns/</link>
+      <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/dark-patterns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>design</title>
+      <link>https://www.shootbird.work/tags/design/</link>
+      <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>iMovie</title>
+      <link>https://www.shootbird.work/tags/imovie/</link>
+      <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/imovie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>macOS</title>
+      <link>https://www.shootbird.work/tags/macos/</link>
+      <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/tags/macos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ux</title>
       <link>https://www.shootbird.work/tags/ux/</link>
       <pubDate>Thu, 01 Nov 2018 04:21:08 +0800</pubDate>
       
@@ -336,11 +336,11 @@
     </item>
     
     <item>
-      <title>Workblogging</title>
-      <link>https://www.shootbird.work/tags/workblogging/</link>
-      <pubDate>Thu, 13 Dec 2018 03:12:33 +0800</pubDate>
+      <title>documentation</title>
+      <link>https://www.shootbird.work/tags/documentation/</link>
+      <pubDate>Tue, 23 Oct 2018 23:42:28 +0800</pubDate>
       
-      <guid>https://www.shootbird.work/tags/workblogging/</guid>
+      <guid>https://www.shootbird.work/tags/documentation/</guid>
       <description></description>
     </item>
     
