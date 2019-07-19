@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Using an XLSX file as a simple CMS with Vuepress Excel spreadsheets are an extremely powerful and versatile data format to work with, but comes with the baggage of Microsoft Office formats having been closed proprietary formats for the longest time, and that they&rsquo;re expensive to read i.e. they&rsquo;re binary files that cannot be read by opening them in a text editor.
+Fortunately, other tools such as OpenOffice/LibreOffice and the Google Suite have allowed us to work with these Office formats without having to be locked into a particular piece of software.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="https://www.shootbird.work/">
+
+<meta name="twitter:image" content="https://www.shootbird.work/img/logo/shootbird_opengraph.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Using an XLSX file as a simple CMS with Vuepress">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Using an XLSX file as a simple CMS with Vuepress Excel spreadsheets are an extremely powerful and versatile data format to work with, but comes with the baggage of Microsoft Office formats having been closed proprietary formats for the longest time, and that they&rsquo;re expensive to read i.e. they&rsquo;re binary files that cannot be read by opening them in a text editor.
+Fortunately, other tools such as OpenOffice/LibreOffice and the Google Suite have allowed us to work with these Office formats without having to be locked into a particular piece of software."}}>
+<meta property="og:type" content="article" />
+<meta name="og:url" content="https://www.shootbird.work/">
+<meta name="og:title" content="Using an XLSX file as a simple CMS with Vuepress">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="https://www.shootbird.work/img/logo/shootbird_opengraph.png">
+
+<title>Using an XLSX file as a simple CMS with Vuepress</title>
+<link rel="shortcut icon" href="https://www.shootbird.work/favicon.png" id="favicon">
+<link rel="stylesheet" href="https://www.shootbird.work/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129052246-1"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-129052246-1');
+</script>
+
+
+
+
+
+    
+
+    
+    
+    
+</head>
+
+<body>
+
+    <div class="wrap">
+			<header><a href="https://www.shootbird.work/" 
+  style="border-bottom:none;"
+  alt="Shoot Bird">
+	<img
+    style="width:3rem;"
+    src="https://www.shootbird.work/img/logo/shootbird_logo_beak.png"
+    alt="Shoot Bird" />
+</a>
+</header>
+        <div class="section" id="title">Using an XLSX file as a simple CMS with Vuepress</div>
+
+        
+<div class="section" id="content">
+		
+		  Sat Jul 20, 2019
+			&#183;
+			534 words
+		
+    
+    <div class="tag-container">
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/blog">
+                blog
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/vuepress">
+                vuepress
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/xlsx">
+                xlsx
+            </a>
+        </span>
+        
+        <span class="tag">
+            <a href="https://www.shootbird.work/tags/cms">
+                cms
+            </a>
+        </span>
+        
+    </div>
+    
+    <hr/>
+    
+
+<h1 id="using-an-xlsx-file-as-a-simple-cms-with-vuepress">Using an XLSX file as a simple CMS with Vuepress</h1>
+
+<p>Excel spreadsheets are an extremely powerful and versatile data format to work with,
+but comes with the baggage of Microsoft Office formats having been closed proprietary formats for
+the longest time, and that they&rsquo;re expensive to read i.e. they&rsquo;re binary files that cannot be read
+by opening them in a text editor.</p>
+
+<p>Fortunately, other tools such as OpenOffice/LibreOffice and the Google Suite have allowed us
+to work with these Office formats without having to be locked into a particular piece of software.
+Plus any of the modern Office documents affixed with an &ldquo;x&rdquo; use the
+<a href="https://github.com/OfficeDev/office-content/tree/master/en-us/OpenXMLCon">OpenXML</a> format,
+which Microsoft has provided an SDK for, allowing us to work with Office formats programmatically.</p>
+
+<h2 id="usage">Usage</h2>
+
+<p>I&rsquo;ve put up a sample repository showing how this would work here: <a href="https://github.com/zeddee/vuepress-and-xlsx">https://github.com/zeddee/vuepress-and-xlsx</a></p>
+
+<p>The repository uses:</p>
+
+<ul>
+<li><a href="https://vuepress.vuejs.org/guide/">Vuepress</a></li>
+<li><a href="https://github.com/SheetJS/js-xlsx">js-xlsx</a></li>
+</ul>
+
+<p>To run this sample repository:</p>
+
+<ol>
+<li>Clone with <code>git clone git@github.com:zeddee/vuepress-and-xlsx.git</code></li>
+<li>Install with <code>yarn install</code></li>
+<li>Run with <code>yarn dev</code> and access the site on <code>localhost:8080</code></li>
+</ol>
+
+<p>Modify <code>site/README.md</code> and <code>sample.xlsx</code> to poke around and see how it works.</p>
+
+<h2 id="why-an-xlsx-file">Why an XLSX file</h2>
+
+<p>The <code>.xlsx</code> file is essentially a datastore that allows us to read and write data to one or more tables.
+This essentially means that it can be rigged to behave like, say, a MySQL database that backs a Wordpress instance.
+(That is not to say that you <em>should</em>.)</p>
+
+<p>This is particularly useful if you&rsquo;ve got a bunch of data that&rsquo;s more readily dealt with as a spreadsheet
+rather than a discrete set of articles. For instance, you know, tables, or when designing a D&amp;D campaign.</p>
+
+<p>But while working with spreadsheets might fit the designer&rsquo;s needs, one might want to present the data more
+palatably than directly embedding a Google Sheet into your webpage.</p>
+
+<h2 id="decoupling-data-from-presentation">Decoupling Data from Presentation</h2>
+
+<p>By working with <code>.xslx</code> files programmatically, how you decide to work with and store data in a spreadsheet
+and how you decide to present your data (in this case, on a website) are decoupled.</p>
+
+<p>This means that you deal with data and presentation separately.
+This frees you up to focus on structuring and working with your data as data,
+while leaving your presentation systems (i.e. Vuepress) to deal with how your data
+will be crunched and presented on a separate system.</p>
+
+<p>When the presentation layer fails, you know you just need to debug the code in your presentation layer,
+and not have to worry about the integrity of your data layer.</p>
+
+<p>If your presentation layer fails to import data from the <code>.xlsx</code> file, you know that your data layer has failed,
+so you go and fix that.</p>
+
+<p>And when you update your spreadsheet, data should automatically propagate in the presentation layer, fuss free.</p>
+
+<p>Working this way significantly reduces the amount of cognitive load imposed on you, the writer/data wrangler.</p>
+
+<h2 id="limitations">Limitations</h2>
+
+<p>I&rsquo;ve not tested this approach with more complex tables e.g. with multi-layered column headers, or merged cells.
+As with working with data formats in general, I would suggest keeping your inputs as simple as possible,
+because it keeps your mental model of the project clear and focused, and makes it easier to grok and, more importantly,
+explain to yourself and anyone who wanders into your orbit.</p>
+
+</div>
+<section class="post-footer">
+	<img class="profileImage" src="https://www.shootbird.work/zed-square-400px.jpg" />
+	<section><strong>Author |</strong> Zed is a former educator and currently a
+  <a href="https://www.zeddee.com/cv">professional explainer</a>.
+  He writes about software, video games, and narrative design.
+  If you have software or a system that needs explaining
+  (to frustrated users, or you just need someone to write
+  stuff down for you), you can contact him for work at
+  <a href="mailto://zed@shootbird.work">zed@shootbird.work</a>.</section>
+</section>
+
+
+
+        
+<div class="section bottom-menu">
+    
+<hr />
+<p>
+
+
+    
+        <a href="https://www.shootbird.work/posts">back</a>
+        
+            &#183;
+        
+    
+    <a href="https://www.shootbird.work/">
+        main
+    </a>
+       &#183; 
+    
+        
+            <a href="https://www.shootbird.work/what-is-shootbird">
+                打鳥 (shoot bird?)
+            </a>
+        
+    
+    
+        
+            &#183; 
+            <a href="https://www.shootbird.work/hire-us">
+                hire us
+            </a>
+        
+            &#183; 
+            <a href="https://www.shootbird.work/posts">
+                blog
+            </a>
+        
+    
+
+</p>
+
+</div>
+
+
+        <div class="section footer"><span>©2018 <a href="https://www.zeddee.com/">zed</a>.</span>
+</div>
+    </div>
+</body>
+
+</html>

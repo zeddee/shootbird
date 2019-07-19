@@ -361,7 +361,7 @@ SELECT * FROM tasks<span class="tok-p">;</span></code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="linenums"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+<pre class="pygments highlight"><code data-lang="linenums"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -385,7 +385,7 @@ SELECT * FROM tasks<span class="tok-p">;</span></code></pre>
 22
 23
 24
-25</div></td><td class="code"><span></span>package main
+25</pre></div></td><td class="code"><pre><span></span>package main
 
 import (
   &quot;database/sql&quot;
@@ -410,7 +410,7 @@ func main(){
     fmt.Println(&quot;Contacted database successfully!&quot;)
   }
 }
-</td></tr></table></code></pre>
+</pre></td></tr></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -464,7 +464,7 @@ If you&#8217;re not familiar with Go, then the idea of having to constantly chec
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="linenums"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+<pre class="pygments highlight"><code data-lang="linenums"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -476,7 +476,7 @@ If you&#8217;re not familiar with Go, then the idea of having to constantly chec
 10
 11
 12
-13</div></td><td class="code"><span></span>func main(){
+13</pre></div></td><td class="code"><pre><span></span>func main(){
   // The code we wrote earlier...
 
 	rows, err := db.Query(`SELECT * FROM tasks LIMIT 1`)
@@ -489,7 +489,7 @@ If you&#8217;re not familiar with Go, then the idea of having to constantly chec
 	}
 	fmt.Println(colNames)
 }
-</td></tr></table></code></pre>
+</pre></td></tr></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -525,7 +525,7 @@ If you&#8217;re not familiar with Go, then the idea of having to constantly chec
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="go"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+<pre class="pygments highlight"><code data-lang="go"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -535,7 +535,7 @@ If you&#8217;re not familiar with Go, then the idea of having to constantly chec
  8
  9
 10
-11</div></td><td class="code"><span></span><span class="tok-kd">func</span> <span class="tok-nx">main</span><span class="tok-p">(){</span>
+11</pre></div></td><td class="code"><pre><span></span><span class="tok-kd">func</span> <span class="tok-nx">main</span><span class="tok-p">(){</span>
   <span class="tok-c1">// ...</span>
 
   <span class="tok-nx">cols</span><span class="tok-p">,</span> <span class="tok-nx">err</span> <span class="tok-o">:=</span> <span class="tok-nx">rows</span><span class="tok-p">.</span><span class="tok-nx">ColumnTypes</span><span class="tok-p">()</span>
@@ -546,7 +546,7 @@ If you&#8217;re not familiar with Go, then the idea of having to constantly chec
     <span class="tok-nx">fmt</span><span class="tok-p">.</span><span class="tok-nx">Printf</span><span class="tok-p">(</span><span class="tok-s">&quot;Col %d: %+v&quot;</span><span class="tok-p">,</span> <span class="tok-nx">index</span><span class="tok-p">,</span> <span class="tok-nx">value</span><span class="tok-p">)</span>
   <span class="tok-p">}</span>
 <span class="tok-p">}</span>
-</td></tr></table></code></pre>
+</pre></td></tr></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -554,18 +554,18 @@ If you&#8217;re not familiar with Go, then the idea of having to constantly chec
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="linenums"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+<pre class="pygments highlight"><code data-lang="linenums"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
 5
-6</div></td><td class="code"><span></span>Cols 0: &amp;{name:id hasNullable:true hasLength:false hasPrecisionScale:false nullable:true length:0 databaseType:INTEGER precision:0 scale:0 scanType:&lt;nil&gt;}
+6</pre></div></td><td class="code"><pre><span></span>Cols 0: &amp;{name:id hasNullable:true hasLength:false hasPrecisionScale:false nullable:true length:0 databaseType:INTEGER precision:0 scale:0 scanType:&lt;nil&gt;}
 Cols 1: &amp;{name:identifier hasNullable:true hasLength:false hasPrecisionScale:false nullable:true length:0 databaseType:TEXT precision:0 scale:0 scanType:&lt;nil&gt;}
 Cols 2: &amp;{name:list_identifier hasNullable:true hasLength:false hasPrecisionScale:false nullable:true length:0 databaseType:TEXT precision:0 scale:0 scanType:&lt;nil&gt;}
 Cols 3: &amp;{name:title hasNullable:true hasLength:false hasPrecisionScale:false nullable:true length:0 databaseType:TEXT precision:0 scale:0 scanType:&lt;nil&gt;}
 Cols 4: &amp;{name:prev_identifier hasNullable:true hasLength:false hasPrecisionScale:false nullable:true length:0 databaseType:TEXT precision:0 scale:0 scanType:&lt;nil&gt;}
 Cols 5: &amp;{name:next_identifier hasNullable:true hasLength:false hasPrecisionScale:false nullable:true length:0 databaseType:TEXT precision:0 scale:0 scanType:&lt;nil&gt;}
-</td></tr></table></code></pre>
+</pre></td></tr></table></code></pre>
 </div>
 </div>
 <div class="admonitionblock tip">
@@ -585,7 +585,7 @@ The <code>ColumnType</code> object is a "struct", which is one of the ways Go st
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="go"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+<pre class="pygments highlight"><code data-lang="go"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -595,7 +595,7 @@ The <code>ColumnType</code> object is a "struct", which is one of the ways Go st
  8
  9
 10
-11</div></td><td class="code"><span></span><span class="tok-kd">func</span> <span class="tok-nx">main</span><span class="tok-p">(){</span>
+11</pre></div></td><td class="code"><pre><span></span><span class="tok-kd">func</span> <span class="tok-nx">main</span><span class="tok-p">(){</span>
   <span class="tok-c1">// ...</span>
 
   <span class="tok-nx">cols</span><span class="tok-p">,</span> <span class="tok-nx">err</span> <span class="tok-o">:=</span> <span class="tok-nx">rows</span><span class="tok-p">.</span><span class="tok-nx">ColumnTypes</span><span class="tok-p">()</span>
@@ -606,7 +606,7 @@ The <code>ColumnType</code> object is a "struct", which is one of the ways Go st
     <span class="tok-nx">fmt</span><span class="tok-p">.</span><span class="tok-nx">Printf</span><span class="tok-p">(</span><span class="tok-s">&quot;Cols %d: %+v&quot;</span><span class="tok-p">,</span> <span class="tok-nx">index</span><span class="tok-p">,</span> <span class="tok-nx">value</span><span class="tok-p">.</span><span class="tok-nx">DatabaseTypeName</span><span class="tok-p">())</span>
   <span class="tok-p">}</span>
 <span class="tok-p">}</span>
-</td></tr></table></code></pre>
+</pre></td></tr></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -645,14 +645,14 @@ To learn more about data types in SQLite, see <a href="https://www.sqlite.org/da
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="linenums"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv">1
+<pre class="pygments highlight"><code data-lang="linenums"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
 4
 5
 6
 7
-8</div></td><td class="code"><span></span>func main(){
+8</pre></div></td><td class="code"><pre><span></span>func main(){
   dbLocation := &quot;./data/database.sqlite&quot; // Make sure you have this point at a valid SQLite file
   db, err := sql.Open(&quot;sqlite3&quot;, dbLocation)
   if err != nil {
@@ -660,7 +660,7 @@ To learn more about data types in SQLite, see <a href="https://www.sqlite.org/da
   }
   defer db.Close()
 }
-</td></tr></table></code></pre>
+</pre></td></tr></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -668,7 +668,7 @@ To learn more about data types in SQLite, see <a href="https://www.sqlite.org/da
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="linenums"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+<pre class="pygments highlight"><code data-lang="linenums"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -679,7 +679,7 @@ To learn more about data types in SQLite, see <a href="https://www.sqlite.org/da
  9
 10
 11
-12</div></td><td class="code"><span></span>type Task struct {
+12</pre></div></td><td class="code"><pre><span></span>type Task struct {
 	ID             int
 	Identifier     string
 	ListIdentifier string
@@ -691,7 +691,7 @@ To learn more about data types in SQLite, see <a href="https://www.sqlite.org/da
 func main(){
   // ...
 }
-</td></tr></table></code></pre>
+</pre></td></tr></table></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -699,7 +699,7 @@ func main(){
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="pygments highlight"><code data-lang="linenums"><table class="pyhltable"><tr><td class="linenos"><div class="linenodiv"> 1
+<pre class="pygments highlight"><code data-lang="linenums"><table class="linenotable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
  4
@@ -713,7 +713,7 @@ func main(){
 12
 13
 14
-15</div></td><td class="code"><span></span>func main(){
+15</pre></div></td><td class="code"><pre><span></span>func main(){
   // ...
 
   rows, err := db.Query(`SELECT * FROM tasks`)
@@ -728,7 +728,7 @@ func main(){
   }
   fmt.Printf(allTasks)
 }
-</td></tr></table></code></pre>
+</pre></td></tr></table></code></pre>
 </div>
 </div>
 <div class="paragraph">

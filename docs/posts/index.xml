@@ -6,10 +6,20 @@
     <description>Recent content in Posts on ShootBird</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 14 Dec 2018 01:30:26 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jul 2019 04:40:24 +0800</lastBuildDate>
     
 	<atom:link href="https://www.shootbird.work/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Using an XLSX file as a simple CMS with Vuepress</title>
+      <link>https://www.shootbird.work/posts/vuepress-xlsx/</link>
+      <pubDate>Sat, 20 Jul 2019 04:40:24 +0800</pubDate>
+      
+      <guid>https://www.shootbird.work/posts/vuepress-xlsx/</guid>
+      <description>Using an XLSX file as a simple CMS with Vuepress Excel spreadsheets are an extremely powerful and versatile data format to work with, but comes with the baggage of Microsoft Office formats having been closed proprietary formats for the longest time, and that they&amp;rsquo;re expensive to read i.e. they&amp;rsquo;re binary files that cannot be read by opening them in a text editor.
+Fortunately, other tools such as OpenOffice/LibreOffice and the Google Suite have allowed us to work with these Office formats without having to be locked into a particular piece of software.</description>
+    </item>
     
     <item>
       <title>I ❤️ Go: Types and Structs</title>

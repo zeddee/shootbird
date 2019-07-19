@@ -3,6 +3,53 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.shootbird.work/posts/</loc>
+    <lastmod>2019-07-20T04:40:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/</loc>
+    <lastmod>2019-07-20T04:40:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/</loc>
+    <lastmod>2019-07-20T04:40:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/posts/vuepress-xlsx/</loc>
+    <lastmod>2019-07-20T04:40:24+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/blog/</loc>
+    <lastmod>2019-07-20T04:40:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/cms/</loc>
+    <lastmod>2019-07-20T04:40:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/vuepress/</loc>
+    <lastmod>2019-07-20T04:40:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.shootbird.work/tags/xlsx/</loc>
+    <lastmod>2019-07-20T04:40:24+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://www.shootbird.work/tags/go/</loc>
     <lastmod>2018-12-14T01:30:26+08:00</lastmod>
     <priority>0</priority>
@@ -11,24 +58,6 @@
   <url>
     <loc>https://www.shootbird.work/posts/i-love-go-structs/</loc>
     <lastmod>2018-12-14T01:30:26+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/posts/</loc>
-    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/</loc>
-    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.shootbird.work/tags/</loc>
-    <lastmod>2018-12-14T01:30:26+08:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
