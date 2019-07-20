@@ -6,8 +6,6 @@ draft: false
 tags: ["blog","vuepress","xlsx","cms"]
 ---
 
-# Using an XLSX file as a simple CMS with Vuepress
-
 Excel spreadsheets are an extremely powerful and versatile data format to work with,
 but comes with the baggage of Microsoft Office formats having been closed proprietary formats for
 the longest time, and that they're expensive to read i.e. they're binary files that cannot be read
@@ -19,7 +17,7 @@ Plus any of the modern Office documents affixed with an "x" use the
 [OpenXML](https://github.com/OfficeDev/office-content/tree/master/en-us/OpenXMLCon) format,
 which Microsoft has provided an SDK for, allowing us to work with Office formats programmatically.
 
-## Usage
+## Using the Sample Repository
 
 I've put up a sample repository showing how this would work here: https://github.com/zeddee/vuepress-and-xlsx
 
@@ -35,6 +33,124 @@ To run this sample repository:
 3. Run with `yarn dev` and access the site on `localhost:8080`
 
 Modify `site/README.md` and `sample.xlsx` to poke around and see how it works.
+
+## Writing it Yourself
+
+First, we'll need to get a basic instance of Vuepress up and running.
+Make sure that you have [NodeJS 10.16](https://nodejs.org/en/) or newer installed,
+and (optionally) [Yarn](https://yarnpkg.com/en/).
+
+Install `vuepress` and `js-xlsx` by running in the terminal:
+
+```
+npm i vuepress xlsx
+```
+
+Then create an XLSX file named `workbook_one.xlsx` with a spreadsheet tool of your choice, and create a table that looks like this:
+
+<table>
+<thead>
+<th>Column 1</th>
+<th>Column 2</th>
+<th>Column 3</th>
+</thead>
+<tbody>
+<tr><td>Item 1</td><td>Item 2</td><td>Item 3</td></tr>
+<tr><td>Item 4</td><td>Item 5</td><td>Item 6</td></tr>
+<tr><td>Item 7</td><td>Item 8</td><td>Item 9</td></tr>
+</tbody>
+</table>
+
+Then, in your project directory, we'll create an empty `README.md` file
+(**IMPORTANT**: The "readme" file _must_ be named `README.md`, not `README.MD`, or Vuepress will not pick it up!)
+that will act as a placeholder for now.
+
+Next we'll create a Javascript file named `crunch_spreadsheet.js`, and add the following code to it:
+
+```javascript
+const fs = require('fs')
+const XLSX = require('xlsx')
+
+const workbook = XLSX.readFile('workbook_one.xlsx')
+
+// export all sheets to json
+
+let runExport = (workbook) => {
+    for (let i = 0; i < workbook.Workbook.Sheets.length; i++){
+        let ws = workbook.Sheets[workbook.SheetNames[i]]
+        let jsonOutput = XLSX.utils.sheet_to_json(ws)
+        fs.writeFile(`${workbook.SheetNames[i]}.json`, JSON.stringify(jsonOutput), (err)=>{
+            if (err) return console.error(err)
+
+            console.log(`${workbook.SheetNames[i]} was saved!`)
+        })
+    }
+}
+
+runExport(workbook)
+```
+
+In the code snippet above, we:
+
+1. Use the `xlsx` library and call `.readFile()` on our spreadsheet `workbook_one.xlsx` to begin processing it.
+2. Loop over the `workbook` object that we get back from `.readFile()`, making sure that we get all the worksheets in the workbook/spreadsheet file.
+3. For each worksheet we find, we call `XLSX.utils.sheet_to_json(worksheet)` to extract the spreadsheet and convert it to JSON.
+4. Write that extracted JSON to a `.json` file.
+
+To see our new Javascript file in action, run in the terminal:
+
+```bash
+node crunch_spreadsheet.js
+```
+
+You should see a new `Sheet 1.json` file (the default name of the first spreadsheet in a workbook in Google Sheets and Excel).
+
+Now, edit `README.md` and add the following code:
+
+```html
+<table>
+<thead>
+<th>Column 1</th>
+<th>Column 2</th>
+<th>Column 3</th>
+<thead>
+<tbody>
+<tr v-for="i in sheet1">
+<td>{{ i["Column 1"] }}</td>
+<td>{{ i["Column 2"] }}</td>
+<td>{{ i["Column 3"] }}</td>
+</tr>
+<tbody>
+</table>
+
+<script>
+import sheet1 from 'Sheet 1.json'
+
+export default {
+    data() {
+        return {
+            sheet1: sheet1
+        }
+    }
+}
+</script>
+```
+
+Here, we've:
+
+1. Created a `<script>` within our markdown file that
+    a. Imports data from our json spreadsheet and assigns it to the `sheet1` variable.
+    b. Exposes `sheet1` to the Vue framework.
+2. Created a HTML `<table>` with the headings that we expect from the spreadsheet we're feeding into it.
+3. Write a loop using the `v-for` directive that:
+    a. For each row in the spreadsheet, creates
+    b. 3 table cells in the spreadsheet, each grabbing an item with a specified key name from the row.
+
+Once done, save the file and run your Vuepress site with the following command:
+
+```bash
+npx vuepress dev
+```
 
 ## Why an XLSX file
 
