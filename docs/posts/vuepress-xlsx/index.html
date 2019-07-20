@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="referrer" content="no-referrer">
 
-<meta name="description" content="Using an XLSX file as a simple CMS with Vuepress Excel spreadsheets are an extremely powerful and versatile data format to work with, but comes with the baggage of Microsoft Office formats having been closed proprietary formats for the longest time, and that they&rsquo;re expensive to read i.e. they&rsquo;re binary files that cannot be read by opening them in a text editor.
+<meta name="description" content="Excel spreadsheets are an extremely powerful and versatile data format to work with, but comes with the baggage of Microsoft Office formats having been closed proprietary formats for the longest time, and that they&rsquo;re expensive to read i.e. they&rsquo;re binary files that cannot be read by opening them in a text editor.
 Fortunately, other tools such as OpenOffice/LibreOffice and the Google Suite have allowed us to work with these Office formats without having to be locked into a particular piece of software.">
 
 <meta name="twitter:card" content="summary">
@@ -18,7 +18,7 @@ Fortunately, other tools such as OpenOffice/LibreOffice and the Google Suite hav
 
 <meta name="twitter:image" content="https://www.shootbird.work/img/logo/shootbird_opengraph.png">
 <meta name="twitter:title" property="og:title" itemprop="title name" content="Using an XLSX file as a simple CMS with Vuepress">
-<meta name="twitter:description" property="og:description" itemprop="description" content="Using an XLSX file as a simple CMS with Vuepress Excel spreadsheets are an extremely powerful and versatile data format to work with, but comes with the baggage of Microsoft Office formats having been closed proprietary formats for the longest time, and that they&rsquo;re expensive to read i.e. they&rsquo;re binary files that cannot be read by opening them in a text editor.
+<meta name="twitter:description" property="og:description" itemprop="description" content="Excel spreadsheets are an extremely powerful and versatile data format to work with, but comes with the baggage of Microsoft Office formats having been closed proprietary formats for the longest time, and that they&rsquo;re expensive to read i.e. they&rsquo;re binary files that cannot be read by opening them in a text editor.
 Fortunately, other tools such as OpenOffice/LibreOffice and the Google Suite have allowed us to work with these Office formats without having to be locked into a particular piece of software."}}>
 <meta property="og:type" content="article" />
 <meta name="og:url" content="https://www.shootbird.work/">
@@ -71,7 +71,7 @@ Fortunately, other tools such as OpenOffice/LibreOffice and the Google Suite hav
 		
 		  Sat Jul 20, 2019
 			&#183;
-			534 words
+			976 words
 		
     
     <div class="tag-container">
@@ -105,8 +105,6 @@ Fortunately, other tools such as OpenOffice/LibreOffice and the Google Suite hav
     <hr/>
     
 
-<h1 id="using-an-xlsx-file-as-a-simple-cms-with-vuepress">Using an XLSX file as a simple CMS with Vuepress</h1>
-
 <p>Excel spreadsheets are an extremely powerful and versatile data format to work with,
 but comes with the baggage of Microsoft Office formats having been closed proprietary formats for
 the longest time, and that they&rsquo;re expensive to read i.e. they&rsquo;re binary files that cannot be read
@@ -118,7 +116,7 @@ Plus any of the modern Office documents affixed with an &ldquo;x&rdquo; use the
 <a href="https://github.com/OfficeDev/office-content/tree/master/en-us/OpenXMLCon">OpenXML</a> format,
 which Microsoft has provided an SDK for, allowing us to work with Office formats programmatically.</p>
 
-<h2 id="usage">Usage</h2>
+<h2 id="using-the-sample-repository">Using the Sample Repository</h2>
 
 <p>I&rsquo;ve put up a sample repository showing how this would work here: <a href="https://github.com/zeddee/vuepress-and-xlsx">https://github.com/zeddee/vuepress-and-xlsx</a></p>
 
@@ -139,6 +137,112 @@ which Microsoft has provided an SDK for, allowing us to work with Office formats
 
 <p>Modify <code>site/README.md</code> and <code>sample.xlsx</code> to poke around and see how it works.</p>
 
+<h2 id="writing-it-yourself">Writing it Yourself</h2>
+
+<p>First, we&rsquo;ll need to get a basic instance of Vuepress up and running.
+Make sure that you have <a href="https://nodejs.org/en/">NodeJS 10.16</a> or newer installed,
+and (optionally) <a href="https://yarnpkg.com/en/">Yarn</a>.</p>
+
+<p>Install <code>vuepress</code> and <code>js-xlsx</code> by running in the terminal:</p>
+
+<pre><code>npm i vuepress xlsx
+</code></pre>
+
+<p>Then create an XLSX file named <code>workbook_one.xlsx</code> with a spreadsheet tool of your choice, and create a table that looks like this:</p>
+
+<table>
+<thead>
+<th>Column 1</th>
+<th>Column 2</th>
+<th>Column 3</th>
+</thead>
+<tbody>
+<tr><td>Item 1</td><td>Item 2</td><td>Item 3</td></tr>
+<tr><td>Item 4</td><td>Item 5</td><td>Item 6</td></tr>
+<tr><td>Item 7</td><td>Item 8</td><td>Item 9</td></tr>
+</tbody>
+</table>
+
+<p>Then, in your project directory, we&rsquo;ll create an empty <code>README.md</code> file
+(<strong>IMPORTANT</strong>: The &ldquo;readme&rdquo; file <em>must</em> be named <code>README.md</code>, not <code>README.MD</code>, or Vuepress will not pick it up!)
+that will act as a placeholder for now.</p>
+
+<p>Next we&rsquo;ll create a Javascript file named <code>crunch_spreadsheet.js</code>, and add the following code to it:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">fs</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;fs&#39;</span>)
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">XLSX</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;xlsx&#39;</span>)
+
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">workbook</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">XLSX</span>.<span style="color:#a6e22e">readFile</span>(<span style="color:#e6db74">&#39;workbook_one.xlsx&#39;</span>)
+
+<span style="color:#75715e">// export all sheets to json
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">runExport</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">workbook</span>) =&gt; {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">workbook</span>.<span style="color:#a6e22e">Workbook</span>.<span style="color:#a6e22e">Sheets</span>.<span style="color:#a6e22e">length</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>){
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">ws</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">workbook</span>.<span style="color:#a6e22e">Sheets</span>[<span style="color:#a6e22e">workbook</span>.<span style="color:#a6e22e">SheetNames</span>[<span style="color:#a6e22e">i</span>]]
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">jsonOutput</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">XLSX</span>.<span style="color:#a6e22e">utils</span>.<span style="color:#a6e22e">sheet_to_json</span>(<span style="color:#a6e22e">ws</span>)
+        <span style="color:#a6e22e">fs</span>.<span style="color:#a6e22e">writeFile</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">workbook</span>.<span style="color:#a6e22e">SheetNames</span>[<span style="color:#a6e22e">i</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74">.json`</span>, <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">jsonOutput</span>), (<span style="color:#a6e22e">err</span>)=&gt;{
+            <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">err</span>) <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">err</span>)
+
+            <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">workbook</span>.<span style="color:#a6e22e">SheetNames</span>[<span style="color:#a6e22e">i</span>]<span style="color:#e6db74">}</span><span style="color:#e6db74"> was saved!`</span>)
+        })
+    }
+}
+
+<span style="color:#a6e22e">runExport</span>(<span style="color:#a6e22e">workbook</span>)
+</code></pre></div>
+<p>In the code snippet above, we:</p>
+
+<ol>
+<li>Use the <code>xlsx</code> library and call <code>.readFile()</code> on our spreadsheet <code>workbook_one.xlsx</code> to begin processing it.</li>
+<li>Loop over the <code>workbook</code> object that we get back from <code>.readFile()</code>, making sure that we get all the worksheets in the workbook/spreadsheet file.</li>
+<li>For each worksheet we find, we call <code>XLSX.utils.sheet_to_json(worksheet)</code> to extract the spreadsheet and convert it to JSON.</li>
+<li>Write that extracted JSON to a <code>.json</code> file.</li>
+</ol>
+
+<p>To see our new Javascript file in action, run in the terminal:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">node crunch_spreadsheet.js</code></pre></div>
+<p>You should see a new <code>Sheet 1.json</code> file (the default name of the first spreadsheet in a workbook in Google Sheets and Excel).</p>
+
+<p>Now, edit <code>README.md</code> and add the following code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">table</span>&gt;
+&lt;<span style="color:#f92672">thead</span>&gt;
+&lt;<span style="color:#f92672">th</span>&gt;Column 1&lt;/<span style="color:#f92672">th</span>&gt;
+&lt;<span style="color:#f92672">th</span>&gt;Column 2&lt;/<span style="color:#f92672">th</span>&gt;
+&lt;<span style="color:#f92672">th</span>&gt;Column 3&lt;/<span style="color:#f92672">th</span>&gt;
+&lt;<span style="color:#f92672">thead</span>&gt;
+&lt;<span style="color:#f92672">tbody</span>&gt;
+&lt;<span style="color:#f92672">tr</span> <span style="color:#a6e22e">v-for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;i in sheet1&#34;</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;{{ i[&#34;Column 1&#34;] }}&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;{{ i[&#34;Column 2&#34;] }}&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;<span style="color:#f92672">td</span>&gt;{{ i[&#34;Column 3&#34;] }}&lt;/<span style="color:#f92672">td</span>&gt;
+&lt;/<span style="color:#f92672">tr</span>&gt;
+&lt;<span style="color:#f92672">tbody</span>&gt;
+&lt;/<span style="color:#f92672">table</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">sheet1</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;Sheet 1.json&#39;</span>
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+    <span style="color:#a6e22e">data</span>() {
+        <span style="color:#66d9ef">return</span> {
+            <span style="color:#a6e22e">sheet1</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">sheet1</span>
+        }
+    }
+}
+&lt;/<span style="color:#f92672">script</span>&gt;</code></pre></div>
+<p>Here, we&rsquo;ve:</p>
+
+<ol>
+<li>Created a <code>&lt;script&gt;</code> within our markdown file that
+a. Imports data from our json spreadsheet and assigns it to the <code>sheet1</code> variable.
+b. Exposes <code>sheet1</code> to the Vue framework.</li>
+<li>Created a HTML <code>&lt;table&gt;</code> with the headings that we expect from the spreadsheet we&rsquo;re feeding into it.</li>
+<li>Write a loop using the <code>v-for</code> directive that:
+a. For each row in the spreadsheet, creates
+b. 3 table cells in the spreadsheet, each grabbing an item with a specified key name from the row.</li>
+</ol>
+
+<p>Once done, save the file and run your Vuepress site with the following command:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">npx vuepress dev</code></pre></div>
 <h2 id="why-an-xlsx-file">Why an XLSX file</h2>
 
 <p>The <code>.xlsx</code> file is essentially a datastore that allows us to read and write data to one or more tables.
